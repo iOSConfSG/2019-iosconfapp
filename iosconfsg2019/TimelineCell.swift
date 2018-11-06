@@ -40,6 +40,30 @@ class TimelineCell: UITableViewCell {
         return imgView
     }()
     
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: UIFont.smallSize, weight: .light)
+        label.text = "10.00 - 10.30"
+        return label
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Codable in Swift 4"
+        label.font = UIFont.boldSystemFont(ofSize: UIFont.largeSize)
+        return label
+    }()
+    
+    let speakerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Sam Davies"
+        label.font = UIFont.systemFont(ofSize: UIFont.normalSize)
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -54,6 +78,9 @@ class TimelineCell: UITableViewCell {
         addSubview(topLineView)
         addSubview(bottomLineView)
         addSubview(nodeView)
+        addSubview(titleLabel)
+        addSubview(timeLabel)
+        addSubview(speakerLabel)
         
         nodeView.addSubview(iconFlag)
         
@@ -74,6 +101,19 @@ class TimelineCell: UITableViewCell {
         
         nodeView.addConstraintsWithFormat("H:|[v0]|", views: iconFlag)
         nodeView.addConstraintsWithFormat("V:|[v0]|", views: iconFlag)
+        
+        titleLabel.centerYAnchor.constraint(equalTo: nodeView.centerYAnchor).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: nodeView.rightAnchor, constant: 12).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        
+        timeLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -3).isActive = true
+        timeLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0).isActive = true
+        timeLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
+        
+        speakerLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
+        speakerLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
+        speakerLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3).isActive = true
+        
     }
     
 }
