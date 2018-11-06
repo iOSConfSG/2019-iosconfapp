@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A790219087F4006EA97E /* TimelineCell.swift */; };
+		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A15A790219087F4006EA97E /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		5A15A79221908C0E006EA97E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
 				5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */,
 				5AFBF182218D6AA200FD2190 /* Info.plist */,
+				5A15A790219087F4006EA97E /* TimelineCell.swift */,
+				5A15A79221908C0E006EA97E /* UIViewExtensions.swift */,
 			);
 			path = iosconfsg2019;
 			sourceTree = "<group>";
@@ -131,7 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */,
 				5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */,
+				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
