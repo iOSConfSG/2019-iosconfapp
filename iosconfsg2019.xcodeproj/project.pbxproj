@@ -12,6 +12,8 @@
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
 		5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79621914BEE006EA97E /* DetailCell.swift */; };
 		5A15A79921915301006EA97E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79821915301006EA97E /* DetailViewController.swift */; };
+		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
+		5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		5A15A79421912C25006EA97E /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		5A15A79621914BEE006EA97E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5A15A79821915301006EA97E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				5A15A79421912C25006EA97E /* UIFontExtensions.swift */,
 				5A15A79621914BEE006EA97E /* DetailCell.swift */,
 				5A15A79821915301006EA97E /* DetailViewController.swift */,
+				5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */,
+				5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */,
 			);
 			path = iosconfsg2019;
 			sourceTree = "<group>";
@@ -149,8 +155,10 @@
 				5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */,
 				5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */,
 				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
+				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
+				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
 				5A15A79921915301006EA97E /* DetailViewController.swift in Sources */,
 			);

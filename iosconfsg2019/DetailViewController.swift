@@ -71,12 +71,34 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         
-        print("top layout guide \(self.topLayoutGuide.length)")
+        feedbackButton.addTarget(self, action: #selector(handleFeedback), for: .touchUpInside)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))       
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         descriptionTextView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
+    }
+    
+    @objc private func giveFeedback(_ sender: Any) {
+        let feedbackViewController = FeedbackViewController()
+        feedbackViewController.modalPresentationStyle = .popover
+        feedbackViewController.preferredContentSize = CGSize(width: 300, height: 300)
+        
+        if let feedbackPopup = feedbackViewController.presentationController as? UIPopoverPresentationController {
+            feedbackPopup.sourceView = sender as? UIView
+            feedbackPopup.barButtonItem = navigationItem.rightBarButtonItem
+            feedbackPopup.permittedArrowDirections = [.down, .up]
+            feedbackPopup.delegate = self
+            present(feedbackViewController, animated: true, completion: nil)
+        }
+    }
+    
+    @objc private func handleFeedback() {
+        
+        
     }
     
     
@@ -135,5 +157,15 @@ class DetailViewController: UIViewController {
         speakerInfoAttrText.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: urlRange)
         speakerName.attributedText = speakerInfoAttrText
         
+    }
+}
+
+extension DetailViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
 }
