@@ -28,4 +28,10 @@ extension UIFont {
         }
     }
     
+    open class var xLargeSize: CGFloat {
+        get {
+            return 22.0
+        }
+    }
+    
 }
