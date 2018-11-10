@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "dark-star.png",
+      "filename" : "schedule_icon1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dark-star@2x.png",
+      "filename" : "schedule_icon2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dark-star@3x.png",
+      "filename" : "schedule_icon3x.png",
       "scale" : "3x"
     }
   ],
