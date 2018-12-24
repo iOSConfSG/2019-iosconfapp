@@ -34,4 +34,10 @@ extension UIFont {
         }
     }
     
+    open class var largeTitleSize: CGFloat {
+        get {
+            return 48.0
+        }
+    }
+    
 }
