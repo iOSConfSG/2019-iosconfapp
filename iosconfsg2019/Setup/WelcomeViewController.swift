@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 class WelcomeViewController: UIViewController {
     let confImage: UIImageView = {
@@ -54,6 +55,7 @@ class WelcomeViewController: UIViewController {
         btn.setTitle("Allow Notifications", for: .normal)
         btn.setTitleColor(UIColor.purple, for: .normal)
         btn.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
+        btn.addTarget(self, action: #selector(requestNotificationPermission), for: .touchUpInside)
         return btn
     }()
     
@@ -123,6 +125,13 @@ class WelcomeViewController: UIViewController {
         changeUsernameButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24).isActive = true
         changeUsernameButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24).isActive = true
         changeUsernameButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+    }
+    
+    @objc private func requestNotificationPermission() {
+        
+        OneSignal.promptForPushNotifications(userResponse: { (accepted) in
+        }, fallbackToSettings: true)
         
     }
 }

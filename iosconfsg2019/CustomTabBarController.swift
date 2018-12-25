@@ -14,7 +14,7 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scheduleController = HomeViewController()
+        let scheduleController = ScheduleViewController()
         let scheduleTab = UINavigationController(rootViewController: scheduleController)
         scheduleTab.title = "Schedule"
         scheduleTab.tabBarItem.image = UIImage(imageLiteralResourceName: "schedule_icon")

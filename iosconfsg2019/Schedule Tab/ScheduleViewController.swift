@@ -7,21 +7,26 @@
 //
 
 import UIKit
+import RealmSwift
 
-class HomeViewController: UITableViewController {
+class ScheduleViewController: UITableViewController {
     
-    let daySegmentControl = UISegmentedControl(items: ["Day 1", "Day 2"])
-    
+    private let viewModel = ScheduleViewModel()
+
+    private let daySegmentControl = UISegmentedControl(items: ["Day 1", "Day 2"])
     private let timelineCellId: String = "timelineCell"
     private let detailCellId: String = "detailCell"
 
+    private var schedule: Results<Talk>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.connect()
         setupViews()
         
         tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
         tableView.register(DetailCell.self, forCellReuseIdentifier: detailCellId)
-        
     }
     
     // MARK: - Private method
@@ -56,10 +61,13 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
         detailViewController.hidesBottomBarWhenPushed = true
+        if let schedule = self.schedule {
+            detailViewController.talk = schedule[indexPath.row]
+        }
         let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return self.schedule?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,8 +77,29 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCell
         cell.selectionStyle = .none
+        if let schedule = self.schedule {
+            cell.talk = schedule[indexPath.row]
+        }
         return cell
     }
 
+}
+
+extension ScheduleViewController: ScheduleViewModelDelegate {
+
+    func didDownloadRealm(error: Error?, result: Results<Talk>?) {
+        if let error = error {
+            // Display error
+            print("Realm error: \(error.localizedDescription)")
+        }
+
+        if let result = result {
+            self.schedule = result
+            tableView.reloadData()
+            print("Result: \(result)")
+        }
+
+        
+    }
 }
 

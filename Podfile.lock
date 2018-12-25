@@ -1,0 +1,32 @@
+PODS:
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
+  - OneSignal (2.9.4)
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
+
+DEPENDENCIES:
+  - NVActivityIndicatorView
+  - OneSignal (< 3.0, >= 2.6.2)
+  - RealmSwift (= 3.11.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NVActivityIndicatorView
+    - OneSignal
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  OneSignal: a41f5a896177275662da07e23d6a809c0e105a89
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
+
+PODFILE CHECKSUM: bdbf7eb12618661238af5cce700d0c38da9cb3c7
+
+COCOAPODS: 1.5.3

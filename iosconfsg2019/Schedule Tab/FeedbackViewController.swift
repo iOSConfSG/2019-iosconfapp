@@ -11,6 +11,7 @@ import UIKit
 class FeedbackViewController: UIViewController {
     
     var talkTitle: String = "Scaling At Large - Lessons learned rewriting Instagram's feed. Plus some very long and super long title to show"
+    var talk: Talk?
     
     let qualityTitleLabel: UILabel = {
         let title = UILabel()
@@ -40,6 +41,7 @@ class FeedbackViewController: UIViewController {
         btn.setImage(imageSelected, for: .selected)
         btn.accessibilityIdentifier = "neutral"
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 2
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
         return btn
     }()
@@ -53,6 +55,7 @@ class FeedbackViewController: UIViewController {
         btn.setImage(imageSelected, for: .selected)
         btn.accessibilityIdentifier = "good"
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 4
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
         return btn
     }()
@@ -67,6 +70,7 @@ class FeedbackViewController: UIViewController {
         btn.accessibilityIdentifier = "excellent"
         btn.adjustsImageWhenHighlighted = false
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 5
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
         return btn
     }()
@@ -80,6 +84,7 @@ class FeedbackViewController: UIViewController {
         btn.setImage(imageSelected, for: .selected)
         btn.accessibilityIdentifier = "ok"
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 3
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
         return btn
     }()
@@ -93,6 +98,7 @@ class FeedbackViewController: UIViewController {
         btn.setImage(imageSelected, for: .selected)
         btn.accessibilityIdentifier = "poor"
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 1
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
         return btn
     }()
@@ -105,6 +111,8 @@ class FeedbackViewController: UIViewController {
         btn.backgroundColor = UIColor.purple
         return btn
     }()
+    
+    var feedback: Feedback = Feedback(rating: 1, comments: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +134,7 @@ class FeedbackViewController: UIViewController {
             return
         }
         selectedBtn.isSelected = true
+        self.feedback.rating = selectedBtn.tag
     }
     
     private func setupViews() {
@@ -198,6 +207,8 @@ class FeedbackViewController: UIViewController {
     }
     
     @objc private func sendFeedback() {
+        
+        
         
         if sendButton.isLoading {
             sendButton.loadingIndicator(show: false)

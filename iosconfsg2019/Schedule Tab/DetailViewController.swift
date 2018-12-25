@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    internal var talk: Talk?
+    
     let talkTitle: UILabel = {
         let title = UILabel()
         title.text = "Scaling At Large - Lessons learned rewriting Instagram's feed. Plus some very long and super long title to show"
