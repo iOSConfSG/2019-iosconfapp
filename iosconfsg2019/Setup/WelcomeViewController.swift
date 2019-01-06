@@ -59,36 +59,73 @@ class WelcomeViewController: UIViewController {
         return btn
     }()
     
-    let anonymousDescriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: UIFont.normalSize, weight: .light)
-        label.text = "We've set you a cool nickname as skywalker10920! Don't worry, your feedback remains absolutely anonymous."
-        label.textColor = UIColor.white
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    let changeUsernameButton: UIButton = {
-        let btn = UIButton(type: UIButton.ButtonType.system)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Change Username", for: .normal)
-        btn.setTitleColor(UIColor.purple, for: .normal)
-        btn.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
-        return btn
-    }()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        updateUserDefaults()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     @objc private func requestNotificationPermission() {
         
+        let acceptedAlert = UIAlertController(title: nil, message: "👏🏼 Great, you're updated with iOSConfSG latest updates!\nTaking you to the Schedule ...", preferredStyle: UIAlertController.Style.alert)
+        
+        let rejectedAlert = UIAlertController(title: nil, message: "😱 You won't see latest updates from iOSConfSG but it can be enabled in Settings.", preferredStyle: UIAlertController.Style.alert)
+        
+        let settingsAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: nil)
+            }
+        }
+        
+        let notNowAction = UIAlertAction(title: "Not now", style: .default, handler: { (_) in
+            self.showTabScreen()
+        })
+        
+        rejectedAlert.addAction(settingsAction)
+        rejectedAlert.addAction(notNowAction)
+        
         OneSignal.promptForPushNotifications(userResponse: { (accepted) in
+            
+            if accepted {
+                self.present(acceptedAlert, animated: true, completion: nil)
+                
+                let when = DispatchTime.now() + 3.5
+                DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                    acceptedAlert.dismiss(animated: true, completion: {self.showTabScreen()})
+                })
+            } else {
+                self.present(rejectedAlert, animated: true, completion: nil)
+            }
+            
+            
+            
         }, fallbackToSettings: true)
         
+    }
+    
+    private func showTabScreen() {
+        self.dismiss(animated: true, completion: nil)
+        let tabViewController = CustomTabBarController()
+        UIApplication.shared.keyWindow?.rootViewController = tabViewController
+    }
+    
+    private func updateUserDefaults() {
+        UserDefaults.standard.set(true, forKey: "sawWelcomeScreen")
     }
     
     private func setupViews() {
@@ -99,11 +136,9 @@ class WelcomeViewController: UIViewController {
         view.addSubview(dateLabel)
         view.addSubview(notificationDescriptionLabel)
         view.addSubview(allowNotificationButton)
-        view.addSubview(anonymousDescriptionLabel)
-        view.addSubview(changeUsernameButton)
         
         confImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        confImage.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 80).isActive = true
+        confImage.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 120).isActive = true
         confImage.heightAnchor.constraint(equalToConstant: 155).isActive = true
         confImage.widthAnchor.constraint(equalToConstant: 155).isActive = true
         
@@ -115,23 +150,14 @@ class WelcomeViewController: UIViewController {
         dateLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12).isActive = true
         dateLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12).isActive = true
         
-        notificationDescriptionLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 12).isActive = true
+        notificationDescriptionLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 32).isActive = true
         notificationDescriptionLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12).isActive = true
         notificationDescriptionLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12).isActive = true
         
-        allowNotificationButton.topAnchor.constraint(equalTo: notificationDescriptionLabel.bottomAnchor, constant: 12).isActive = true
+        allowNotificationButton.topAnchor.constraint(equalTo: notificationDescriptionLabel.bottomAnchor, constant: 22).isActive = true
         allowNotificationButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24).isActive = true
         allowNotificationButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24).isActive = true
         allowNotificationButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        
-        anonymousDescriptionLabel.topAnchor.constraint(equalTo: allowNotificationButton.bottomAnchor, constant: 12).isActive = true
-        anonymousDescriptionLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12).isActive = true
-        anonymousDescriptionLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12).isActive = true
-        
-        changeUsernameButton.topAnchor.constraint(equalTo: anonymousDescriptionLabel.bottomAnchor, constant: 12).isActive = true
-        changeUsernameButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24).isActive = true
-        changeUsernameButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24).isActive = true
-        changeUsernameButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
     }
 }
