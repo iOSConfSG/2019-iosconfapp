@@ -68,3 +68,5 @@ vendor
 .DS_Store
 *.xcuserstate
 cobertura.xml
+
+iosconfsg2019/GoogleService-Info\.plist
