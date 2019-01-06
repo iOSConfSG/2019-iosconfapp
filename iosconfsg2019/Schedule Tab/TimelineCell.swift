@@ -9,6 +9,12 @@ import UIKit
 
 class TimelineCell: UITableViewCell {
     
+    var talk: Talk? {
+        didSet {
+            self.titleLabel.text = talk?.title
+        }
+    }
+    
     let topLineView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false

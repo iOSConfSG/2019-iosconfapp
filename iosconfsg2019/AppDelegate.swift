@@ -8,6 +8,8 @@
 
 import UIKit
 import OneSignal
+import Firebase
+import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // Firebase
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+        
+        Auth.auth().signInAnonymously { (user, error) in
+            if let error = error {
+                #if DEBUG
+                print("FirebaseAuth Error: \(error.localizedDescription)")
+                #endif
+            }
+            #if DEBUG
+            print("FirebaseAuth signed in anonymously")
+            #endif
+        }
+        
+        // OneSignal
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
         
@@ -26,22 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
         
-        // Recommend moving the below line to prompt for push after informing the user about
-        //   how your app will use them.
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-        })
-        
         window = UIWindow()
         window?.makeKeyAndVisible()
-//        window?.rootViewController = WelcomeViewController()
-        window?.rootViewController = CustomTabBarController()
-//        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
-//        window?.rootViewController = UINavigationController(rootViewController: DetailViewController())
-//        window?.rootViewController = UINavigationController(rootViewController: FeedbackViewController())
-        return true
+        
+        // Which screen to show?
+        
+        if UserDefaults.standard.object(forKey: "sawWelcomeScreen") == nil {
+            window?.rootViewController = WelcomeViewController()
+            return true
+        } else {
+            window?.rootViewController = CustomTabBarController()
+            return true
+        }
     }
-
 
 }
 

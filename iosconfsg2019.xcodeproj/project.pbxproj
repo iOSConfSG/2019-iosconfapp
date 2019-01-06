@@ -21,6 +21,9 @@
 		5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BE42196CA3000D8FDC5 /* AboutViewController.swift */; };
 		5A7C3E3121E1AA5700A49FE1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E3021E1AA5700A49FE1 /* NotificationService.swift */; };
 		5A7C3E3521E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A7C3E2E21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A7C3E4221E1E6ED00A49FE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */; };
+		5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4421E1EC9700A49FE1 /* Talk.swift */; };
+		5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
@@ -61,7 +64,6 @@
 		5A15A79421912C25006EA97E /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		5A15A79621914BEE006EA97E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5A15A79821915301006EA97E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		5A262BAE21AC1E9E008BC34F /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,9 @@
 		5A7C3E3221E1AA5700A49FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A7C3E3B21E1AB2100A49FE1 /* iosconfsgNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosconfsgNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosconfsg2019.entitlements; sourceTree = "<group>"; };
+		5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A7C3E4421E1EC9700A49FE1 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
+		5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -120,8 +125,12 @@
 		5A262BA621AC165A008BC34F /* Schedule Tab */ = {
 			isa = PBXGroup;
 			children = (
-				5A262BAE21AC1E9E008BC34F /* ScheduleViewModel.swift */,
+				5AFBF178218D6AA100FD2190 /* HomeViewController.swift */,
+				5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */,
+				5A15A79821915301006EA97E /* DetailViewController.swift */,
 				5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */,
+				5A15A79621914BEE006EA97E /* DetailCell.swift */,
+				5A15A790219087F4006EA97E /* TimelineCell.swift */,
 			);
 			path = "Schedule Tab";
 			sourceTree = "<group>";
@@ -129,6 +138,9 @@
 		5A262BA721AC1682008BC34F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */,
+				5A15A79421912C25006EA97E /* UIFontExtensions.swift */,
+				5A15A79221908C0E006EA97E /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +148,7 @@
 		5A262BA821AC16AC008BC34F /* News Tab */ = {
 			isa = PBXGroup;
 			children = (
+				5A7B2BE22196C9D100D8FDC5 /* NewsViewController.swift */,
 			);
 			path = "News Tab";
 			sourceTree = "<group>";
@@ -143,6 +156,7 @@
 		5A262BA921AC16BD008BC34F /* About Tab */ = {
 			isa = PBXGroup;
 			children = (
+				5A7B2BE42196CA3000D8FDC5 /* AboutViewController.swift */,
 			);
 			path = "About Tab";
 			sourceTree = "<group>";
@@ -151,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				5A41848C21D110CA007E1905 /* WelcomeViewController.swift */,
+				5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -163,6 +178,15 @@
 				5A7C3E3221E1AA5700A49FE1 /* Info.plist */,
 			);
 			path = iosconfsgNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		5A7C3E4321E1EC8A00A49FE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A7C3E4421E1EC9700A49FE1 /* Talk.swift */,
+				5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5AFBF16A218D6AA000FD2190 = {
@@ -188,6 +212,8 @@
 		5AFBF175218D6AA000FD2190 /* iosconfsg2019 */ = {
 			isa = PBXGroup;
 			children = (
+				5A7C3E4321E1EC8A00A49FE1 /* Models */,
+				5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
 				5A41848B21D110BB007E1905 /* Setup */,
 				5A262BA921AC16BD008BC34F /* About Tab */,
@@ -195,20 +221,9 @@
 				5A262BA721AC1682008BC34F /* Extensions */,
 				5A262BA621AC165A008BC34F /* Schedule Tab */,
 				5AFBF176218D6AA100FD2190 /* AppDelegate.swift */,
-				5AFBF178218D6AA100FD2190 /* HomeViewController.swift */,
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
 				5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */,
 				5AFBF182218D6AA200FD2190 /* Info.plist */,
-				5A15A790219087F4006EA97E /* TimelineCell.swift */,
-				5A15A79221908C0E006EA97E /* UIViewExtensions.swift */,
-				5A15A79421912C25006EA97E /* UIFontExtensions.swift */,
-				5A15A79621914BEE006EA97E /* DetailCell.swift */,
-				5A15A79821915301006EA97E /* DetailViewController.swift */,
-				5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */,
-				5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */,
-				5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */,
-				5A7B2BE22196C9D100D8FDC5 /* NewsViewController.swift */,
-				5A7B2BE42196CA3000D8FDC5 /* AboutViewController.swift */,
 			);
 			path = iosconfsg2019;
 			sourceTree = "<group>";
@@ -328,6 +343,7 @@
 			files = (
 				5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
+				5A7C3E4221E1E6ED00A49FE1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,11 +442,13 @@
 				5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */,
 				5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
+				5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */,
 				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
 				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
 				5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */,
 				5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */,
+				5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
