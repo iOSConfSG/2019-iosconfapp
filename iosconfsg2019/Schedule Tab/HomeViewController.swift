@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class HomeViewController: UITableViewController {
+class ScheduleViewController: UITableViewController {
     
     let daySegmentControl = UISegmentedControl(items: ["Day 1", "Day 2"])
     
     private let timelineCellId: String = "timelineCell"
     private let detailCellId: String = "detailCell"
+    
+    var schedule: [Talk] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +25,51 @@ class HomeViewController: UITableViewController {
         tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
         tableView.register(DetailCell.self, forCellReuseIdentifier: detailCellId)
         
+        getSchedule()
+        
     }
     
     // MARK: - Private method
+    private func getSchedule() {
+        let dbRef = Database.database().reference()
+        let scheduleRef = dbRef.child("schedule")
+        scheduleRef.keepSynced(true)
+        
+        scheduleRef.observe(.childAdded) { (snapshot) in
+            let talk = Talk(snapshot: snapshot)
+            self.schedule.append(talk)
+            
+            #if DEBUG
+            print("Got talk: \(talk.title)")
+            #endif
+        }
+        
+        scheduleRef.observe(.childChanged) { (snapshot) in
+            let newTalk = Talk(snapshot: snapshot)
+            
+            let index = self.schedule.firstIndex(where: { (talk) -> Bool in
+                return talk.firebaseId == newTalk.firebaseId
+            })
+            
+            if let talkIndex = index {
+                self.schedule.remove(at: talkIndex)
+                self.schedule.insert(newTalk, at: talkIndex)
+            }
+            
+        }
+        
+        scheduleRef.observe(.value) { (snapshot) in
+            self.reloadData()
+        }
+        
+    }
+    
+    private func reloadData() {
+        OperationQueue.main.addOperation {
+            self.tableView.reloadData()
+        }
+    }
+    
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
         
@@ -59,7 +104,7 @@ class HomeViewController: UITableViewController {
         let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return self.schedule.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,6 +113,7 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCell
+        cell.talk = self.schedule[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
