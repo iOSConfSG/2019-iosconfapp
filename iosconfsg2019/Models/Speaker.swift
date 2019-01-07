@@ -26,7 +26,7 @@ class Speaker {
         let speakerDict = snapshot.value as! NSDictionary
         
         self.name = speakerDict["name"] as! String
-        self.description = speakerDict["description"] as! String
+        self.description = speakerDict["shortBio"] as! String
         self.imageFilename = speakerDict["imageFilename"] as! String
         self.twitter = speakerDict["twitter"] as! String
         self.company = speakerDict["company"] as! String

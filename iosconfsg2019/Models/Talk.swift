@@ -33,6 +33,7 @@ class Talk {
     var speakerId: String?
     var talkType: TalkType
     var speaker: Speaker?
+    var day: Int
     
     init(snapshot: DataSnapshot) {
         self.firebaseId = snapshot.key
@@ -40,7 +41,9 @@ class Talk {
         
         self.title = talkDict["title"] as! String
         self.talkDescription = talkDict["talk_description"] as! String
-        if let speakerId = talkDict["speakerId"] as? String, speakerId != "" {
+        self.day = talkDict["day"] as! Int
+        
+        if let speakerId = talkDict["speaker_id"] as? String, speakerId != "" {
             self.speakerId = speakerId
         } else {
             self.speakerId = nil

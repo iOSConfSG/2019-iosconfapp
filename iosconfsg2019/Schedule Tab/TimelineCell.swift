@@ -12,37 +12,26 @@ class TimelineCell: UITableViewCell {
     var talk: Talk? {
         didSet {
             self.titleLabel.text = talk?.title
+            self.speakerLabel.text = talk?.speaker?.name
+            
+            if let iconFilename = talk?.talkIconFilename {
+                self.iconImageView.image = UIImage(imageLiteralResourceName: iconFilename)
+            }
+            
+            var duration = talk?.startAt.toConferenceTime()
+            duration?.append(contentsOf: " - ")
+            duration?.append(contentsOf: talk?.endAt.toConferenceTime() ?? "")
+            self.timeLabel.text = duration
         }
     }
     
-    let topLineView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.red
-        return view
-    }()
-    
-    let bottomLineView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.blue
-        return view
-    }()
-    
-    let nodeView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.clear
-        return view
-    }()
-    
-    let iconFlag: UIImageView = {
+    let iconImageView: UIImageView = {
         let img = UIImage(imageLiteralResourceName: "flag")
         let imgView = UIImageView(image: img)
         imgView.contentMode = .scaleToFill
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.layer.cornerRadius = 10
-        imgView.backgroundColor = UIColor.yellow
+        imgView.backgroundColor = UIColor.clear
         return imgView
     }()
     
@@ -51,6 +40,7 @@ class TimelineCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: UIFont.smallSize, weight: .light)
         label.text = "10.00 - 10.30"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -59,6 +49,9 @@ class TimelineCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Codable in Swift 4"
         label.font = UIFont.boldSystemFont(ofSize: UIFont.largeSize)
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        label.textColor = UIColor.purple
         return label
     }()
     
@@ -67,6 +60,7 @@ class TimelineCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sam Davies"
         label.font = UIFont.systemFont(ofSize: UIFont.normalSize)
+        label.numberOfLines = 1
         return label
     }()
     
@@ -78,47 +72,38 @@ class TimelineCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+        
     private func setupViews() {
         
-        addSubview(topLineView)
-        addSubview(bottomLineView)
-        addSubview(nodeView)
-        addSubview(titleLabel)
-        addSubview(timeLabel)
-        addSubview(speakerLabel)
+        let marginGuide = contentView.layoutMarginsGuide
         
-        nodeView.addSubview(iconFlag)
+        contentView.addSubview(timeLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(speakerLabel)
+        contentView.addSubview(iconImageView)
         
-        topLineView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 44).isActive = true
-        topLineView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
-        topLineView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        topLineView.widthAnchor.constraint(equalToConstant: 1).isActive = true
+        iconImageView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 0).isActive = true
+        iconImageView.heightAnchor.constraint(equalToConstant: 27).isActive = true
+        iconImageView.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        iconImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         
-        bottomLineView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 44).isActive = true
-        bottomLineView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
-        bottomLineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-        bottomLineView.widthAnchor.constraint(equalToConstant: 1).isActive = true
-        
-        nodeView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        nodeView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        nodeView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        nodeView.centerXAnchor.constraint(equalTo: topLineView.centerXAnchor).isActive = true
-        
-        nodeView.addConstraintsWithFormat("H:|[v0]|", views: iconFlag)
-        nodeView.addConstraintsWithFormat("V:|[v0]|", views: iconFlag)
-        
-        titleLabel.centerYAnchor.constraint(equalTo: nodeView.centerYAnchor).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: nodeView.rightAnchor, constant: 12).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
-        
-        timeLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -3).isActive = true
-        timeLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor, constant: 0).isActive = true
-        timeLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
-        
-        speakerLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
-        speakerLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
-        speakerLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3).isActive = true
+        timeLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 0).isActive = true
+        timeLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 8).isActive = true
+        timeLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 0).isActive = true
+
+        titleLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: timeLabel.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 0).isActive = true
+        speakerLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
+        speakerLabel.leadingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: 0).isActive = true
+        speakerLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 0).isActive = true
+        speakerLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 0).isActive = true
+
+        // Went thru heaven creating the dynamic cell height but these 4 lines work like charm!
+//        addConstraintsWithFormat("H:|-16-[v0]", views: timeLabel)
+//        addConstraintsWithFormat("H:|-16-[v0]-32-|", views: titleLabel)
+//        addConstraintsWithFormat("H:|-16-[v0]|", views: speakerLabel)
+//        addConstraintsWithFormat("V:|-4-[v0]-4-[v1]-4-[v2]-4-|", views: timeLabel, titleLabel, speakerLabel)
         
     }
     

@@ -11,22 +11,31 @@ import FirebaseDatabase
 
 class ScheduleViewController: UITableViewController {
     
-    let daySegmentControl = UISegmentedControl(items: ["Day 1", "Day 2"])
+    private let kSecondDay: Date = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return df.date(from: "2019-01-19")!
+    }()
+    
+    private let kFirstDay: Date = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return df.date(from: "2019-01-18")!
+    }()
+    
+    let daySegmentControl = UISegmentedControl(items: ["18 Jan", "19 Jan"])
     
     private let timelineCellId: String = "timelineCell"
-    private let detailCellId: String = "detailCell"
     
-    var schedule: [Talk] = []
+    var day1: [Talk] = []
+    var day2: [Talk] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
-        tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
-        tableView.register(DetailCell.self, forCellReuseIdentifier: detailCellId)
-        
         getSchedule()
         
+        tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
     }
     
     // MARK: - Private method
@@ -37,7 +46,14 @@ class ScheduleViewController: UITableViewController {
         
         scheduleRef.observe(.childAdded) { (snapshot) in
             let talk = Talk(snapshot: snapshot)
-            self.schedule.append(talk)
+            talk.reloadSpeakerData()
+            
+            switch talk.day {
+            case 1:
+                self.day1.append(talk)
+            default:
+                self.day2.append(talk)
+            }
             
             #if DEBUG
             print("Got talk: \(talk.title)")
@@ -46,15 +62,30 @@ class ScheduleViewController: UITableViewController {
         
         scheduleRef.observe(.childChanged) { (snapshot) in
             let newTalk = Talk(snapshot: snapshot)
+            newTalk.reloadSpeakerData()
             
-            let index = self.schedule.firstIndex(where: { (talk) -> Bool in
-                return talk.firebaseId == newTalk.firebaseId
-            })
-            
-            if let talkIndex = index {
-                self.schedule.remove(at: talkIndex)
-                self.schedule.insert(newTalk, at: talkIndex)
+            switch newTalk.day {
+            case 1:
+                let index = self.day1.firstIndex(where: { (talk) -> Bool in
+                    return talk.firebaseId == newTalk.firebaseId
+                })
+                
+                if let talkIndex = index {
+                    self.day1.remove(at: talkIndex)
+                    self.day1.insert(newTalk, at: talkIndex)
+                }
+            default:
+                let index = self.day2.firstIndex(where: { (talk) -> Bool in
+                    return talk.firebaseId == newTalk.firebaseId
+                })
+                
+                if let talkIndex = index {
+                    self.day2.remove(at: talkIndex)
+                    self.day2.insert(newTalk, at: talkIndex)
+                }
             }
+            
+            
             
         }
         
@@ -62,6 +93,19 @@ class ScheduleViewController: UITableViewController {
             self.reloadData()
         }
         
+    }
+    
+    private func isSecondDay() -> Bool {
+        let today = Date()
+        
+        let isSecondDay = Calendar.current.compare(today, to: kSecondDay, toGranularity: .day)
+        
+        switch isSecondDay {
+        case .orderedSame:
+            return true
+        default:
+            return false
+        }
     }
     
     private func reloadData() {
@@ -73,27 +117,24 @@ class ScheduleViewController: UITableViewController {
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
         
-        self.daySegmentControl.selectedSegmentIndex = activeSegmentIndex()
+        self.daySegmentControl.selectedSegmentIndex = isSecondDay() ? 1 : 0
         self.daySegmentControl.addTarget(self, action: #selector(handleChangeDay), for: .valueChanged)
         self.daySegmentControl.tintColor = UIColor.purple
         self.navigationItem.titleView = self.daySegmentControl
-    }
-    private func activeSegmentIndex() -> Int {
-        let today = Date()
-        let calendar = Calendar.current
-        let component = calendar.dateComponents([.day], from: today)
         
-        // Todo: get from config
-        if component.day == 17 {
-            return 0
-        } else {
-            return 1
-        }
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = UITableView.automaticDimension
+        
+        
+//        self.tableView.separatorInset.right = self.tableView.separatorInset.left
     }
     
     @objc private func handleChangeDay() {
         let selectedIndex = self.daySegmentControl.selectedSegmentIndex
         print("Switch to \(selectedIndex)")
+        self.reloadData()
     }
 
     
@@ -104,19 +145,51 @@ class ScheduleViewController: UITableViewController {
         let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.schedule.count
+        if self.daySegmentControl.selectedSegmentIndex == 1 {
+            return self.day2.count
+        } else {
+            return self.day1.count
+        }
     }
     
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == 0 {
+//            return UITableView.automaticDimension
+//        } else {
+//            return 98.0
+//        }
+//        return UITableView.automaticDimension
+//    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75.0
+//        if indexPath.row == 0 {
+//            return UITableView.automaticDimension
+//        } else {
+//            return 98.0
+//        }
+//        return 80
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCell
-        cell.talk = self.schedule[indexPath.row]
-        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
+        cell.separatorInset = .zero
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        } else {
+            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+        }
+        
+        if self.daySegmentControl.selectedSegmentIndex == 1 {
+            cell.talk = self.day2[indexPath.row]
+        } else {
+            cell.talk = self.day1[indexPath.row]
+        }
         return cell
     }
+    
+    
 
 }
 
