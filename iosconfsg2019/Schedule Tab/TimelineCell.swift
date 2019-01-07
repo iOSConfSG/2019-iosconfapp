@@ -12,6 +12,12 @@ class TimelineCell: UITableViewCell {
     var talk: Talk? {
         didSet {
             self.titleLabel.text = talk?.title
+            self.speakerLabel.text = talk?.speaker?.name
+            
+            var duration = talk?.startAt.toConferenceTime()
+            duration?.append(contentsOf: " - ")
+            duration?.append(contentsOf: talk?.endAt.toConferenceTime() ?? "")
+            self.timeLabel.text = duration
         }
     }
     

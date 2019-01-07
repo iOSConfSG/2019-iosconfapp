@@ -40,7 +40,7 @@ class Talk {
         
         self.title = talkDict["title"] as! String
         self.talkDescription = talkDict["talk_description"] as! String
-        if let speakerId = talkDict["speakerId"] as? String, speakerId != "" {
+        if let speakerId = talkDict["speaker_id"] as? String, speakerId != "" {
             self.speakerId = speakerId
         } else {
             self.speakerId = nil

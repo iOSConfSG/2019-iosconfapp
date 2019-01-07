@@ -37,6 +37,7 @@ class ScheduleViewController: UITableViewController {
         
         scheduleRef.observe(.childAdded) { (snapshot) in
             let talk = Talk(snapshot: snapshot)
+            talk.reloadSpeakerData()
             self.schedule.append(talk)
             
             #if DEBUG
@@ -46,6 +47,7 @@ class ScheduleViewController: UITableViewController {
         
         scheduleRef.observe(.childChanged) { (snapshot) in
             let newTalk = Talk(snapshot: snapshot)
+            newTalk.reloadSpeakerData()
             
             let index = self.schedule.firstIndex(where: { (talk) -> Bool in
                 return talk.firebaseId == newTalk.firebaseId
