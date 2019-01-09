@@ -26,6 +26,9 @@
 		5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */; };
 		5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88951421E2DD2B0015BEFD /* DateExtensions.swift */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
+		5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */; };
+		5ABCCA2B21E6236C0058A076 /* NewsWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */; };
+		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
@@ -83,6 +86,9 @@
 		5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5A88951421E2DD2B0015BEFD /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		5ABCCA2621E5E1010058A076 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithoutImageCell.swift; sourceTree = "<group>"; };
+		5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithImageCell.swift; sourceTree = "<group>"; };
+		5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				5A15A79421912C25006EA97E /* UIFontExtensions.swift */,
 				5A15A79221908C0E006EA97E /* UIViewExtensions.swift */,
 				5A88951421E2DD2B0015BEFD /* DateExtensions.swift */,
+				5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				5A7B2BE22196C9D100D8FDC5 /* NewsViewController.swift */,
+				5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */,
+				5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */,
 			);
 			path = "News Tab";
 			sourceTree = "<group>";
@@ -387,6 +396,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AttributedTextView/AttributedTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
@@ -397,6 +407,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AttributedTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
@@ -452,15 +463,18 @@
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
 				5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */,
 				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
+				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
 				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
 				5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */,
+				5ABCCA2B21E6236C0058A076 /* NewsWithImageCell.swift in Sources */,
 				5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */,
 				5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
+				5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */,
 				5A15A79921915301006EA97E /* DetailViewController.swift in Sources */,
 				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
 			);
