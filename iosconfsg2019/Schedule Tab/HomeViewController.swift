@@ -84,15 +84,11 @@ class ScheduleViewController: UITableViewController {
                     self.day2.insert(newTalk, at: talkIndex)
                 }
             }
-            
-            
-            
         }
         
         scheduleRef.observe(.value) { (snapshot) in
             self.reloadData()
         }
-        
     }
     
     private func isSecondDay() -> Bool {
@@ -126,9 +122,6 @@ class ScheduleViewController: UITableViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
-        
-        
-//        self.tableView.separatorInset.right = self.tableView.separatorInset.left
     }
     
     @objc private func handleChangeDay() {
@@ -142,6 +135,13 @@ class ScheduleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
         detailViewController.hidesBottomBarWhenPushed = true
+        
+        if self.daySegmentControl.selectedSegmentIndex == 1 {
+            detailViewController.talk = self.day2[indexPath.row]
+        } else {
+            detailViewController.talk = self.day1[indexPath.row]
+        }
+        
         let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -152,22 +152,7 @@ class ScheduleViewController: UITableViewController {
         }
     }
     
-//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return UITableView.automaticDimension
-//        } else {
-//            return 98.0
-//        }
-//        return UITableView.automaticDimension
-//    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return UITableView.automaticDimension
-//        } else {
-//            return 98.0
-//        }
-//        return 80
         return UITableView.automaticDimension
     }
     
@@ -188,8 +173,6 @@ class ScheduleViewController: UITableViewController {
         }
         return cell
     }
-    
-    
 
 }
 

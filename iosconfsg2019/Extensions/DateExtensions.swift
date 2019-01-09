@@ -19,4 +19,11 @@ extension Date {
         
         return df.string(from: self)
     }
+    
+    public func toConferenceDate() -> String {
+        let df = DateFormatter()
+        df.timeZone = TimeZone(abbreviation: "SGT")
+        df.dateFormat = "d MMM yyyy"
+        return df.string(from: self)
+    }
 }

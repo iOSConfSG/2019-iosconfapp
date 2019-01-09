@@ -10,12 +10,43 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var talk: Talk? {
+        didSet {
+            self.talkTitle.text = talk?.title
+            
+            if let speaker = talk?.speaker {
+                self.speakerName.text = speaker.name
+                self.speakerCompany.text = speaker.company
+                self.speakerTwitter.text = speaker.twitter
+                self.speakerImage.image = UIImage(imageLiteralResourceName: speaker.imageFilename)
+            } else {
+                self.speakerName.text = "iOSConfSG Organiser"
+                self.speakerCompany.text = ""
+                self.speakerTwitter.text = "iosconfsg"
+                self.speakerImage.image = UIImage(imageLiteralResourceName: "welcome_icon")
+            }
+            
+            var duration = talk?.startAt.toConferenceDate()
+            duration?.append(contentsOf: ", ")
+            duration?.append(contentsOf: talk?.startAt.toConferenceTime() ?? "")
+            duration?.append(contentsOf: " - ")
+            duration?.append(contentsOf: talk?.endAt.toConferenceTime() ?? "")
+            self.talkTime.text = duration
+            
+            let offset = self.descriptionTextView.contentOffset
+            self.descriptionTextView.text = talk?.talkDescription
+            OperationQueue.main.addOperation {
+                self.descriptionTextView.setContentOffset(offset, animated: false)
+            }
+        }
+    }
+    
     let talkTitle: UILabel = {
         let title = UILabel()
         title.text = "Scaling At Large - Lessons learned rewriting Instagram's feed. Plus some very long and super long title to show"
         //title.text = "Scaling At Large"
         title.font = UIFont.boldSystemFont(ofSize: UIFont.xLargeSize)
-        title.textColor = UIColor.orange
+        title.textColor = UIColor.purple
         title.numberOfLines = 5
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -38,10 +69,27 @@ class DetailViewController: UIViewController {
     
     let speakerName: UILabel = {
         let name = UILabel()
-        name.numberOfLines = 3
+        name.numberOfLines = 1
         name.translatesAutoresizingMaskIntoConstraints = false
         name.text = "iOSConfSG\n@iosconfsg\nwww.iosconf.sg"
+        name.textColor = UIColor.orange
         return name
+    }()
+    
+    let speakerTwitter: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "@iosconfsg"
+        return label
+    }()
+    
+    let speakerCompany: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "iOSConfSG\n@iosconfsg\nwww.iosconf.sg"
+        return label
     }()
     
     let descriptionTextView: UITextView = {
@@ -52,7 +100,7 @@ class DetailViewController: UIViewController {
         tv.showsHorizontalScrollIndicator = true
         tv.showsVerticalScrollIndicator = true
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.text = "Earlier this year, Instagram released a rewritten newsfeed on iOS. When rebuilding its feed, the team undertook a huge refactor of its most-used feature, all while other teams were actively working on it. From this refactor, they learned a lot about how to build a highly-performant and stable feed, and through this work built a new open source project called IGListKit. Come learn about how and why the Instagram team took on rewriting their iOS feed from the bottom up, see what it takes to ship a successful refactor, and learn about their new open source project being released."
+        tv.text = ""
         return tv
     }()
     
@@ -71,10 +119,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         
-        feedbackButton.addTarget(self, action: #selector(handleFeedback), for: .touchUpInside)
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))       
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,10 +127,12 @@ class DetailViewController: UIViewController {
         descriptionTextView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
     }
     
+    // MARK: - Private methods
     @objc private func giveFeedback(_ sender: Any) {
         let feedbackViewController = FeedbackViewController()
         feedbackViewController.modalPresentationStyle = .popover
         feedbackViewController.preferredContentSize = CGSize(width: 300, height: 300)
+        feedbackViewController.talk = self.talk
         
         if let feedbackPopup = feedbackViewController.presentationController as? UIPopoverPresentationController {
             feedbackPopup.sourceView = sender as? UIView
@@ -96,12 +143,6 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @objc private func handleFeedback() {
-        
-        
-    }
-    
-    
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
         
@@ -109,8 +150,9 @@ class DetailViewController: UIViewController {
         self.view.addSubview(talkTime)
         self.view.addSubview(speakerImage)
         self.view.addSubview(speakerName)
+        self.view.addSubview(speakerTwitter)
+        self.view.addSubview(speakerCompany)
         self.view.addSubview(descriptionTextView)
-        self.view.addSubview(feedbackButton)
         
         talkTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12).isActive = true
         talkTitle.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 12).isActive = true
@@ -129,16 +171,19 @@ class DetailViewController: UIViewController {
         speakerName.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         speakerName.topAnchor.constraint(equalTo: speakerImage.topAnchor).isActive = true
         
+        speakerTwitter.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
+        speakerTwitter.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
+        speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 3).isActive = true
+        
+        speakerCompany.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
+        speakerCompany.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
+        speakerCompany.bottomAnchor.constraint(equalTo: speakerImage.bottomAnchor).isActive = true
+        
         descriptionTextView.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
         descriptionTextView.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         descriptionTextView.topAnchor.constraint(equalTo: speakerImage.bottomAnchor, constant: 22).isActive = true
-        descriptionTextView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        
-        feedbackButton.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
-        feedbackButton.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
-        feedbackButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 12).isActive = true
-        feedbackButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        
+        descriptionTextView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+                
         let descriptionStyle = NSMutableParagraphStyle()
         descriptionStyle.lineSpacing = 7
         
@@ -147,16 +192,6 @@ class DetailViewController: UIViewController {
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIFont.normalSize)
             ] as [NSAttributedString.Key : Any]
         descriptionTextView.attributedText = NSAttributedString(string: descriptionTextView.text, attributes: descriptionAttributes)
-        
-        
-        let speakerText = speakerName.text!
-        let speakerInfoAttrText = NSMutableAttributedString(string: speakerText)
-        let twitterRange = (speakerText as NSString).range(of: "@iosconfsg")
-        speakerInfoAttrText.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: twitterRange)
-        let urlRange = (speakerText as NSString).range(of: "www.iosconf.sg")
-        speakerInfoAttrText.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: urlRange)
-        speakerName.attributedText = speakerInfoAttrText
-        
     }
 }
 
