@@ -19,7 +19,7 @@ class CustomTabBarController: UITabBarController {
         scheduleTab.title = "Schedule"
         scheduleTab.tabBarItem.image = UIImage(imageLiteralResourceName: "schedule_icon")
         
-        let newsController = NewsViewController()
+        let newsController = NewsViewController(collectionViewLayout: UICollectionViewFlowLayout())
         let newsTab = UINavigationController(rootViewController: newsController)
         newsTab.title = "News"
         newsTab.tabBarItem.image = UIImage(imageLiteralResourceName: "news_icon")
@@ -38,7 +38,7 @@ class CustomTabBarController: UITabBarController {
         
         tabBar.layer.addSublayer(topBorder)
         tabBar.clipsToBounds = true
-        tabBar.tintColor = UIColor.orange
+        tabBar.tintColor = UIColor.purple
     }
 }
 

@@ -12,6 +12,7 @@ target 'iosconfsg2019' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'AttributedTextView', '~> 1.2.3'
 end
 
 target 'iosconfsgNotificationServiceExtension' do
