@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class FeedbackViewController: UIViewController {
     
-    var talkTitle: String = "Scaling At Large - Lessons learned rewriting Instagram's feed. Plus some very long and super long title to show"
+    var selectedButton: MyButton?
+    var talk: Talk?
     
     let qualityTitleLabel: UILabel = {
         let title = UILabel()
@@ -31,8 +33,17 @@ class FeedbackViewController: UIViewController {
         return tv
     }()
     
-    let neutralButton: UIButton = {
-        let btn = UIButton(type: .custom)
+    let errorLabel: UILabel = {
+        let title = UILabel()
+        title.text = "Something went wrong, try again."
+        title.textColor = UIColor.red
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.isHidden = true
+        return title
+    }()
+    
+    let neutralButton: MyButton = {
+        let btn = MyButton(type: .custom)
         let imageSelected = UIImage(imageLiteralResourceName: "face_neutral")
         let imageInitial = UIImage(imageLiteralResourceName: "face_neutral_dark")
         btn.setImage(imageInitial, for: .normal)
@@ -41,11 +52,12 @@ class FeedbackViewController: UIViewController {
         btn.accessibilityIdentifier = "neutral"
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
+        btn.feeling = Feedback.Feeling.neutral
         return btn
     }()
     
-    let grinButton: UIButton = {
-        let btn = UIButton(type: .custom)
+    let grinButton: MyButton = {
+        let btn = MyButton(type: .custom)
         let imageSelected = UIImage(imageLiteralResourceName: "face_grin")
         let imageInitial = UIImage(imageLiteralResourceName: "face_grin_dark")
         btn.setImage(imageInitial, for: .normal)
@@ -54,11 +66,12 @@ class FeedbackViewController: UIViewController {
         btn.accessibilityIdentifier = "good"
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
+        btn.feeling = Feedback.Feeling.grin
         return btn
     }()
     
-    let starstruckButton: UIButton = {
-        let btn = UIButton(type: .custom)
+    let starstruckButton: MyButton = {
+        let btn = MyButton(type: .custom)
         let imageSelected = UIImage(imageLiteralResourceName: "face_starstruck")
         let imageInitial = UIImage(imageLiteralResourceName: "face_starstruck_dark")
         btn.setImage(imageInitial, for: .normal)
@@ -68,11 +81,12 @@ class FeedbackViewController: UIViewController {
         btn.adjustsImageWhenHighlighted = false
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
+        btn.feeling = Feedback.Feeling.starstruck
         return btn
     }()
     
-    let smileButton: UIButton = {
-        let btn = UIButton(type: .custom)
+    let smileButton: MyButton = {
+        let btn = MyButton(type: .custom)
         let imageSelected = UIImage(imageLiteralResourceName: "face_slightsmile")
         let imageInitial = UIImage(imageLiteralResourceName: "face_slightsmile_dark")
         btn.setImage(imageInitial, for: .normal)
@@ -81,11 +95,12 @@ class FeedbackViewController: UIViewController {
         btn.accessibilityIdentifier = "ok"
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
+        btn.feeling = Feedback.Feeling.smile
         return btn
     }()
     
-    let frowningButton: UIButton = {
-        let btn = UIButton(type: .custom)
+    let frowningButton: MyButton = {
+        let btn = MyButton(type: .custom)
         let imageSelected = UIImage(imageLiteralResourceName: "face_frowning")
         let imageInitial = UIImage(imageLiteralResourceName: "face_frowning_dark")
         btn.setImage(imageInitial, for: .normal)
@@ -94,6 +109,7 @@ class FeedbackViewController: UIViewController {
         btn.accessibilityIdentifier = "poor"
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(handleRatingButtonTap), for: .touchUpInside)
+        btn.feeling = Feedback.Feeling.frowning
         return btn
     }()
     
@@ -111,6 +127,10 @@ class FeedbackViewController: UIViewController {
         setupViews()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.sendButton.loadingIndicator(show: false)
+    }
+    
     @objc private func handleRatingButtonTap(_ sender: UIButton) {
         
         if sender.isSelected {
@@ -126,10 +146,10 @@ class FeedbackViewController: UIViewController {
             return
         }
         selectedBtn.isSelected = true
+        self.selectedButton = selectedBtn
     }
     
     private func setupViews() {
-        title = "Feedback for \(talkTitle)"
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(qualityTitleLabel)
         self.view.addSubview(frowningButton)
@@ -139,6 +159,7 @@ class FeedbackViewController: UIViewController {
         self.view.addSubview(starstruckButton)
         self.view.addSubview(commentTextView)
         self.view.addSubview(sendButton)
+        self.view.addSubview(errorLabel)
         
         NSLayoutConstraint.activate([
             qualityTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
@@ -180,7 +201,11 @@ class FeedbackViewController: UIViewController {
             commentTextView.topAnchor.constraint(equalTo: frowningButton.bottomAnchor, constant: 12),
             commentTextView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
             commentTextView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12),
-            commentTextView.bottomAnchor.constraint(equalTo: sendButton.topAnchor, constant: -12)
+            commentTextView.bottomAnchor.constraint(equalTo: errorLabel.topAnchor, constant: -12),
+            errorLabel.topAnchor.constraint(equalTo: commentTextView.bottomAnchor, constant: 8),
+            errorLabel.leftAnchor.constraint(equalTo: commentTextView.leftAnchor),
+            errorLabel.rightAnchor.constraint(equalTo: commentTextView.rightAnchor),
+            errorLabel.bottomAnchor.constraint(equalTo: sendButton.topAnchor, constant: -12)
             ])
         
         commentTextView.layer.borderWidth = 1.0
@@ -198,15 +223,51 @@ class FeedbackViewController: UIViewController {
     }
     
     @objc private func sendFeedback() {
-        
-        if sendButton.isLoading {
-            sendButton.loadingIndicator(show: false)
-            sendButton.setTitle("Sent!", for: .normal)
-        } else {
-            sendButton.loadingIndicator(show: true)
-            sendButton.setTitle("", for: .normal)
+        sendButton.loadingIndicator(show: true)
+        self.errorLabel.isHidden = true
+        guard let talk = self.talk,
+            let selectedButton = self.selectedButton,
+            let feeling = selectedButton.feeling else {
+            #if DEBUG
+            print("Empty feedback")
+            #endif
+            return
         }
-    }    
+        
+        let newFeedback = Feedback(feeling: feeling, comments: self.commentTextView.text)
+        
+        let databaseRef = Database.database().reference()
+        let feedbacksRef = databaseRef.child("feedback")
+        let talkIdRef = feedbacksRef.child(talk.firebaseId)
+
+        let newFeedbackRef = talkIdRef.childByAutoId()
+        
+        let newFeedbackDict = [
+            "feeling": newFeedback.feeling.emoji,
+            "comments": newFeedback.comments
+        ]
+        
+        newFeedbackRef.setValue(newFeedbackDict) { (error, ref) in
+            if error == nil {
+                #if DEBUG
+                print("Feedback saved")
+                #endif
+                self.sendButton.loadingIndicator(show: false)
+                self.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
+                
+                let when = DispatchTime.now() + 1.53
+                DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+            } else {
+                self.sendButton.loadingIndicator(show: false)
+                self.errorLabel.isHidden = false
+                self.sendButton.setTitle("Send", for: .normal)
+            }
+        }
+    }
+    
 }
 
 extension FeedbackViewController: UITextViewDelegate {

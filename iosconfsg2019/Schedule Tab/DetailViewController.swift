@@ -119,10 +119,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         
-        feedbackButton.addTarget(self, action: #selector(handleFeedback), for: .touchUpInside)
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))       
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -130,10 +127,12 @@ class DetailViewController: UIViewController {
         descriptionTextView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
     }
     
+    // MARK: - Private methods
     @objc private func giveFeedback(_ sender: Any) {
         let feedbackViewController = FeedbackViewController()
         feedbackViewController.modalPresentationStyle = .popover
         feedbackViewController.preferredContentSize = CGSize(width: 300, height: 300)
+        feedbackViewController.talk = self.talk
         
         if let feedbackPopup = feedbackViewController.presentationController as? UIPopoverPresentationController {
             feedbackPopup.sourceView = sender as? UIView
@@ -143,12 +142,6 @@ class DetailViewController: UIViewController {
             present(feedbackViewController, animated: true, completion: nil)
         }
     }
-    
-    @objc private func handleFeedback() {
-        
-        
-    }
-    
     
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
@@ -160,7 +153,6 @@ class DetailViewController: UIViewController {
         self.view.addSubview(speakerTwitter)
         self.view.addSubview(speakerCompany)
         self.view.addSubview(descriptionTextView)
-//        self.view.addSubview(feedbackButton)
         
         talkTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12).isActive = true
         talkTitle.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 12).isActive = true
@@ -191,12 +183,7 @@ class DetailViewController: UIViewController {
         descriptionTextView.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         descriptionTextView.topAnchor.constraint(equalTo: speakerImage.bottomAnchor, constant: 22).isActive = true
         descriptionTextView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-        
-//        feedbackButton.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
-//        feedbackButton.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
-//        feedbackButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 12).isActive = true
-//        feedbackButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        
+                
         let descriptionStyle = NSMutableParagraphStyle()
         descriptionStyle.lineSpacing = 7
         

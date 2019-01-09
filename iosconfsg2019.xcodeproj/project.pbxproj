@@ -25,6 +25,7 @@
 		5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4421E1EC9700A49FE1 /* Talk.swift */; };
 		5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */; };
 		5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88951421E2DD2B0015BEFD /* DateExtensions.swift */; };
+		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		5A7C3E4421E1EC9700A49FE1 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5A88951421E2DD2B0015BEFD /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		5ABCCA2621E5E1010058A076 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				5A7C3E4421E1EC9700A49FE1 /* Talk.swift */,
 				5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */,
+				5ABCCA2621E5E1010058A076 /* Feedback.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			files = (
 				5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */,
 				5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */,
+				5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */,
 				5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
 				5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */,

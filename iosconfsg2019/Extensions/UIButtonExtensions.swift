@@ -10,10 +10,13 @@ import UIKit
 
 class MyButton: UIButton {
     
+    public var feeling: Feedback.Feeling?
+    
     internal var isLoading: Bool = false
     
     func loadingIndicator(show: Bool) {
         if show {
+            setTitle("", for: .normal)
             let indicator = UIActivityIndicatorView()
             let buttonHeight = self.bounds.size.height
             let buttonWidth = self.bounds.size.width
