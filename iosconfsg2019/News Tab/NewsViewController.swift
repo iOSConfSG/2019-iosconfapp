@@ -13,8 +13,8 @@ class NewsViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     private var newsFeed: [NewsFeed] = []
     
-    private let newsCellWithoutImage = "newsCellWithoutImage"
-    private let newsCellWithImage = "newsCellWithImage"
+    private let newsCellWithoutImage: String = "newsCellWithoutImage"
+    private let newsCellWithImage: String = "newsCellWithImage"
     
     let zoomImageView = UIImageView()
     let blackBackgroundView = UIView()
