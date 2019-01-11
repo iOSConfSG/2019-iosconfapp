@@ -29,7 +29,12 @@ class DetailViewController: UIViewController {
             } else {
                 self.speakerName.text = "iOSConfSG Organiser"
                 self.speakerCompany.text = ""
-                self.speakerTwitter.text = "iosconfsg"
+                let twitter = "@iosconfsg"
+                self.speakerTwitter.text = twitter
+                self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
+                    UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
+                }).setLinkColor(UIColor.purple).size(14)
+                self.speakerTwitter.setContentOffset(.zero, animated: false)
                 self.speakerImage.image = UIImage(imageLiteralResourceName: "welcome_icon")
             }
             
