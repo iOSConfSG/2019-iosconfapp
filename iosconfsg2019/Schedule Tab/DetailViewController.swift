@@ -76,6 +76,8 @@ class DetailViewController: UIViewController {
         let face = UIImageView()
         face.image = UIImage(named: "ben")
         face.translatesAutoresizingMaskIntoConstraints = false
+        face.layer.cornerRadius = 64/2
+        face.clipsToBounds = true
         return face
     }()
     
@@ -136,6 +138,9 @@ class DetailViewController: UIViewController {
         setupViews()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -199,8 +204,8 @@ class DetailViewController: UIViewController {
         descriptionTextView.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
         descriptionTextView.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         descriptionTextView.topAnchor.constraint(equalTo: speakerImage.bottomAnchor, constant: 22).isActive = true
-        descriptionTextView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-                
+        descriptionTextView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor, constant: 30).isActive = true
+        
         let descriptionStyle = NSMutableParagraphStyle()
         descriptionStyle.lineSpacing = 7
         
