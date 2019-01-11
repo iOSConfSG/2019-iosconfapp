@@ -26,7 +26,7 @@ class TimelineCell: UITableViewCell {
     }
     
     let iconImageView: UIImageView = {
-        let img = UIImage(imageLiteralResourceName: "flag")
+        let img = UIImage(imageLiteralResourceName: "welcome_icon")
         let imgView = UIImageView(image: img)
         imgView.contentMode = .scaleToFill
         imgView.translatesAutoresizingMaskIntoConstraints = false
