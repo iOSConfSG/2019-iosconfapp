@@ -30,6 +30,7 @@
 		5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */; };
 		5ABCCA2B21E6236C0058A076 /* NewsWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */; };
 		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
+		5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithoutImageCell.swift; sourceTree = "<group>"; };
 		5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithImageCell.swift; sourceTree = "<group>"; };
 		5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopViewController.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5ACB755321E89CE400A21F97 /* Workshop Tab */ = {
+			isa = PBXGroup;
+			children = (
+				5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */,
+			);
+			path = "Workshop Tab";
+			sourceTree = "<group>";
+		};
 		5AFBF16A218D6AA000FD2190 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +240,7 @@
 		5AFBF175218D6AA000FD2190 /* iosconfsg2019 */ = {
 			isa = PBXGroup;
 			children = (
+				5ACB755321E89CE400A21F97 /* Workshop Tab */,
 				5A7C3E4321E1EC8A00A49FE1 /* Models */,
 				5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
@@ -480,6 +491,7 @@
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
 				5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */,
 				5A15A79921915301006EA97E /* DetailViewController.swift in Sources */,
+				5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */,
 				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

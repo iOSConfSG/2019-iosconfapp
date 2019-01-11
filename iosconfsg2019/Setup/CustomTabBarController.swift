@@ -19,6 +19,11 @@ class CustomTabBarController: UITabBarController {
         scheduleTab.title = "Schedule"
         scheduleTab.tabBarItem.image = UIImage(imageLiteralResourceName: "schedule_icon")
         
+        let workshopController = WorkshopViewController()
+        let workshopTab = UINavigationController(rootViewController: workshopController)
+        workshopTab.title = "Workshop"
+        workshopTab.tabBarItem.image = UIImage(imageLiteralResourceName: "workshop_icon")
+        
         let newsController = NewsViewController(collectionViewLayout: UICollectionViewFlowLayout())
         let newsTab = UINavigationController(rootViewController: newsController)
         newsTab.title = "News"
@@ -29,7 +34,7 @@ class CustomTabBarController: UITabBarController {
         aboutTab.title = "About"
         aboutTab.tabBarItem.image = UIImage(imageLiteralResourceName: "iosconfsg_icon")
         
-        viewControllers = [scheduleTab, newsTab, aboutTab]
+        viewControllers = [scheduleTab, workshopTab, newsTab, aboutTab]
         tabBar.isTranslucent = false
         
         let topBorder = CALayer()
