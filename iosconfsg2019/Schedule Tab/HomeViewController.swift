@@ -55,9 +55,7 @@ class ScheduleViewController: UITableViewController {
                 self.day2.append(talk)
             }
             
-            #if DEBUG
-            print("Got talk: \(talk.title)")
-            #endif
+            self.reloadData()
         }
         
         scheduleRef.observe(.childChanged) { (snapshot) in
