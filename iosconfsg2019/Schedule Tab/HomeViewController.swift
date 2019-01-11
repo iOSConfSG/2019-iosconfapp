@@ -23,6 +23,13 @@ class ScheduleViewController: UITableViewController {
         return df.date(from: "2019-01-18")!
     }()
     
+    let footerView: UIView = {
+        let view = UIImageView()
+        view.image = UIImage(imageLiteralResourceName: "skyline")
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
     let daySegmentControl = UISegmentedControl(items: ["18 Jan", "19 Jan"])
     
     private let timelineCellId: String = "timelineCell"
@@ -120,6 +127,15 @@ class ScheduleViewController: UITableViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = UITableView.automaticDimension
+        
+        
+        let skylineView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
+        skylineView.image = UIImage(imageLiteralResourceName: "skyline")
+        skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        skylineView.contentMode = .scaleAspectFill
+        
+        
+        self.tableView.tableFooterView = skylineView
     }
     
     @objc private func handleChangeDay() {
