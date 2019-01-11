@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AttributedTextView
 
 class DetailViewController: UIViewController {
     
@@ -17,7 +18,13 @@ class DetailViewController: UIViewController {
             if let speaker = talk?.speaker {
                 self.speakerName.text = speaker.name
                 self.speakerCompany.text = speaker.company
-                self.speakerTwitter.text = speaker.twitter
+                
+                let twitter = "@" + speaker.twitter
+                self.speakerTwitter.text = twitter
+                self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
+                    UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
+                }).setLinkColor(UIColor.purple).size(14)
+                self.speakerTwitter.setContentOffset(.zero, animated: false)
                 self.speakerImage.image = UIImage(imageLiteralResourceName: speaker.imageFilename)
             } else {
                 self.speakerName.text = "iOSConfSG Organiser"
@@ -71,16 +78,20 @@ class DetailViewController: UIViewController {
         let name = UILabel()
         name.numberOfLines = 1
         name.translatesAutoresizingMaskIntoConstraints = false
-        name.text = "iOSConfSG\n@iosconfsg\nwww.iosconf.sg"
+        name.text = "iOSConfSG"
         name.textColor = UIColor.orange
         return name
     }()
     
-    let speakerTwitter: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
+    let speakerTwitter: AttributedTextView = {
+        let label = AttributedTextView()
+        label.isUserInteractionEnabled = true
+        label.isEditable = false
+        label.isSelectable = true
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "@iosconfsg"
+        label.textContainer.lineFragmentPadding = 0
+        label.textContainerInset = .zero
+        label.bounces = false
         return label
     }()
     
@@ -174,6 +185,7 @@ class DetailViewController: UIViewController {
         speakerTwitter.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
         speakerTwitter.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 3).isActive = true
+        speakerTwitter.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         speakerCompany.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
         speakerCompany.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
