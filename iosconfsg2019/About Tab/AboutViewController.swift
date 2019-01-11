@@ -198,6 +198,7 @@ class AboutCellWithImage: AboutCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.isUserInteractionEnabled = true
+        iv.backgroundColor = UIColor.white
         return iv
     }()
     
@@ -213,6 +214,6 @@ class AboutCellWithImage: AboutCell {
         addConstraintsWithFormat("H:|-8-[v0]-8-|", views: imageView)
         addConstraintsWithFormat("H:|-8-[v0]-8-|", views: dividerLineView)
         
-        addConstraintsWithFormat("V:|-8-[v0]-12-[v1]-8-[v2]-2-|", views: title, imageView, dividerLineView)
+        addConstraintsWithFormat("V:|-8-[v0]-12-[v1]-8-[v2(1)]|", views: title, imageView, dividerLineView)
     }
 }
