@@ -72,9 +72,17 @@ class AboutViewController: UICollectionViewController, UICollectionViewDelegateF
         }
 
         if item.imageUrl != nil {
+            
             // with image, add 120 of image thumbnail height
             estimatedHeight += 120
-            return CGSize(width: view.frame.width, height: estimatedHeight + 90)
+            
+            if item.title.contains("After-party Sponsor") {
+                //after-party space should be smaller than gold
+            
+                return CGSize(width: view.frame.width, height: estimatedHeight)
+            }
+            
+            return CGSize(width: view.frame.width, height: estimatedHeight + 100)
         }
         return CGSize(width: view.frame.width, height: estimatedHeight + 50)
     }
