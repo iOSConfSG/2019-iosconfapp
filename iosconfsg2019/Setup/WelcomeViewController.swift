@@ -78,9 +78,9 @@ class WelcomeViewController: UIViewController {
     
     @objc private func requestNotificationPermission() {
         
-        let acceptedAlert = UIAlertController(title: nil, message: "👏🏼 Great, you're updated with iOSConfSG latest updates!\nTaking you to the Schedule ...", preferredStyle: UIAlertController.Style.alert)
+        let acceptedAlert = UIAlertController(title: nil, message: "👏🏼 Thank you! You'll now be notified of the latest updates from iOS Conf SG.", preferredStyle: UIAlertController.Style.alert)
         
-        let rejectedAlert = UIAlertController(title: nil, message: "😱 You won't see latest updates from iOSConfSG but it can be enabled in Settings.", preferredStyle: UIAlertController.Style.alert)
+        let rejectedAlert = UIAlertController(title: nil, message: "😱 You won't see the latest updates from iOS Conf SG for now, but you can enable notifications in Settings.", preferredStyle: UIAlertController.Style.alert)
         
         let settingsAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
