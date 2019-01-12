@@ -126,8 +126,7 @@ class ScheduleViewController: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = UITableView.automaticDimension
-        
+        self.tableView.estimatedRowHeight = 80        
         
         let skylineView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
         skylineView.image = UIImage(imageLiteralResourceName: "skyline")

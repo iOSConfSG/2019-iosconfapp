@@ -204,7 +204,7 @@ class DetailViewController: UIViewController {
         descriptionTextView.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
         descriptionTextView.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         descriptionTextView.topAnchor.constraint(equalTo: speakerImage.bottomAnchor, constant: 22).isActive = true
-        descriptionTextView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor, constant: 30).isActive = true
+        descriptionTextView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor, constant: -22).isActive = true
         
         let descriptionStyle = NSMutableParagraphStyle()
         descriptionStyle.lineSpacing = 7

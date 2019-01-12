@@ -21,7 +21,7 @@ class WorkshopViewController: UIViewController {
         view.isEditable = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.bounces = false
-        view.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 0, right: 12)
+        view.textContainerInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         return view
     }()
     
@@ -36,12 +36,13 @@ class WorkshopViewController: UIViewController {
         setupViews()
         
         tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
+//        locationView.setContentOffset(.zero, animated: false)
         getSchedule()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        locationView.setContentOffset(.zero, animated: false)
+        
     }
     
     private func setupViews() {
@@ -56,7 +57,7 @@ class WorkshopViewController: UIViewController {
             locationView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
             locationView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0),
             locationView.heightAnchor.constraint(equalToConstant: 140),
-            tableView.topAnchor.constraint(equalTo: locationView.bottomAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: locationView.bottomAnchor, constant: 10),
             tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
             tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor, constant: 0)
@@ -64,6 +65,8 @@ class WorkshopViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 80
         
         locationView.attributer =
             "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
