@@ -532,7 +532,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSGNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSG2019NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -554,7 +554,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSGNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSG2019NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
