@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
                 self.speakerTwitter.text = twitter
                 self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
                     UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
-                }).setLinkColor(UIColor.purple).size(14)
+                }).setLinkColor(UIColor.purple).size(UIFont.largeSize)
                 self.speakerTwitter.setContentOffset(.zero, animated: false)
                 self.speakerImage.image = UIImage(imageLiteralResourceName: speaker.imageFilename)
             } else {
@@ -78,6 +78,7 @@ class DetailViewController: UIViewController {
         face.translatesAutoresizingMaskIntoConstraints = false
         face.layer.cornerRadius = 64/2
         face.clipsToBounds = true
+        face.isUserInteractionEnabled = true
         return face
     }()
     
@@ -106,7 +107,8 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "iOSConfSG\n@iosconfsg\nwww.iosconf.sg"
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: UIFont.largeSize)
         return label
     }()
     
@@ -194,7 +196,7 @@ class DetailViewController: UIViewController {
         
         speakerTwitter.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
         speakerTwitter.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
-        speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 3).isActive = true
+        speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 2).isActive = true
         speakerTwitter.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         speakerCompany.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
@@ -214,6 +216,20 @@ class DetailViewController: UIViewController {
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIFont.normalSize)
             ] as [NSAttributedString.Key : Any]
         descriptionTextView.attributedText = NSAttributedString(string: descriptionTextView.text, attributes: descriptionAttributes)
+        
+        let speakerTap = UITapGestureRecognizer(target: self, action: #selector(showSpeakerBio))
+        speakerTap.numberOfTapsRequired = 1
+        self.speakerImage.addGestureRecognizer(speakerTap)
+    }
+    
+    @objc private func showSpeakerBio() {
+        let bioViewController = CustomAlertViewController()
+        bioViewController.modalTransitionStyle = .crossDissolve
+        bioViewController.modalPresentationStyle = .overCurrentContext
+        bioViewController.profileText = self.talk?.speaker?.description
+        self.navigationController?.present(bioViewController, animated: true, completion: nil)
+        
+        
     }
 }
 
