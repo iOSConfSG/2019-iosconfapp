@@ -94,6 +94,12 @@ class ScheduleViewController: UITableViewController {
         scheduleRef.observe(.value) { (snapshot) in
             self.reloadData()
         }
+        
+        scheduleRef.observe(.childRemoved, with: { (snapshot) in
+            let talk = Talk(snapshot: snapshot)
+            self.removeTalk(talkId: talk.firebaseId, day: talk.day)
+            self.reloadData()
+        })
     }
     
     private func isSecondDay() -> Bool {
@@ -133,8 +139,46 @@ class ScheduleViewController: UITableViewController {
         skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         skylineView.contentMode = .scaleAspectFill
         
-        
         self.tableView.tableFooterView = skylineView
+    }
+    
+    private func removeTalk(talkId: String, day: Int) {
+        
+        if day == 1 {
+            OperationQueue.main.addOperation {
+                
+                var indexToRemove: Int = -1
+                for index in 0...self.day1.count-1 {
+                    let talk = self.day1[index]
+                    if talk.firebaseId == talkId {
+                        indexToRemove = index
+                        break
+                    }
+                }
+                
+                if indexToRemove >= 0 {
+                    //found thing to remove, remove it
+                    self.day1.remove(at: indexToRemove)
+                }
+            }
+        }
+        else {
+            OperationQueue.main.addOperation {
+                var indexToRemove: Int = -1
+                for index in 0...self.day2.count-1 {
+                    let talk = self.day2[index]
+                    if talk.firebaseId == talkId {
+                        indexToRemove = index
+                        break
+                    }
+                }
+                
+                if indexToRemove >= 0 {
+                    //found thing to remove, remove it
+                    self.day2.remove(at: indexToRemove)
+                }
+            }
+        }
     }
     
     @objc private func handleChangeDay() {
