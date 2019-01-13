@@ -14,6 +14,7 @@
 		5A15A79921915301006EA97E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79821915301006EA97E /* DetailViewController.swift */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
+		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
 		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
 		5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */; };
 		5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */; };
@@ -73,6 +74,7 @@
 		5A15A79821915301006EA97E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				5A41848C21D110CA007E1905 /* WelcomeViewController.swift */,
 				5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */,
+				5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
 				5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */,
+				5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */,
 				5A15A79921915301006EA97E /* DetailViewController.swift in Sources */,
 				5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */,
 				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
