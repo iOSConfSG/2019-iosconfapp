@@ -44,8 +44,6 @@ class CustomAlertViewController: UIViewController {
         self.modalTransitionStyle = .coverVertical
         self.view.addSubview(descriptionTextView)
         let width = self.view.frame.width - 100
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        let size = CGSize(width: width, height: 1000)
 
         descriptionTextView.widthAnchor.constraint(equalToConstant: width).isActive = true
         descriptionTextView.heightAnchor.constraint(equalToConstant: 228).isActive = true
