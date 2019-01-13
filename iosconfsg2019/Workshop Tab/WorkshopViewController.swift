@@ -59,28 +59,28 @@ class WorkshopViewController: UIViewController {
         locationView.attributer =
             "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
                 .append("\n\n")
-                .append("PlugIn@BLK71\n")
-                .append("71 Ayer Rajah Crescent, 02-18, Singapore 139951\n")
+                .append("PlugIn@BLK71\n").size(UIFont.normalSize)
+                .append("71 Ayer Rajah Crescent, 02-18, Singapore 139951\n").size(UIFont.normalSize)
                 .append("https://goo.gl/maps/vZB8otAC5yL2").matchLinks.makeInteract({ (link) in
                     guard let url = URL(string: link) else {
                         return
                     }
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                })
+                }).size(UIFont.normalSize)
                 .append("\n\nWorkshop Schedule").purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
         
         containerView.addSubview(locationView)
         
         NSLayoutConstraint.activate([
             containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 125),
+            containerView.heightAnchor.constraint(equalToConstant: 150),
             containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor, constant: 0),
             tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0),
             tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
             tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor, constant: 0),
             locationView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
-            locationView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0),
+            locationView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
             locationView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0),
             ])
         
