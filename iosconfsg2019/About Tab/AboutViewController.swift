@@ -176,7 +176,7 @@ class AboutCell: BaseCell {
         content.showsVerticalScrollIndicator = true
         content.isEditable = false
         content.isUserInteractionEnabled = true
-        content.text = "Sugar iced fair trade, mocha bar wings whipped to go french press half and half coffee americano. Cappuccino robusta organic redeye filter viennese robusta. Macchiato, flavour black body cortado sit grinder irish. Mug beans viennese, organic ristretto, macchiato single origin percolator at robusta. Sugar iced fair trade, mocha bar wings whipped to go french press half and half coffee americano. Cappuccino robusta organic redeye filter viennese robusta. Macchiato, flavour black body cortado sit grinder irish. Mug beans viennese, organic ristretto, macchiato single origin percolator at robusta."
+        content.text = ""
         return content
     }()
     
