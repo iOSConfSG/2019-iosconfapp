@@ -96,21 +96,30 @@ class AboutViewController: UICollectionViewController, UICollectionViewDelegateF
         abtRef.observe(.childAdded, with: { (snapshot) in
             let itemFromFirebase = About(snapshot: snapshot)
             self.items.append(itemFromFirebase)
+            self.reloadData()
         })
         
         abtRef.observe(.childChanged, with: { (snapshot) in
+            self.reloadData()
         })
         
         abtRef.observe(.childRemoved, with: { (snapshot) in
             self.removeItem(id: snapshot.key)
+            self.reloadData()
         })
         
         abtRef.observe(.value, with: { (snapshot) in
-            self.collectionView?.reloadData()
+            self.reloadData()
         })
     }
     
-    func removeItem(id: String) {
+    private func reloadData() {
+        let items = self.items.sorted(by: { $0.order < $1.order })
+        self.items = items
+        self.collectionView?.reloadData()
+    }
+    
+    private func removeItem(id: String) {
         
         OperationQueue.main.addOperation {
             var indexToRemove: Int = -1
