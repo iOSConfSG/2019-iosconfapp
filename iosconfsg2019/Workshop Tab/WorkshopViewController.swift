@@ -71,9 +71,18 @@ class WorkshopViewController: UIViewController {
         
         containerView.addSubview(locationView)
         
+        var containerHeightConstraintConstant: CGFloat = 150
+        //TODO: quick fix for location table header view
+        if UIScreen.main.bounds.size.height < 600 {
+            containerHeightConstraintConstant = 160
+        }
+        else {
+            containerHeightConstraintConstant = 150
+        }
+        
         NSLayoutConstraint.activate([
             containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 150),
+            containerView.heightAnchor.constraint(equalToConstant: containerHeightConstraintConstant),
             containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor, constant: 0),
             tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0),
             tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
