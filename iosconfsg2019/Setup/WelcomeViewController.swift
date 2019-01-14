@@ -138,7 +138,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(allowNotificationButton)
         
         confImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        confImage.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 120).isActive = true
+        confImage.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 90).isActive = true
         confImage.heightAnchor.constraint(equalToConstant: 155).isActive = true
         confImage.widthAnchor.constraint(equalToConstant: 155).isActive = true
         
