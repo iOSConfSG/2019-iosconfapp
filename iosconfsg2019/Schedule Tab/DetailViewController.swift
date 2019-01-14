@@ -194,14 +194,14 @@ class DetailViewController: UIViewController {
         speakerName.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         speakerName.topAnchor.constraint(equalTo: speakerImage.topAnchor).isActive = true
         
+        speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 0).isActive = true
         speakerTwitter.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
         speakerTwitter.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
-        speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 2).isActive = true
-        speakerTwitter.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        speakerTwitter.heightAnchor.constraint(equalToConstant: 22).isActive = true
         
+        speakerCompany.topAnchor.constraint(equalTo: speakerTwitter.bottomAnchor, constant: 0).isActive = true
         speakerCompany.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
         speakerCompany.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
-        speakerCompany.bottomAnchor.constraint(equalTo: speakerImage.bottomAnchor).isActive = true
         
         descriptionTextView.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
         descriptionTextView.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
