@@ -39,6 +39,7 @@ class NewsViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         let dbRef = Database.database().reference()
         let newsRef = dbRef.child("news")
+        newsRef.keepSynced(true)
         
         newsRef.observe(.childAdded, with: { (snapshot) in
             let newsItemFromFirebase = NewsFeed(snapshot: snapshot)
