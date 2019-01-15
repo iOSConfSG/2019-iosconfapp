@@ -31,12 +31,19 @@ class WorkshopViewController: UIViewController {
         return tbl
     }()
     
+    let containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         
         tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
-//        locationView.setContentOffset(.zero, animated: false)
+
+        getWorkshopLocation()
         getSchedule()
     }
     
@@ -48,13 +55,8 @@ class WorkshopViewController: UIViewController {
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
         self.navigationItem.title = "Workshop"
-        
-//        self.view.addSubview(locationView)
+
         self.view.addSubview(tableView)
-        
-        let containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        self.tableView.tableHeaderView = containerView
         
         locationView.attributer =
             "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
@@ -70,14 +72,15 @@ class WorkshopViewController: UIViewController {
                 .append("\n\nWorkshop Schedule").purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
         
         containerView.addSubview(locationView)
+        self.tableView.tableHeaderView = containerView
         
-        var containerHeightConstraintConstant: CGFloat = 150
+        var containerHeightConstraintConstant: CGFloat = 180
         //TODO: quick fix for location table header view
         if UIScreen.main.bounds.size.height < 600 {
-            containerHeightConstraintConstant = 160
+            containerHeightConstraintConstant = 180
         }
         else {
-            containerHeightConstraintConstant = 150
+            containerHeightConstraintConstant = 170
         }
         
         NSLayoutConstraint.activate([
@@ -135,6 +138,33 @@ class WorkshopViewController: UIViewController {
     private func reloadData() {
         OperationQueue.main.addOperation {
             self.tableView.reloadData()
+        }
+    }
+    
+    private func getWorkshopLocation() {
+        
+        let dbRef = Database.database().reference()
+        let wrkLocRef = dbRef.child("workshopLocation")
+        wrkLocRef.keepSynced(true)
+        
+        wrkLocRef.observe(.value) { (snapshot) in
+            
+            if let workshopLocationString = snapshot.value as? String {
+            
+                self.locationView.text = ""
+                
+                self.locationView.attributer =
+                    "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
+                        .append("\n\n")
+                        .append(workshopLocationString).matchLinks.makeInteract({ (link) in
+                            guard let url = URL(string: link) else {
+                                return
+                            }
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }).size(UIFont.normalSize)
+                        .append("\n\nWorkshop Schedule").purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
+                
+            }
         }
     }
 }
