@@ -124,6 +124,9 @@ class ScheduleViewController: UITableViewController {
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
         
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
+        
         self.daySegmentControl.selectedSegmentIndex = isSecondDay() ? 1 : 0
         self.daySegmentControl.addTarget(self, action: #selector(handleChangeDay), for: .valueChanged)
         self.daySegmentControl.tintColor = UIColor.purple

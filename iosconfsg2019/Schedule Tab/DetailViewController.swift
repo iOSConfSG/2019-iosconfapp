@@ -140,9 +140,6 @@ class DetailViewController: UIViewController {
         setupViews()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.purple
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -168,6 +165,9 @@ class DetailViewController: UIViewController {
     
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
         
         self.view.addSubview(talkTitle)
         self.view.addSubview(talkTime)

@@ -54,7 +54,11 @@ class WorkshopViewController: UIViewController {
     
     private func setupViews() {
         self.view.backgroundColor = UIColor.white
+        
         self.navigationItem.title = "Workshop"
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
 
         self.view.addSubview(tableView)
         

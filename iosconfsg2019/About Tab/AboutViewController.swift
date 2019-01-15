@@ -24,6 +24,9 @@ class AboutViewController: UICollectionViewController, UICollectionViewDelegateF
         self.navigationItem.title = "iOSConfSG 2019"
         self.view.backgroundColor = UIColor.white
         
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
+        
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.white
         
