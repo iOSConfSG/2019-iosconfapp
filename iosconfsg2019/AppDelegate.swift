@@ -36,13 +36,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // OneSignal
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
-        
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "6cae02d0-cce0-4457-bb58-0ed5302980f3",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        if let oneSignalDict = Helpers.dictionaryFromPlist(filename: "OneSignal-Info") {
+            
+            if let oneSignalAppId = oneSignalDict["ONE_SIGNAL_APP_ID"] {
+                
+                let appIdString = oneSignalAppId as! String
+            
+                OneSignal.initWithLaunchOptions(launchOptions,
+                                                appId: appIdString,
+                                                handleNotificationAction: nil,
+                                                settings: onesignalInitSettings)
+                
+                OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+            }
+            else {
+                print("ERROR: Failed to initialize OneSignal - ONE_SIGNAL_APP_ID missing from plist.")
+            }
+            
+        }
+        else {
+            print("ERROR: Failed to initialize OneSignal - missing OneSignal-Info.plist file.")
+        }
         
         window = UIWindow()
         window?.makeKeyAndVisible()

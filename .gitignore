@@ -70,3 +70,4 @@ vendor
 cobertura.xml
 
 iosconfsg2019/GoogleService-Info\.plist
+OneSignal-Info.plist
