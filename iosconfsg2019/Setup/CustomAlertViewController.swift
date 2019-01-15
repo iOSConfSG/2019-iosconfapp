@@ -60,18 +60,6 @@ class CustomAlertViewController: UIViewController {
         }) { (finished) in
             self.dismiss(animated: false, completion: nil)
         }
-        
     }
-    
 }
 
-extension CATransition {
-    func fadeTransition() -> CATransition {
-        let transition = CATransition()
-        transition.duration = 0.7
-        transition.type = CATransitionType.fade
-        transition.subtype = CATransitionSubtype.fromRight
-        
-        return transition
-    }
-}

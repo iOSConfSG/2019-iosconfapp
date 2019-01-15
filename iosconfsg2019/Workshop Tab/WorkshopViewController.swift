@@ -60,7 +60,7 @@ class WorkshopViewController: UIViewController {
             "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
                 .append("\n\n")
                 .append("PlugIn@BLK71\n").size(UIFont.normalSize)
-                .append("71 Ayer Rajah Crescent, 02-18, Singapore 139951\n").size(UIFont.normalSize)
+                .append("71 Ayer Rajah Crescent, 02-01, Singapore 139951\n").size(UIFont.normalSize)
                 .append("https://goo.gl/maps/vZB8otAC5yL2").matchLinks.makeInteract({ (link) in
                     guard let url = URL(string: link) else {
                         return

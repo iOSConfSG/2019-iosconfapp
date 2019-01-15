@@ -46,12 +46,13 @@ class NewsViewController: UICollectionViewController, UICollectionViewDelegateFl
         })
         
         newsRef.observe(.childChanged, with: { (snapshot) in
-            print("News child changed")
+            self.collectionView?.reloadData()
         })
         
         newsRef.observe(.childRemoved, with: { (snapshot) in
             print("News child removed")
             self.removeNews(newsId: snapshot.key)
+            self.collectionView?.reloadData()
         })
         
         newsRef.observe(.value, with: { (snapshot) in
