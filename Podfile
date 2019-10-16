@@ -13,6 +13,9 @@ target 'iosconfsg2019' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'AttributedTextView', '~> 1.4.0'
+  pod 'Apollo'
+  pod 'Apollo/SQLite'
+  pod 'Apollo/WebSocket'
 end
 
 target 'iosconfsgNotificationServiceExtension' do

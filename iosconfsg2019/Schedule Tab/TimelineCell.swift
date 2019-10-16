@@ -104,6 +104,8 @@ class TimelineCell: UITableViewCell {
 //        addConstraintsWithFormat("H:|-16-[v0]-32-|", views: titleLabel)
 //        addConstraintsWithFormat("H:|-16-[v0]|", views: speakerLabel)
 //        addConstraintsWithFormat("V:|-4-[v0]-4-[v1]-4-[v2]-4-|", views: timeLabel, titleLabel, speakerLabel)
+
+
         
     }
     

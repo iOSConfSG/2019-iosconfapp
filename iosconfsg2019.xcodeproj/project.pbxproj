@@ -3,20 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */; };
 		24C8AC9021EE306E00829307 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8AC8F21EE306E00829307 /* Helpers.swift */; };
+		425F6B083E862C2E8609EEE5 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */; };
+		52947528A704BFB86EE04B95 /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */; };
+		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
 		5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A790219087F4006EA97E /* TimelineCell.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
 		5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79621914BEE006EA97E /* DetailCell.swift */; };
 		5A15A79921915301006EA97E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79821915301006EA97E /* DetailViewController.swift */; };
+		5A287DD62333BF8600F20101 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD52333BF8600F20101 /* schema.json */; };
+		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
+		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
 		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
+		5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */; };
 		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
 		5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */; };
 		5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */; };
@@ -38,8 +45,8 @@
 		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
 		5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */; };
-		D4336D0E9CDACF9051B4AE4C /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98EEB02D010B063BAF1B3E0F /* Pods_iosconfsg2019.framework */; };
-		FDF0B097721E460523A50E1A /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B19A62D0BF5E3EE9F7A831 /* Pods_iosconfsgNotificationServiceExtension.framework */; };
+		5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */; };
+		5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC7B234F06E500024A13 /* ApolloManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,18 +74,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		005665975B78BF4E758E7A83 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
-		21B19A62D0BF5E3EE9F7A831 /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D4FF3684E461A7894445B85 /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
+		0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24283E080A7291671BBC64C3 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OneSignal-Info.plist"; path = "iosconfsg2019/OneSignal-Info.plist"; sourceTree = SOURCE_ROOT; };
 		24C8AC8F21EE306E00829307 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellV2.swift; sourceTree = "<group>"; };
 		5A15A790219087F4006EA97E /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		5A15A79221908C0E006EA97E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5A15A79421912C25006EA97E /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		5A15A79621914BEE006EA97E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5A15A79821915301006EA97E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5A287DD52333BF8600F20101 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		5A287DD82333C5F500F20101 /* api.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = api.graphql; sourceTree = "<group>"; };
+		5A287DDA2333C6AD00F20101 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphQLViewModel.swift; sourceTree = "<group>"; };
 		5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -105,10 +118,11 @@
 		5AFBF17D218D6AA200FD2190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFBF180218D6AA200FD2190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AFBF182218D6AA200FD2190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98EEB02D010B063BAF1B3E0F /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10E7E0EA08A0076C50B00EA /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
-		DC6D790B77884F5019D49D83 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		F651B8335D870505BAB958C1 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphqlViewController.swift; sourceTree = "<group>"; };
+		5B5DFC7B234F06E500024A13 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
+		68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDF0B097721E460523A50E1A /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */,
+				425F6B083E862C2E8609EEE5 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4336D0E9CDACF9051B4AE4C /* Pods_iosconfsg2019.framework in Frameworks */,
+				52947528A704BFB86EE04B95 /* Pods_iosconfsg2019.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,19 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				24C8AC8F21EE306E00829307 /* Helpers.swift */,
+				5B5DFC7B234F06E500024A13 /* ApolloManager.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		376EA664A551EF7006BC0D0A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A10E7E0EA08A0076C50B00EA /* Pods-iosconfsg2019.debug.xcconfig */,
-				005665975B78BF4E758E7A83 /* Pods-iosconfsg2019.release.xcconfig */,
-				DC6D790B77884F5019D49D83 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */,
-				F651B8335D870505BAB958C1 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		5A262BA621AC165A008BC34F /* Schedule Tab */ = {
@@ -159,6 +163,9 @@
 				5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */,
 				5A15A79621914BEE006EA97E /* DetailCell.swift */,
 				5A15A790219087F4006EA97E /* TimelineCell.swift */,
+				5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */,
+				5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */,
+				5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */,
 			);
 			path = "Schedule Tab";
 			sourceTree = "<group>";
@@ -238,8 +245,8 @@
 				5AFBF175218D6AA000FD2190 /* iosconfsg2019 */,
 				5A7C3E2F21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension */,
 				5AFBF174218D6AA000FD2190 /* Products */,
-				376EA664A551EF7006BC0D0A /* Pods */,
-				E085D8AD00FC49D255A398D5 /* Frameworks */,
+				AE0B204DE0F126D371F9F527 /* Pods */,
+				99D8D0078E28B7AC58FDB6D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,17 +277,31 @@
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
 				5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */,
 				5AFBF182218D6AA200FD2190 /* Info.plist */,
+				5A287DD52333BF8600F20101 /* schema.json */,
+				5A287DD82333C5F500F20101 /* api.graphql */,
+				5A287DDA2333C6AD00F20101 /* API.swift */,
 			);
 			path = iosconfsg2019;
 			sourceTree = "<group>";
 		};
-		E085D8AD00FC49D255A398D5 /* Frameworks */ = {
+		99D8D0078E28B7AC58FDB6D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98EEB02D010B063BAF1B3E0F /* Pods_iosconfsg2019.framework */,
-				21B19A62D0BF5E3EE9F7A831 /* Pods_iosconfsgNotificationServiceExtension.framework */,
+				6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */,
+				0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE0B204DE0F126D371F9F527 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D4FF3684E461A7894445B85 /* Pods-iosconfsg2019.debug.xcconfig */,
+				A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */,
+				68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */,
+				24283E080A7291671BBC64C3 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A7C3E3821E1AA5700A49FE1 /* Build configuration list for PBXNativeTarget "iosconfsgNotificationServiceExtension" */;
 			buildPhases = (
-				A9899DF6C430FA46EF59E84F /* [CP] Check Pods Manifest.lock */,
+				9C8DFFDC326CCC80F3F6F381 /* [CP] Check Pods Manifest.lock */,
 				5A7C3E2A21E1AA5700A49FE1 /* Sources */,
 				5A7C3E2B21E1AA5700A49FE1 /* Frameworks */,
 				5A7C3E2C21E1AA5700A49FE1 /* Resources */,
@@ -308,12 +329,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFBF185218D6AA200FD2190 /* Build configuration list for PBXNativeTarget "iosconfsg2019" */;
 			buildPhases = (
-				482DF9BE009A6AA1E5883D0B /* [CP] Check Pods Manifest.lock */,
+				A048A8D3BBD388CB17A05970 /* [CP] Check Pods Manifest.lock */,
+				5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */,
 				5AFBF16F218D6AA000FD2190 /* Sources */,
 				5AFBF170218D6AA000FD2190 /* Frameworks */,
 				5AFBF171218D6AA000FD2190 /* Resources */,
 				5A7C3E3921E1AA5700A49FE1 /* Embed App Extensions */,
-				A605EBDD568A1729DA3A38C6 /* [CP] Embed Pods Frameworks */,
+				A224CBB4070DCEADFB666601 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,7 +411,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A287DD92333C5F600F20101 /* api.graphql in Resources */,
 				5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */,
+				5A287DD62333BF8600F20101 /* schema.json in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
 				5A7C3E4221E1E6ED00A49FE1 /* GoogleService-Info.plist in Resources */,
 				24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */,
@@ -399,7 +423,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		482DF9BE009A6AA1E5883D0B /* [CP] Check Pods Manifest.lock */ = {
+		5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,53 +431,17 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Generate Apollo GraphQL API";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosconfsg2019-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "source ~/.zshrc\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
-		A605EBDD568A1729DA3A38C6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AttributedTextView/AttributedTextView.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AttributedTextView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A9899DF6C430FA46EF59E84F /* [CP] Check Pods Manifest.lock */ = {
+		9C8DFFDC326CCC80F3F6F381 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,6 +463,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A048A8D3BBD388CB17A05970 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iosconfsg2019-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A224CBB4070DCEADFB666601 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -494,10 +521,14 @@
 				5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */,
 				5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */,
 				5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */,
+				5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
+				5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */,
+				5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */,
 				5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */,
 				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
 				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
+				5A287DDB2333C6AD00F20101 /* API.swift in Sources */,
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
 				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
 				5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */,
@@ -513,6 +544,7 @@
 				5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */,
 				5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */,
 				5A15A79921915301006EA97E /* DetailViewController.swift in Sources */,
+				5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */,
 				5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */,
 				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
 			);
@@ -542,7 +574,7 @@
 /* Begin XCBuildConfiguration section */
 		5A7C3E3621E1AA5700A49FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC6D790B77884F5019D49D83 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = 68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
@@ -565,7 +597,7 @@
 		};
 		5A7C3E3721E1AA5700A49FE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F651B8335D870505BAB958C1 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */;
+			baseConfigurationReference = 24283E080A7291671BBC64C3 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
@@ -706,7 +738,7 @@
 		};
 		5AFBF186218D6AA200FD2190 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A10E7E0EA08A0076C50B00EA /* Pods-iosconfsg2019.debug.xcconfig */;
+			baseConfigurationReference = 0D4FF3684E461A7894445B85 /* Pods-iosconfsg2019.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -728,7 +760,7 @@
 		};
 		5AFBF187218D6AA200FD2190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 005665975B78BF4E758E7A83 /* Pods-iosconfsg2019.release.xcconfig */;
+			baseConfigurationReference = A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

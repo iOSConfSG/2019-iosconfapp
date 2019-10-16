@@ -21,6 +21,22 @@ public enum TalkType: String {
     case afterparty
     case special
 }
+
+struct TalkV2 {
+    var id: Int
+    var title: String
+    var talkType: TalkType
+    var startAt: Date?
+    var endAt: Date?
+    var talkDescription: String?
+    var speakerImage: String?
+    var speakerTwitter: String?
+    var speakerCompany: String?
+    var speakerName: String?
+    var speakerBio: String?
+    var activityName: String?
+}
+
 class Talk {
     
     var firebaseId: String
