@@ -58,6 +58,13 @@ class TimelineCellV2: UITableViewCell {
 
     func setupCell(talk: TalkV2) {
         titleLabel.text = talk.title
+
+        if let startAt = talk.startAt, let endAt = talk.endAt {
+            var duration = startAt.toConferenceTime()
+            duration.append(contentsOf: " - ")
+            duration.append(contentsOf: endAt.toConferenceTime())
+            self.timeLabel.text = duration
+        }
     }
 
     private func setupViews() {
