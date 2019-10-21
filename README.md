@@ -4,4 +4,4 @@ iOS Conf SG is the biggest conference in Southeast Asia hosted for the iOS devel
 
 ##### What's new?
 
-This year's app was done by [@vinalemody](https://github.com/vinamelody). A personal project and endeavour into building apps without the use of storyboard. Feel free to fork and explore the code.
+This year's app was done by [@vinamelody](https://github.com/vinamelody). A personal project and endeavour into building apps without the use of storyboard. Feel free to fork and explore the code.
