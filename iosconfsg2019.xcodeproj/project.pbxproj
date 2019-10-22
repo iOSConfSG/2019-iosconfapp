@@ -17,6 +17,7 @@
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
 		5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79621914BEE006EA97E /* DetailCell.swift */; };
 		5A15A79921915301006EA97E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79821915301006EA97E /* DetailViewController.swift */; };
+		5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */; };
 		5A287DD62333BF8600F20101 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD52333BF8600F20101 /* schema.json */; };
 		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
 		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
@@ -85,6 +86,7 @@
 		5A15A79421912C25006EA97E /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		5A15A79621914BEE006EA97E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5A15A79821915301006EA97E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphqlViewController.swift; sourceTree = "<group>"; };
 		5A287DD52333BF8600F20101 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5A287DD82333C5F500F20101 /* api.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = api.graphql; sourceTree = "<group>"; };
 		5A287DDA2333C6AD00F20101 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */,
 				5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */,
 				5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */,
+				5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */,
 			);
 			path = "Schedule Tab";
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */,
 				5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */,
 				5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */,
+				5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */,
 				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
 				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
 				5A287DDB2333C6AD00F20101 /* API.swift in Sources */,

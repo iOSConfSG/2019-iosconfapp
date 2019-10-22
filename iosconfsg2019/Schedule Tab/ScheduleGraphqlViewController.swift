@@ -84,6 +84,15 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
+            let detailViewController = DetailGraphqlViewController()
+            detailViewController.hidesBottomBarWhenPushed = true
+            detailViewController.talk = talk
+            let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
 }
 
 extension ScheduleGraphqlViewController: ScheduleGraphqlViewModelDelegate {
