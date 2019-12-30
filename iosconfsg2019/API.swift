@@ -1,27 +1,30 @@
 //  This file was automatically generated and should not be edited.
 
 import Apollo
+import Foundation
 
 public final class GetScheduleSubscription: GraphQLSubscription {
-  /// subscription GetSchedule {
-  ///   schedule {
-  ///     __typename
-  ///     activity
-  ///     end_at
-  ///     id
-  ///     speaker_bio
-  ///     speaker_company
-  ///     speaker_image
-  ///     speaker_name
-  ///     speaker_twitter
-  ///     start_at
-  ///     talk_description
-  ///     talk_type
-  ///     title
-  ///   }
-  /// }
+  /// The raw GraphQL definition of this operation.
   public let operationDefinition =
-    "subscription GetSchedule { schedule { __typename activity end_at id speaker_bio speaker_company speaker_image speaker_name speaker_twitter start_at talk_description talk_type title } }"
+    """
+    subscription GetSchedule {
+      schedule {
+        __typename
+        activity
+        end_at
+        id
+        speaker_bio
+        speaker_company
+        speaker_image
+        speaker_name
+        speaker_twitter
+        start_at
+        talk_description
+        talk_type
+        title
+      }
+    }
+    """
 
   public let operationName = "GetSchedule"
 
@@ -198,6 +201,101 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "title")
+        }
+      }
+    }
+  }
+}
+
+public final class CreateFeedbackMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition =
+    """
+    mutation CreateFeedback($talkId: Int!, $feeling: String!, $comment: String!) {
+      insert_feedback(objects: [{talk_id: $talkId, feeling: $feeling, comment: $comment}]) {
+        __typename
+        affected_rows
+      }
+    }
+    """
+
+  public let operationName = "CreateFeedback"
+
+  public var talkId: Int
+  public var feeling: String
+  public var comment: String
+
+  public init(talkId: Int, feeling: String, comment: String) {
+    self.talkId = talkId
+    self.feeling = feeling
+    self.comment = comment
+  }
+
+  public var variables: GraphQLMap? {
+    return ["talkId": talkId, "feeling": feeling, "comment": comment]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["mutation_root"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("insert_feedback", arguments: ["objects": [["talk_id": GraphQLVariable("talkId"), "feeling": GraphQLVariable("feeling"), "comment": GraphQLVariable("comment")]]], type: .object(InsertFeedback.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(insertFeedback: InsertFeedback? = nil) {
+      self.init(unsafeResultMap: ["__typename": "mutation_root", "insert_feedback": insertFeedback.flatMap { (value: InsertFeedback) -> ResultMap in value.resultMap }])
+    }
+
+    /// insert data into the table: "feedback"
+    public var insertFeedback: InsertFeedback? {
+      get {
+        return (resultMap["insert_feedback"] as? ResultMap).flatMap { InsertFeedback(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "insert_feedback")
+      }
+    }
+
+    public struct InsertFeedback: GraphQLSelectionSet {
+      public static let possibleTypes = ["feedback_mutation_response"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("affected_rows", type: .nonNull(.scalar(Int.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(affectedRows: Int) {
+        self.init(unsafeResultMap: ["__typename": "feedback_mutation_response", "affected_rows": affectedRows])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// number of affected rows by the mutation
+      public var affectedRows: Int {
+        get {
+          return resultMap["affected_rows"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "affected_rows")
         }
       }
     }

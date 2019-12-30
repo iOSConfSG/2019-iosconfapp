@@ -1,22 +1,22 @@
 PODS:
-  - Apollo (0.16.1):
-    - Apollo/Core (= 0.16.1)
-  - Apollo/Core (0.16.1)
-  - Apollo/SQLite (0.16.1):
+  - Apollo (0.21.0):
+    - Apollo/Core (= 0.21.0)
+  - Apollo/Core (0.21.0)
+  - Apollo/SQLite (0.21.0):
     - Apollo/Core
     - SQLite.swift (= 0.12.2)
-  - Apollo/WebSocket (0.16.1):
+  - Apollo/WebSocket (0.21.0):
     - Apollo/Core
-    - Starscream (= 3.1.0)
+    - Starscream (= 3.1.1)
   - AttributedTextView (1.4.1)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
-  - OneSignal (2.11.2)
+  - OneSignal (2.12.3)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
-  - Starscream (3.1.0)
+  - Starscream (3.1.1)
 
 DEPENDENCIES:
   - Apollo
@@ -36,12 +36,12 @@ SPEC REPOS:
     - Starscream
 
 SPEC CHECKSUMS:
-  Apollo: 2b08fca48664d25e1dc8635f0ad128483ccba43b
+  Apollo: 56a0aa81b744bf2810a8277e705f155c91ac9055
   AttributedTextView: 9e01651d96c1af861a9c67c2cc3f94c30320d1c2
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
-  OneSignal: 4e3e68bb6c29975286a2fa910cb49132bc6e20bb
+  OneSignal: 30b6e03a1f14169c4313e301a7b7bdf467b5a575
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
-  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
 PODFILE CHECKSUM: 21336ac222fb3f74695d0eaf1222b3de199ab60a
 
