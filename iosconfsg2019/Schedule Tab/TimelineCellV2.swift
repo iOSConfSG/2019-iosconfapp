@@ -58,12 +58,16 @@ class TimelineCellV2: UITableViewCell {
 
     func setupCell(talk: TalkV2) {
         titleLabel.text = talk.title
-
+        speakerLabel.text = talk.speakerName
         if let startAt = talk.startAt, let endAt = talk.endAt {
             var duration = startAt.toConferenceTime()
             duration.append(contentsOf: " - ")
             duration.append(contentsOf: endAt.toConferenceTime())
             self.timeLabel.text = duration
+        }
+
+        if let imageFilename = talk.speakerImage, let profilePic = UIImage(named: imageFilename) {
+            speakerImage.image = profilePic
         }
     }
 
@@ -95,7 +99,6 @@ class TimelineCellV2: UITableViewCell {
             timeLabel.bottomAnchor.constraint(lessThanOrEqualTo: marginGuide.bottomAnchor),
             speakerImage.bottomAnchor.constraint(lessThanOrEqualTo: marginGuide.bottomAnchor)
         ])
-
     }
 
     required init?(coder aDecoder: NSCoder) {

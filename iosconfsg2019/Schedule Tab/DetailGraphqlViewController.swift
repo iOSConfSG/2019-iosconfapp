@@ -13,6 +13,7 @@ class DetailGraphqlViewController: UIViewController {
 
     var talk: TalkV2? {
         didSet {
+            self.title = talk?.title
             self.talkTitle.text = talk?.title
             self.speakerName.text = talk?.speakerName
             self.speakerCompany.text = talk?.speakerCompany

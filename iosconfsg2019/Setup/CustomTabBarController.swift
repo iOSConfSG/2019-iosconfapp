@@ -23,12 +23,12 @@ class CustomTabBarController: UITabBarController {
         workshopTab.title = "Workshops"
         workshopTab.tabBarItem.image = UIImage(imageLiteralResourceName: "workshop_icon")
         
-        let newsController = NewsViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let newsController = NewsViewController()
         let newsTab = UINavigationController(rootViewController: newsController)
         newsTab.title = "News"
         newsTab.tabBarItem.image = UIImage(imageLiteralResourceName: "news_icon")
         
-        let aboutController = AboutViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let aboutController = AboutViewController()
         let aboutTab = UINavigationController(rootViewController: aboutController)
         aboutTab.title = "About"
         aboutTab.tabBarItem.image = UIImage(imageLiteralResourceName: "iosconfsg_icon")

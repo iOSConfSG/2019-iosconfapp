@@ -8,8 +8,6 @@
 
 import UIKit
 import OneSignal
-import Firebase
-import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,21 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Firebase
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
-        
-        Auth.auth().signInAnonymously { (user, error) in
-            if let error = error {
-                #if DEBUG
-                print("FirebaseAuth Error: \(error.localizedDescription)")
-                #endif
-            }
-            #if DEBUG
-            print("FirebaseAuth signed in anonymously")
-            #endif
-        }
         
         // OneSignal
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
