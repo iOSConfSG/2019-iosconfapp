@@ -70,13 +70,20 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows()
+        let numberOfRows = viewModel.numberOfRows()
+        tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? UIColor.lightGray.withAlphaComponent(0.1) : UIColor.lightGray.withAlphaComponent(0.2)
+        return numberOfRows
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCellV2
         if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
             cell.setupCell(talk: talk)
+        }
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        } else {
+            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         }
         return cell
     }

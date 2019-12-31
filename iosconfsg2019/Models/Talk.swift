@@ -21,6 +21,7 @@ public enum TalkType: String {
     case afterparty
     case special
     case workshop
+    case groupPhoto
 }
 
 struct TalkV2 {
