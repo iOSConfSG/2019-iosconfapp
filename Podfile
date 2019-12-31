@@ -8,10 +8,6 @@ target 'iosconfsg2019' do
   # Pods for iosconfsg2019
   pod 'NVActivityIndicatorView'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
-  pod 'Firebase/Core'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
   pod 'AttributedTextView', '~> 1.4.0'
   pod 'Apollo'
   pod 'Apollo/SQLite'

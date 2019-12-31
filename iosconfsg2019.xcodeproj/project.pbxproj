@@ -12,11 +12,9 @@
 		425F6B083E862C2E8609EEE5 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */; };
 		52947528A704BFB86EE04B95 /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */; };
 		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
-		5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A790219087F4006EA97E /* TimelineCell.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
 		5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79621914BEE006EA97E /* DetailCell.swift */; };
-		5A15A79921915301006EA97E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79821915301006EA97E /* DetailViewController.swift */; };
 		5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */; };
 		5A287DD62333BF8600F20101 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD52333BF8600F20101 /* schema.json */; };
 		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
@@ -32,19 +30,13 @@
 		5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BE42196CA3000D8FDC5 /* AboutViewController.swift */; };
 		5A7C3E3121E1AA5700A49FE1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E3021E1AA5700A49FE1 /* NotificationService.swift */; };
 		5A7C3E3521E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A7C3E2E21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5A7C3E4221E1E6ED00A49FE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */; };
 		5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4421E1EC9700A49FE1 /* Talk.swift */; };
-		5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */; };
 		5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88951421E2DD2B0015BEFD /* DateExtensions.swift */; };
 		5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */; };
-		5A9C316C21E783C90016A16D /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C316B21E783C90016A16D /* About.swift */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
-		5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */; };
-		5ABCCA2B21E6236C0058A076 /* NewsWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */; };
 		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
 		5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
-		5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF178218D6AA100FD2190 /* HomeViewController.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
 		5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */; };
 		5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */; };
@@ -82,11 +74,9 @@
 		24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OneSignal-Info.plist"; path = "iosconfsg2019/OneSignal-Info.plist"; sourceTree = SOURCE_ROOT; };
 		24C8AC8F21EE306E00829307 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellV2.swift; sourceTree = "<group>"; };
-		5A15A790219087F4006EA97E /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		5A15A79221908C0E006EA97E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5A15A79421912C25006EA97E /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		5A15A79621914BEE006EA97E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
-		5A15A79821915301006EA97E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphqlViewController.swift; sourceTree = "<group>"; };
 		5A287DD52333BF8600F20101 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5A287DD82333C5F500F20101 /* api.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = api.graphql; sourceTree = "<group>"; };
@@ -105,20 +95,14 @@
 		5A7C3E3221E1AA5700A49FE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A7C3E3B21E1AB2100A49FE1 /* iosconfsgNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosconfsgNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosconfsg2019.entitlements; sourceTree = "<group>"; };
-		5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A7C3E4421E1EC9700A49FE1 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
-		5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5A88951421E2DD2B0015BEFD /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopViewModel.swift; sourceTree = "<group>"; };
-		5A9C316B21E783C90016A16D /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		5ABCCA2621E5E1010058A076 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithoutImageCell.swift; sourceTree = "<group>"; };
-		5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWithImageCell.swift; sourceTree = "<group>"; };
 		5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopViewController.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AFBF178218D6AA100FD2190 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5AFBF17D218D6AA200FD2190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFBF180218D6AA200FD2190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AFBF182218D6AA200FD2190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,12 +145,9 @@
 		5A262BA621AC165A008BC34F /* Schedule Tab */ = {
 			isa = PBXGroup;
 			children = (
-				5AFBF178218D6AA100FD2190 /* HomeViewController.swift */,
 				5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */,
-				5A15A79821915301006EA97E /* DetailViewController.swift */,
 				5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */,
 				5A15A79621914BEE006EA97E /* DetailCell.swift */,
-				5A15A790219087F4006EA97E /* TimelineCell.swift */,
 				5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */,
 				5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */,
 				5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */,
@@ -191,8 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				5A7B2BE22196C9D100D8FDC5 /* NewsViewController.swift */,
-				5ABCCA2821E622E30058A076 /* NewsWithoutImageCell.swift */,
-				5ABCCA2A21E6236C0058A076 /* NewsWithImageCell.swift */,
 			);
 			path = "News Tab";
 			sourceTree = "<group>";
@@ -229,9 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7C3E4421E1EC9700A49FE1 /* Talk.swift */,
-				5A7C3E4621E1EFBB00A49FE1 /* Speaker.swift */,
 				5ABCCA2621E5E1010058A076 /* Feedback.swift */,
-				5A9C316B21E783C90016A16D /* About.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,7 +254,6 @@
 				5A262BA721AC1682008BC34F /* Extensions */,
 				24C8AC8E21EE305D00829307 /* Helpers */,
 				5AFBF176218D6AA100FD2190 /* AppDelegate.swift */,
-				5A7C3E4121E1E6ED00A49FE1 /* GoogleService-Info.plist */,
 				24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
@@ -421,7 +397,6 @@
 				5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */,
 				5A287DD62333BF8600F20101 /* schema.json in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
-				5A7C3E4221E1E6ED00A49FE1 /* GoogleService-Info.plist in Resources */,
 				24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,15 +498,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A15A791219087F4006EA97E /* TimelineCell.swift in Sources */,
 				5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */,
 				5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */,
-				5AFBF179218D6AA100FD2190 /* HomeViewController.swift in Sources */,
 				5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
 				5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */,
 				5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */,
-				5A7C3E4721E1EFBB00A49FE1 /* Speaker.swift in Sources */,
 				5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */,
 				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
 				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
@@ -539,19 +511,15 @@
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
 				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
 				5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */,
-				5ABCCA2B21E6236C0058A076 /* NewsWithImageCell.swift in Sources */,
 				5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */,
 				24C8AC9021EE306E00829307 /* Helpers.swift in Sources */,
-				5A9C316C21E783C90016A16D /* About.swift in Sources */,
 				5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
-				5ABCCA2921E622E30058A076 /* NewsWithoutImageCell.swift in Sources */,
 				5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */,
 				5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */,
-				5A15A79921915301006EA97E /* DetailViewController.swift in Sources */,
 				5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */,
 				5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */,
 				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
