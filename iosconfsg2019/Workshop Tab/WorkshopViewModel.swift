@@ -1,26 +1,26 @@
 //
-//  ScheduleGraphQLViewModel.swift
+//  WorkshopViewModel.swift
 //  iosconfsg2019
 //
-//  Created by Vina Melody on 13/10/19.
+//  Created by Vina Melody on 27/10/19.
 //  Copyright © 2019 Vina Melody. All rights reserved.
 //
 
 import Foundation
 import Apollo
 
-protocol ScheduleGraphqlViewModelDelegate {
+protocol WorkshopViewModelDelegate {
     func didFetchSchedule()
 }
 
-class ScheduleGraphqlViewModel {
+class WorkshopViewModel {
 
     private var apollo: ApolloClient!
-    private var scheduleSubscription: Cancellable?
+    private var scheduleSubscription: Cancellable!
     private var scheduleGraphql: [GetScheduleSubscription.Data.Schedule] = []
     private var schedule: [TalkV2] = []
 
-    var delegate: ScheduleGraphqlViewModelDelegate?
+    var delegate: WorkshopViewModelDelegate?
     var selectedDay: Int?
 
     let dateFormatter: DateFormatter = {
@@ -30,34 +30,34 @@ class ScheduleGraphqlViewModel {
         return df
     }()
 
-    enum ConferenceDay: Int, CaseIterable {
+    enum WorkshopDay: Int, CaseIterable {
         case one = 0
         case two = 1
 
         var dateString: String {
             switch self {
             case .one:
-                return "17 Jan"
+                return "15 Jan"
             case .two:
-                return "18 Jan"
+                return "16 Jan"
             }
         }
 
         var activityName: String {
             switch self {
             case .one:
-                return "iosconfsg20.day1"
+                return "iosconfsg20.workshop1"
             case .two:
-                return "iosconfsg20.day2"
+                return "iosconfsg20.workshop2"
             }
         }
 
         var dateInt: Int {
             switch self {
             case .one:
-                return 17
+                return 15
             case .two:
-                return 18
+                return 16
             }
         }
     }
@@ -71,7 +71,7 @@ class ScheduleGraphqlViewModel {
     }
 
     func segmentedControlLabels() -> [String] {
-        let allConferenceDays = ConferenceDay.allCases
+        let allConferenceDays = WorkshopDay.allCases
         return allConferenceDays.compactMap({ return $0.dateString })
     }
 
@@ -83,7 +83,7 @@ class ScheduleGraphqlViewModel {
             let day = components.day ?? 0
 
             switch day {
-            case 18:
+            case 16:
                 self.selectedDay = 1
             default:
                 self.selectedDay = 0
@@ -155,7 +155,7 @@ class ScheduleGraphqlViewModel {
     }
 
     private func scheduleFor(day: Int) -> [TalkV2] {
-        guard let selectedDay = ConferenceDay(rawValue: day) else {
+        guard let selectedDay = WorkshopDay(rawValue: day) else {
             return [TalkV2]()
         }
 

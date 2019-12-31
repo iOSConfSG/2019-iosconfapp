@@ -8,202 +8,99 @@
 
 import UIKit
 import AttributedTextView
-import FirebaseDatabase
+import Apollo
+import NVActivityIndicatorView
 
-class WorkshopViewController: UIViewController {
+class WorkshopViewController: UITableViewController, NVActivityIndicatorViewable {
     
     private let timelineCellId: String = "timelineCell"
-    var schedule: [Talk] = []
-    
-    let locationView: AttributedTextView = {
-        let view = AttributedTextView()
-        view.isUserInteractionEnabled = true
-        view.isEditable = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.bounces = false
-        view.textContainerInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
-        return view
+    private let headerViewId: String = "headerView"
+
+    lazy var viewModel: WorkshopViewModel = {
+        return WorkshopViewModel(failInitClosure: {
+            handleGraphqlError()
+        })
     }()
-    
-    let tableView: UITableView = {
-        let tbl = UITableView()
-        tbl.translatesAutoresizingMaskIntoConstraints = false
-        return tbl
-    }()
-    
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
-        tableView.register(TimelineCell.self, forCellReuseIdentifier: timelineCellId)
-
-        getWorkshopLocation()
-        getSchedule()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+        viewModel.tryFetchSchedule()
+        startAnimating()
     }
     
     private func setupViews() {
-        self.view.backgroundColor = UIColor.white
-        
-        self.navigationItem.title = "Workshop"
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.purple
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        self.navigationItem.title = "Workshop Schedule"
+        view.backgroundColor = .white
 
-        self.view.addSubview(tableView)
-        
-        locationView.attributer =
-            "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
-                .append("\n\n")
-                .append("PlugIn@BLK71\n").size(UIFont.normalSize)
-                .append("71 Ayer Rajah Crescent, 02-01, Singapore 139951\n").size(UIFont.normalSize)
-                .append("https://goo.gl/maps/vZB8otAC5yL2").matchLinks.makeInteract({ (link) in
-                    guard let url = URL(string: link) else {
-                        return
-                    }
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }).size(UIFont.normalSize)
-                .append("\n\nWorkshop Schedule").purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
-        
-        containerView.addSubview(locationView)
-        self.tableView.tableHeaderView = containerView
-        
-        var containerHeightConstraintConstant: CGFloat = 180
-        //TODO: quick fix for location table header view
-        if UIScreen.main.bounds.size.height < 600 {
-            containerHeightConstraintConstant = 180
-        }
-        else {
-            containerHeightConstraintConstant = 170
-        }
-        
-        NSLayoutConstraint.activate([
-            containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: containerHeightConstraintConstant),
-            containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0),
-            tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
-            tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor, constant: 0),
-            locationView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
-            locationView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
-            locationView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0),
-            ])
-        
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 80
-        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 80
+        tableView.register(TimelineCellV2.self, forCellReuseIdentifier: timelineCellId)
+
+        let skylineView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
+        skylineView.image = UIImage(imageLiteralResourceName: "skyline")
+        skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        skylineView.contentMode = .scaleAspectFill
+        self.tableView.tableFooterView = skylineView
+
+
+        let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
+        let segmentTitles = viewModel.segmentedControlLabels()
+        let selectedIndex = viewModel.segmentedControlSelectedIndex()
+        let daySegmentedControlView = HeaderTableView(frame: segmentFrame, initialItems: segmentTitles, selectedIndex: selectedIndex, didChangeAction: { [weak self] (selectedIndex) in
+            self?.viewModel.selectedDay = selectedIndex
+            self?.tableView.reloadData()
+        })
+        self.tableView.tableHeaderView = daySegmentedControlView
+
+        viewModel.delegate = self
     }
-    
-    private func getSchedule() {
-        let dbRef = Database.database().reference()
-        let scheduleRef = dbRef.child("workshop")
-        scheduleRef.keepSynced(true)
-        
-        scheduleRef.observe(.childAdded) { (snapshot) in
-            let talk = Talk(snapshot: snapshot)
-            talk.reloadSpeakerData()
-            self.schedule.append(talk)
-            
-            self.reloadData()
-        }
-        
-        scheduleRef.observe(.childChanged) { (snapshot) in
-            let newTalk = Talk(snapshot: snapshot)
-            newTalk.reloadSpeakerData()
-            
-            let index = self.schedule.firstIndex(where: { (talk) -> Bool in
-                return talk.firebaseId == newTalk.firebaseId
-            })
-            
-            if let talkIndex = index {
-                self.schedule.remove(at: talkIndex)
-                self.schedule.insert(newTalk, at: talkIndex)
-            }
-        }
-        
-        scheduleRef.observe(.value) { (snapshot) in
-            self.reloadData()
-        }
+
+    func handleGraphqlError() {
+        stopAnimating()
+        print("Something wrong with Graphql connection")
     }
-    
-    private func reloadData() {
-        OperationQueue.main.addOperation {
-            self.tableView.reloadData()
-        }
+
+    // MARK: - UITableViewDelegate
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    
-    private func getWorkshopLocation() {
-        
-        let dbRef = Database.database().reference()
-        let wrkLocRef = dbRef.child("workshopLocation")
-        wrkLocRef.keepSynced(true)
-        
-        wrkLocRef.observe(.value) { (snapshot) in
-            
-            if let workshopLocationString = snapshot.value as? String {
-            
-                self.locationView.text = ""
-                
-                self.locationView.attributer =
-                    "Workshop Location".purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
-                        .append("\n\n")
-                        .append(workshopLocationString).matchLinks.makeInteract({ (link) in
-                            guard let url = URL(string: link) else {
-                                return
-                            }
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }).size(UIFont.normalSize)
-                        .append("\n\nWorkshop Schedule").purple.font(UIFont.boldSystemFont(ofSize: UIFont.largeSize))
-                
-            }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCellV2
+        if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
+            cell.setupCell(talk: talk)
+        }
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
+            let detailViewController = DetailGraphqlViewController()
+            detailViewController.hidesBottomBarWhenPushed = true
+            detailViewController.talk = talk
+            let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
 }
 
-extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.schedule.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCell
-        cell.accessoryType = .disclosureIndicator
-        cell.separatorInset = .zero
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
-        } else {
-            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+extension WorkshopViewController: WorkshopViewModelDelegate {
+    func didFetchSchedule() {
+        DispatchQueue.main.async {
+            self.stopAnimating()
+            self.tableView.reloadData()
         }
-        
-        cell.talk = self.schedule[indexPath.row]
-        return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
-        detailViewController.hidesBottomBarWhenPushed = true
-        
-        detailViewController.talk = self.schedule[indexPath.row]
-        
-        let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
-    }
-    
 }

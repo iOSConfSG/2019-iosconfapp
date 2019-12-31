@@ -20,6 +20,7 @@ public enum TalkType: String {
     case lightningTalk
     case afterparty
     case special
+    case workshop
 }
 
 struct TalkV2 {
