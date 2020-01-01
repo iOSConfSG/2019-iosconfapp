@@ -120,6 +120,12 @@ class FeedbackViewController: UIViewController {
         btn.backgroundColor = UIColor.purple
         return btn
     }()
+
+    lazy var viewModel: FeedbackViewModel = {
+        return FeedbackViewModel(failInitClosure: {
+            self.handleViewModelError()
+        })
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -222,49 +228,37 @@ class FeedbackViewController: UIViewController {
     }
     
     @objc private func sendFeedback() {
-//        sendButton.loadingIndicator(show: true)
-//        self.errorLabel.isHidden = true
-//        guard let talk = self.talk,
-//            let selectedButton = self.selectedButton,
-//            let feeling = selectedButton.feeling else {
-//            #if DEBUG
-//            print("Empty feedback")
-//            #endif
-//            return
-//        }
-//
-//        let newFeedback = Feedback(feeling: feeling, comments: self.commentTextView.text)
-//
-//        let databaseRef = Database.database().reference()
-//        let feedbacksRef = databaseRef.child("feedback")
-//        let talkIdRef = feedbacksRef.child(talk.firebaseId)
-//
-//        let newFeedbackRef = talkIdRef.childByAutoId()
-//
-//        let newFeedbackDict = [
-//            "feeling": newFeedback.feeling.emoji,
-//            "comments": newFeedback.comments
-//        ]
-//
-//        newFeedbackRef.setValue(newFeedbackDict) { (error, ref) in
-//            if error == nil {
-//                #if DEBUG
-//                print("Feedback saved")
-//                #endif
-//                self.sendButton.loadingIndicator(show: false)
-//                self.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
-//
-//                let when = DispatchTime.now() + 1.53
-//                DispatchQueue.main.asyncAfter(deadline: when, execute: {
-//                    self.dismiss(animated: true, completion: nil)
-//                })
-//
-//            } else {
-//                self.sendButton.loadingIndicator(show: false)
-//                self.errorLabel.isHidden = false
-//                self.sendButton.setTitle("Send", for: .normal)
-//            }
-//        }
+        sendButton.loadingIndicator(show: true)
+        self.errorLabel.isHidden = true
+        guard let talk = self.talk,
+            let selectedButton = self.selectedButton,
+            let feeling = selectedButton.feeling else {
+            #if DEBUG
+            print("Empty feedback")
+            #endif
+            return
+        }
+
+        viewModel.submitFeedback(for: talk, feeling: feeling, comments: self.commentTextView.text, completionHandler: { [weak self] result in
+            switch result {
+            case .success:
+                self?.sendButton.loadingIndicator(show: false)
+                self?.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
+
+                let when = DispatchTime.now() + 1.53
+                DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                    self?.dismiss(animated: true, completion: nil)
+                })
+            case .failure:
+                self?.sendButton.loadingIndicator(show: false)
+                self?.errorLabel.isHidden = false
+                self?.sendButton.setTitle("Send", for: .normal)
+            }
+        })
+    }
+
+    func handleViewModelError() {
+        //todo
     }
     
 }
