@@ -32,7 +32,7 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
-        self.navigationItem.title = "Conference Schedule"
+        navigationItem.title = "Conference Schedule"
         view.backgroundColor = .white
 
         tableView.delegate = self
@@ -46,7 +46,6 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
         skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         skylineView.contentMode = .scaleAspectFill
         self.tableView.tableFooterView = skylineView
-
 
         let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
         let segmentTitles = viewModel.segmentedControlLabels()
