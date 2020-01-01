@@ -46,14 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Which screen to show?
         
-//        if UserDefaults.standard.object(forKey: "sawWelcomeScreen") == nil {
-//            window?.rootViewController = WelcomeViewController()
-//            return true
-//        } else {
-//            window?.rootViewController = CustomTabBarController()
-//            return true
-//        }
-//        window?.rootViewController = UINavigationController(rootViewController: ScheduleGraphqlViewController())
+        if UserDefaults.standard.object(forKey: "sawWelcomeScreen") == nil {
+            window?.rootViewController = WelcomeViewController()
+            return true
+        } else {
+            window?.rootViewController = CustomTabBarController()
+            return true
+        }
+        window?.rootViewController = UINavigationController(rootViewController: ScheduleGraphqlViewController())
         window?.rootViewController = CustomTabBarController()
         return true
     }
