@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140EEC5A4C16C22B295C417E /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */; };
 		24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */; };
 		24C8AC9021EE306E00829307 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8AC8F21EE306E00829307 /* Helpers.swift */; };
-		425F6B083E862C2E8609EEE5 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */; };
-		52947528A704BFB86EE04B95 /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */; };
+		388E8DCB875D2A6E004A8B10 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */; };
 		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
@@ -68,9 +68,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0D4FF3684E461A7894445B85 /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
-		0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24283E080A7291671BBC64C3 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OneSignal-Info.plist"; path = "iosconfsg2019/OneSignal-Info.plist"; sourceTree = SOURCE_ROOT; };
 		24C8AC8F21EE306E00829307 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellV2.swift; sourceTree = "<group>"; };
@@ -108,9 +105,12 @@
 		5AFBF182218D6AA200FD2190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphqlViewController.swift; sourceTree = "<group>"; };
 		5B5DFC7B234F06E500024A13 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
-		68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
+		7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
+		C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
+		CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				425F6B083E862C2E8609EEE5 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */,
+				388E8DCB875D2A6E004A8B10 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52947528A704BFB86EE04B95 /* Pods_iosconfsg2019.framework in Frameworks */,
+				140EEC5A4C16C22B295C417E /* Pods_iosconfsg2019.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +140,15 @@
 				5B5DFC7B234F06E500024A13 /* ApolloManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		31C3D23D7649EB9DF09DBFE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */,
+				CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5A262BA621AC165A008BC34F /* Schedule Tab */ = {
@@ -229,7 +238,7 @@
 				5A7C3E2F21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension */,
 				5AFBF174218D6AA000FD2190 /* Products */,
 				AE0B204DE0F126D371F9F527 /* Pods */,
-				99D8D0078E28B7AC58FDB6D8 /* Frameworks */,
+				31C3D23D7649EB9DF09DBFE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,22 +275,13 @@
 			path = iosconfsg2019;
 			sourceTree = "<group>";
 		};
-		99D8D0078E28B7AC58FDB6D8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */,
-				0FC24B62D0FA96BC283CEB4A /* Pods_iosconfsgNotificationServiceExtension.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AE0B204DE0F126D371F9F527 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D4FF3684E461A7894445B85 /* Pods-iosconfsg2019.debug.xcconfig */,
-				A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */,
-				68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */,
-				24283E080A7291671BBC64C3 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */,
+				C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */,
+				AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */,
+				DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */,
+				7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A7C3E3821E1AA5700A49FE1 /* Build configuration list for PBXNativeTarget "iosconfsgNotificationServiceExtension" */;
 			buildPhases = (
-				9C8DFFDC326CCC80F3F6F381 /* [CP] Check Pods Manifest.lock */,
+				A59B9329F36244FECEDC791B /* [CP] Check Pods Manifest.lock */,
 				5A7C3E2A21E1AA5700A49FE1 /* Sources */,
 				5A7C3E2B21E1AA5700A49FE1 /* Frameworks */,
 				5A7C3E2C21E1AA5700A49FE1 /* Resources */,
@@ -311,13 +311,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFBF185218D6AA200FD2190 /* Build configuration list for PBXNativeTarget "iosconfsg2019" */;
 			buildPhases = (
-				A048A8D3BBD388CB17A05970 /* [CP] Check Pods Manifest.lock */,
+				423A3963C1DFA6E08362B9C9 /* [CP] Check Pods Manifest.lock */,
 				5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */,
 				5AFBF16F218D6AA000FD2190 /* Sources */,
 				5AFBF170218D6AA000FD2190 /* Frameworks */,
 				5AFBF171218D6AA000FD2190 /* Resources */,
 				5A7C3E3921E1AA5700A49FE1 /* Embed App Extensions */,
-				A224CBB4070DCEADFB666601 /* [CP] Embed Pods Frameworks */,
+				DDAE4EA4F8D088513C4AD876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -404,47 +404,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Generate Apollo GraphQL API";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://iosconfsg.herokuapp.com/v1/graphql\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
-		};
-		9C8DFFDC326CCC80F3F6F381 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosconfsgNotificationServiceExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A048A8D3BBD388CB17A05970 /* [CP] Check Pods Manifest.lock */ = {
+		423A3963C1DFA6E08362B9C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,7 +426,47 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A224CBB4070DCEADFB666601 /* [CP] Embed Pods Frameworks */ = {
+		5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://iosconfsg.herokuapp.com/v1/graphql\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+		A59B9329F36244FECEDC791B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iosconfsgNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDAE4EA4F8D088513C4AD876 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -550,11 +550,12 @@
 /* Begin XCBuildConfiguration section */
 		5A7C3E3621E1AA5700A49FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsgNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -563,6 +564,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSG2019NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -573,11 +575,12 @@
 		};
 		5A7C3E3721E1AA5700A49FE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24283E080A7291671BBC64C3 /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */;
+			baseConfigurationReference = 7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsgNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -586,6 +589,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSG2019NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -714,12 +718,13 @@
 		};
 		5AFBF186218D6AA200FD2190 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D4FF3684E461A7894445B85 /* Pods-iosconfsg2019.debug.xcconfig */;
+			baseConfigurationReference = C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iosconfsg2019/iosconfsg2019.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -727,6 +732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -736,12 +742,13 @@
 		};
 		5AFBF187218D6AA200FD2190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */;
+			baseConfigurationReference = AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iosconfsg2019/iosconfsg2019.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -749,6 +756,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

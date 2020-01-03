@@ -53,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = CustomTabBarController()
             return true
         }
-        window?.rootViewController = UINavigationController(rootViewController: ScheduleGraphqlViewController())
-        window?.rootViewController = CustomTabBarController()
-        return true
+//        window?.rootViewController = UINavigationController(rootViewController: ScheduleGraphqlViewController())
+//        window?.rootViewController = CustomTabBarController()
+//        return true
     }
 
 }
