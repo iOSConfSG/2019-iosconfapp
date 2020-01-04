@@ -9,7 +9,7 @@
 import UIKit
 import AttributedTextView
 
-class DetailGraphqlViewController: UIViewController {
+class DetailGraphqlViewController: BaseViewController {
 
     var talk: TalkV2? {
         didSet {

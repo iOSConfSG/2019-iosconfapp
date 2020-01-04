@@ -9,7 +9,7 @@
 import UIKit
 import OneSignal
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: BaseViewController {
     let confImage: UIImageView = {
         let img = UIImage(imageLiteralResourceName: "welcome_icon")
         let imgView = UIImageView(image: img)
@@ -111,11 +111,7 @@ class WelcomeViewController: UIViewController {
             } else {
                 self.present(rejectedAlert, animated: true, completion: nil)
             }
-            
-            
-            
         }, fallbackToSettings: true)
-        
     }
     
     private func showTabScreen() {
