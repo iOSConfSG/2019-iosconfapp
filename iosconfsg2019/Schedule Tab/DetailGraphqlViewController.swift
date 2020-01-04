@@ -9,7 +9,7 @@
 import UIKit
 import AttributedTextView
 
-class DetailGraphqlViewController: UIViewController {
+class DetailGraphqlViewController: BaseViewController {
 
     var talk: TalkV2? {
         didSet {
@@ -114,22 +114,11 @@ class DetailGraphqlViewController: UIViewController {
         return tv
     }()
 
-    let feedbackButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Leave Feedback", for: .normal)
-        btn.backgroundColor = UIColor.orange
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.largeSize)
-        return btn
-    }()
-
     // MARK: - ViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
+        setupFeedbackButton()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -218,8 +207,12 @@ class DetailGraphqlViewController: UIViewController {
         bioViewController.modalPresentationStyle = .overCurrentContext
         bioViewController.profileText = self.talk?.speakerBio
         self.navigationController?.present(bioViewController, animated: true, completion: nil)
+    }
 
-
+    private func setupFeedbackButton() {
+        if let speakerName = self.talk?.speakerName, speakerName != "Organiser" {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
+        }
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class NewsViewController: UIViewController {
+class NewsViewController: BaseViewController {
 
     private var webView: WKWebView!
     private var webViewConfiguration: WKWebViewConfiguration = {

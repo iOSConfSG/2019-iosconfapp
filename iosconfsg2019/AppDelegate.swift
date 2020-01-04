@@ -14,38 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    private var modules: [UIApplicationDelegate] = [UIApplicationDelegate]()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // OneSignal
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        
-        if let oneSignalDict = Helpers.dictionaryFromPlist(filename: "OneSignal-Info") {
-            
-            if let oneSignalAppId = oneSignalDict["ONE_SIGNAL_APP_ID"] {
-                
-                let appIdString = oneSignalAppId as! String
-            
-                OneSignal.initWithLaunchOptions(launchOptions,
-                                                appId: appIdString,
-                                                handleNotificationAction: nil,
-                                                settings: onesignalInitSettings)
-                
-                OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
-            }
-            else {
-                print("ERROR: Failed to initialize OneSignal - ONE_SIGNAL_APP_ID missing from plist.")
-            }
-            
-        }
-        else {
-            print("ERROR: Failed to initialize OneSignal - missing OneSignal-Info.plist file.")
+        registerModules()
+
+        _ = modules.compactMap {
+            _ = $0.application?(application, didFinishLaunchingWithOptions: launchOptions)
         }
         
         window = UIWindow()
         window?.makeKeyAndVisible()
         
         // Which screen to show?
-        
         if UserDefaults.standard.object(forKey: "sawWelcomeScreen") == nil {
             window?.rootViewController = WelcomeViewController()
             return true
@@ -58,5 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        return true
     }
 
+}
+
+extension AppDelegate {
+    private func registerModules() {
+        modules.append(PushNotificationManager())
+        modules.append(AnalyticsManager())
+    }
 }
 

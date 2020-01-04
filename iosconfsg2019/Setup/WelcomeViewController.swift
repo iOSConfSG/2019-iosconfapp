@@ -9,7 +9,7 @@
 import UIKit
 import OneSignal
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: BaseViewController {
     let confImage: UIImageView = {
         let img = UIImage(imageLiteralResourceName: "welcome_icon")
         let imgView = UIImageView(image: img)
@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: UIFont.xLargeSize, weight: .light)
-        label.text = "17-19 January 2019"
+        label.text = "15-18 January 2020"
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
@@ -111,11 +111,7 @@ class WelcomeViewController: UIViewController {
             } else {
                 self.present(rejectedAlert, animated: true, completion: nil)
             }
-            
-            
-            
         }, fallbackToSettings: true)
-        
     }
     
     private func showTabScreen() {
@@ -157,7 +153,6 @@ class WelcomeViewController: UIViewController {
         allowNotificationButton.topAnchor.constraint(equalTo: notificationDescriptionLabel.bottomAnchor, constant: 22).isActive = true
         allowNotificationButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24).isActive = true
         allowNotificationButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24).isActive = true
-        allowNotificationButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        
+        allowNotificationButton.heightAnchor.constraint(equalToConstant: 44).isActive = true        
     }
 }

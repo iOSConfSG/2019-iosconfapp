@@ -10,10 +10,11 @@ import UIKit
 import Apollo
 import NVActivityIndicatorView
 
-class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorViewable {
+class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorViewable {
 
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
+    private var tableView: UITableView!
 
     lazy var viewModel: ScheduleGraphqlViewModel = {
         return ScheduleGraphqlViewModel(failInitClosure: {
@@ -34,6 +35,12 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
         }
         navigationItem.title = "Conference Schedule"
         view.backgroundColor = .white
+
+        tableView = UITableView(frame: view.frame, style: .plain)
+
+        view.addSubview(tableView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: tableView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: tableView)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -63,18 +70,19 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
         stopAnimating()
         print("Something wrong with Graphql connection")
     }
+}
 
-    // MARK: - UITableViewDelegate
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRows = viewModel.numberOfRows()
         tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? UIColor.lightGray.withAlphaComponent(0.1) : UIColor.lightGray.withAlphaComponent(0.2)
         return numberOfRows
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCellV2
         if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
             cell.setupCell(talk: talk)
@@ -87,11 +95,11 @@ class ScheduleGraphqlViewController: UITableViewController, NVActivityIndicatorV
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true

@@ -9,7 +9,7 @@
 import UIKit
 import AttributedTextView
 
-class CustomAlertViewController: UIViewController {
+class CustomAlertViewController: BaseViewController {
     
     let descriptionTextView: AttributedTextView = {
         let tv = AttributedTextView()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedbackViewController: UIViewController {
+class FeedbackViewController: BaseViewController {
     
     var selectedButton: MyButton?
     var talk: TalkV2?

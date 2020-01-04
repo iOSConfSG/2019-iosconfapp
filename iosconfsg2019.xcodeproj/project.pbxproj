@@ -14,13 +14,16 @@
 		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
-		5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79621914BEE006EA97E /* DetailCell.swift */; };
 		5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */; };
 		5A287DD62333BF8600F20101 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD52333BF8600F20101 /* schema.json */; };
 		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
 		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
+		5A61519623C08CA200D5FE5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A61519523C08CA200D5FE5C /* GoogleService-Info.plist */; };
+		5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519823C0924800D5FE5C /* AnalyticsManager.swift */; };
+		5A61519B23C0928E00D5FE5C /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519A23C0928E00D5FE5C /* PushNotificationManager.swift */; };
+		5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519D23C0A32600D5FE5C /* BaseViewController.swift */; };
 		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
 		5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */; };
 		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
@@ -73,13 +76,16 @@
 		5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellV2.swift; sourceTree = "<group>"; };
 		5A15A79221908C0E006EA97E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5A15A79421912C25006EA97E /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
-		5A15A79621914BEE006EA97E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphqlViewController.swift; sourceTree = "<group>"; };
 		5A287DD52333BF8600F20101 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5A287DD82333C5F500F20101 /* api.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = api.graphql; sourceTree = "<group>"; };
 		5A287DDA2333C6AD00F20101 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5A61519523C08CA200D5FE5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A61519823C0924800D5FE5C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		5A61519A23C0928E00D5FE5C /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		5A61519D23C0A32600D5FE5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphQLViewModel.swift; sourceTree = "<group>"; };
 		5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +162,6 @@
 			children = (
 				5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */,
 				5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */,
-				5A15A79621914BEE006EA97E /* DetailCell.swift */,
 				5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */,
 				5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */,
 				5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */,
@@ -201,6 +206,23 @@
 				5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */,
 			);
 			path = Setup;
+			sourceTree = "<group>";
+		};
+		5A61519723C0923800D5FE5C /* Startup Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A61519823C0924800D5FE5C /* AnalyticsManager.swift */,
+				5A61519A23C0928E00D5FE5C /* PushNotificationManager.swift */,
+			);
+			path = "Startup Services";
+			sourceTree = "<group>";
+		};
+		5A61519C23C0A30E00D5FE5C /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A61519D23C0A32600D5FE5C /* BaseViewController.swift */,
+			);
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
 		5A7C3E2F21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension */ = {
@@ -254,6 +276,8 @@
 		5AFBF175218D6AA000FD2190 /* iosconfsg2019 */ = {
 			isa = PBXGroup;
 			children = (
+				5A61519C23C0A30E00D5FE5C /* UI Components */,
+				5A61519723C0923800D5FE5C /* Startup Services */,
 				5A7C3E4321E1EC8A00A49FE1 /* Models */,
 				5A41848B21D110BB007E1905 /* Setup */,
 				5A262BA621AC165A008BC34F /* Schedule Tab */,
@@ -263,6 +287,7 @@
 				5A262BA721AC1682008BC34F /* Extensions */,
 				24C8AC8E21EE305D00829307 /* Helpers */,
 				5AFBF176218D6AA100FD2190 /* AppDelegate.swift */,
+				5A61519523C08CA200D5FE5C /* GoogleService-Info.plist */,
 				24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
@@ -398,6 +423,7 @@
 				5A287DD62333BF8600F20101 /* schema.json in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
 				24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */,
+				5A61519623C08CA200D5FE5C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,12 +526,13 @@
 			files = (
 				5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */,
 				5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */,
+				5A61519B23C0928E00D5FE5C /* PushNotificationManager.swift in Sources */,
 				5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
+				5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */,
 				5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */,
 				5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */,
 				5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */,
-				5A15A79721914BEE006EA97E /* DetailCell.swift in Sources */,
 				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
 				5A287DDB2333C6AD00F20101 /* API.swift in Sources */,
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
@@ -516,6 +543,7 @@
 				5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
+				5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */,
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
 				5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */,

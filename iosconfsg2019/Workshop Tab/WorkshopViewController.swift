@@ -11,10 +11,11 @@ import AttributedTextView
 import Apollo
 import NVActivityIndicatorView
 
-class WorkshopViewController: UITableViewController, NVActivityIndicatorViewable {
+class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
     
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
+    private var tableView: UITableView!
 
     lazy var viewModel: WorkshopViewModel = {
         return WorkshopViewModel(failInitClosure: {
@@ -35,6 +36,12 @@ class WorkshopViewController: UITableViewController, NVActivityIndicatorViewable
         }
         self.navigationItem.title = "Workshop Schedule"
         view.backgroundColor = .white
+
+        tableView = UITableView(frame: view.frame, style: .plain)
+
+        view.addSubview(tableView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: tableView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: tableView)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,16 +72,17 @@ class WorkshopViewController: UITableViewController, NVActivityIndicatorViewable
         stopAnimating()
         print("Something wrong with Graphql connection")
     }
+}
 
-    // MARK: - UITableViewDelegate
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCellV2
         if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
             cell.setupCell(talk: talk)
@@ -82,11 +90,11 @@ class WorkshopViewController: UITableViewController, NVActivityIndicatorViewable
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true
