@@ -26,7 +26,7 @@ class TimelineCellV2: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize, weight: .light)
         label.text = "10.00 - 10.30"
         label.numberOfLines = 0
-        label.textColor = UIColor.darkGray
+        label.textColor = StyleSheet.shared.theme.tertiaryLabelColor
         return label
     }()
 
@@ -37,7 +37,7 @@ class TimelineCellV2: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: UIFont.largeSize)
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.textColor = UIColor.purple
+        label.textColor = StyleSheet.shared.theme.primaryLabelColor
         return label
     }()
 
@@ -47,7 +47,7 @@ class TimelineCellV2: UITableViewCell {
         label.text = "Sam Davies"
         label.font = UIFont.systemFont(ofSize: UIFont.normalSize)
         label.numberOfLines = 1
-        label.textColor = UIColor.black
+        label.textColor = StyleSheet.shared.theme.secondaryLabelColor
         return label
     }()
 
@@ -105,3 +105,4 @@ class TimelineCellV2: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

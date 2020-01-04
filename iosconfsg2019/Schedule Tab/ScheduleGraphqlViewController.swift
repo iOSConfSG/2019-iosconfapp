@@ -88,9 +88,9 @@ extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDeleg
             cell.setupCell(talk: talk)
         }
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+            cell.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
         } else {
-            cell.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+            cell.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         }
         return cell
     }
@@ -125,7 +125,7 @@ class HeaderTableView: UIView {
 
     init(frame: CGRect, initialItems: [String], selectedIndex: Int, didChangeAction: ((_ selectedIndex: Int) -> Void)?) {
         super.init(frame: frame)
-        backgroundColor = UIColor.white
+        backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
         setupView(items: initialItems)
         daySegmentControl.selectedSegmentIndex = selectedIndex
         self.didChangeAction = didChangeAction
@@ -140,6 +140,7 @@ class HeaderTableView: UIView {
         daySegmentControl = UISegmentedControl(items: items)
         daySegmentControl.translatesAutoresizingMaskIntoConstraints = false
         daySegmentControl.tintColor = UIColor.purple
+        daySegmentControl.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         addSubview(daySegmentControl)
         addConstraintsWithFormat("H:|-16-[v0]-16-|", views: daySegmentControl)
         addConstraintsWithFormat("V:|-8-[v0]-8-|", views: daySegmentControl)
@@ -149,3 +150,4 @@ class HeaderTableView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

@@ -44,6 +44,7 @@
 		5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */; };
 		5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */; };
 		5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC7B234F06E500024A13 /* ApolloManager.swift */; };
+		B57452C623C0E7C8004CD8C3 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
+		B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
 		C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
 		CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		24C8AC8E21EE305D00829307 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */,
 				24C8AC8F21EE306E00829307 /* Helpers.swift */,
 				5B5DFC7B234F06E500024A13 /* ApolloManager.swift */,
 			);
@@ -537,6 +540,7 @@
 				5A287DDB2333C6AD00F20101 /* API.swift in Sources */,
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
 				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
+				B57452C623C0E7C8004CD8C3 /* StyleSheet.swift in Sources */,
 				5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */,
 				5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */,
 				24C8AC9021EE306E00829307 /* Helpers.swift in Sources */,

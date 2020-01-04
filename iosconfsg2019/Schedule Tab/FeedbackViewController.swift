@@ -17,7 +17,7 @@ class FeedbackViewController: BaseViewController {
         let title = UILabel()
         title.text = "What do you think of this talk?"
         title.font = UIFont.boldSystemFont(ofSize: UIFont.largeSize)
-        title.textColor = UIColor.orange
+        title.textColor = StyleSheet.shared.theme.secondaryLabelColor
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -155,7 +155,7 @@ class FeedbackViewController: BaseViewController {
     }
     
     private func setupViews() {
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
         self.view.addSubview(qualityTitleLabel)
         self.view.addSubview(frowningButton)
         self.view.addSubview(smileButton)
@@ -269,16 +269,17 @@ extension FeedbackViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = StyleSheet.shared.theme.tertiaryLabelColor
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Type your news content here"
-            textView.textColor = UIColor.lightGray
+            textView.textColor = StyleSheet.shared.theme.tertiaryLabelColor
         }
     }
     
 }
+
 

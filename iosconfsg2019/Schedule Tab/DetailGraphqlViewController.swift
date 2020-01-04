@@ -48,7 +48,7 @@ class DetailGraphqlViewController: BaseViewController {
         title.text = "Scaling At Large - Lessons learned rewriting Instagram's feed. Plus some very long and super long title to show"
         //title.text = "Scaling At Large"
         title.font = UIFont.boldSystemFont(ofSize: UIFont.xLargeSize)
-        title.textColor = UIColor.purple
+        title.textColor = StyleSheet.shared.theme.primaryLabelColor
         title.numberOfLines = 5
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -58,6 +58,7 @@ class DetailGraphqlViewController: BaseViewController {
         let time = UILabel()
         time.text = "10:00 - 10.35"
         time.font = UIFont.systemFont(ofSize: UIFont.smallSize)
+        time.textColor = StyleSheet.shared.theme.secondaryLabelColor
         time.translatesAutoresizingMaskIntoConstraints = false
         return time
     }()
@@ -77,7 +78,7 @@ class DetailGraphqlViewController: BaseViewController {
         name.numberOfLines = 1
         name.translatesAutoresizingMaskIntoConstraints = false
         name.text = "iOSConfSG"
-        name.textColor = UIColor.orange
+        name.textColor = StyleSheet.shared.theme.secondaryLabelColor
         return name
     }()
 
@@ -86,6 +87,7 @@ class DetailGraphqlViewController: BaseViewController {
         label.isUserInteractionEnabled = true
         label.isEditable = false
         label.isSelectable = true
+        label.textColor = StyleSheet.shared.theme.primaryLabelColor
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textContainer.lineFragmentPadding = 0
         label.textContainerInset = .zero
@@ -96,6 +98,7 @@ class DetailGraphqlViewController: BaseViewController {
     let speakerCompany: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
+        label.textColor = StyleSheet.shared.theme.secondaryLabelColor
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.font = UIFont.systemFont(ofSize: UIFont.largeSize)
@@ -143,10 +146,10 @@ class DetailGraphqlViewController: BaseViewController {
     }
 
     private func setupViews() {
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
 
-        self.navigationController?.navigationBar.tintColor = UIColor.purple
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
+        self.navigationController?.navigationBar.tintColor = StyleSheet.shared.theme.primaryLabelColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: StyleSheet.shared.theme.primaryLabelColor]
 
         self.view.addSubview(talkTitle)
         self.view.addSubview(talkTime)
@@ -192,7 +195,8 @@ class DetailGraphqlViewController: BaseViewController {
 
         let descriptionAttributes = [
             NSAttributedString.Key.paragraphStyle: descriptionStyle,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIFont.normalSize)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIFont.normalSize),
+            NSAttributedString.Key.foregroundColor : StyleSheet.shared.theme.secondaryLabelColor
             ] as [NSAttributedString.Key : Any]
         descriptionTextView.attributedText = NSAttributedString(string: descriptionTextView.text, attributes: descriptionAttributes)
 
@@ -225,3 +229,4 @@ extension DetailGraphqlViewController: UIPopoverPresentationControllerDelegate {
         return .none
     }
 }
+
