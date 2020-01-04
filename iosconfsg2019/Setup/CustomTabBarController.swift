@@ -34,6 +34,7 @@ class CustomTabBarController: UITabBarController {
         aboutTab.tabBarItem.image = UIImage(imageLiteralResourceName: "iosconfsg_icon")
         
         viewControllers = [scheduleTab, workshopTab, newsTab, aboutTab]
+        viewControllers = [scheduleTab, workshopTab, newsTab]
         tabBar.isTranslucent = false
         
         let topBorder = CALayer()
