@@ -247,6 +247,7 @@ class FeedbackViewController: BaseViewController {
 
                 let when = DispatchTime.now() + 1.53
                 DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                    self?.logTap(talkId: talk.id)
                     self?.dismiss(animated: true, completion: nil)
                 })
             case .failure:
@@ -259,6 +260,11 @@ class FeedbackViewController: BaseViewController {
 
     func handleViewModelError() {
         //todo
+    }
+
+    private func logTap(talkId: Int) {
+        let event = TrackingEvent(tap: "Submit Feedback Button \(talkId)", category: "Submit Feedback")
+        AnalyticsManager.shared.log(event: event)
     }
     
 }

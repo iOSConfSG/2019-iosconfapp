@@ -88,11 +88,13 @@ class WelcomeViewController: BaseViewController {
             }
             
             if UIApplication.shared.canOpenURL(settingsUrl) {
+                self.logTap(buttonName: "Open Settings")
                 UIApplication.shared.open(settingsUrl, completionHandler: nil)
             }
         }
         
         let notNowAction = UIAlertAction(title: "Not now", style: .default, handler: { (_) in
+            self.logTap(buttonName: "Not now button")
             self.showTabScreen()
         })
         
@@ -100,8 +102,8 @@ class WelcomeViewController: BaseViewController {
         rejectedAlert.addAction(notNowAction)
         
         OneSignal.promptForPushNotifications(userResponse: { (accepted) in
-            
             if accepted {
+                self.logTap(buttonName: "Accepted push notification button")
                 self.present(acceptedAlert, animated: true, completion: nil)
                 
                 let when = DispatchTime.now() + 3.5
@@ -154,5 +156,10 @@ class WelcomeViewController: BaseViewController {
         allowNotificationButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24).isActive = true
         allowNotificationButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24).isActive = true
         allowNotificationButton.heightAnchor.constraint(equalToConstant: 44).isActive = true        
+    }
+
+    private func logTap(buttonName: String) {
+        let event = TrackingEvent(tap: buttonName, category: "Push Notification Setup")
+        AnalyticsManager.shared.log(event: event)
     }
 }
