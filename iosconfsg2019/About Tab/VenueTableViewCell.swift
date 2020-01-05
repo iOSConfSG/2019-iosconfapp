@@ -22,7 +22,7 @@ class VenueTableViewCell: UITableViewCell {
     var titleLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.purple
+        label.textColor = StyleSheet.shared.theme.primaryLabelColor
         label.font = UIFont.boldSystemFont(ofSize: UIFont.largeSize)
         return label
     }()
@@ -30,23 +30,13 @@ class VenueTableViewCell: UITableViewCell {
     var addressTextView: UITextView = {
         let textView = UITextView.init(frame: CGRect.zero)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.textColor = UIColor.gray
+        textView.textColor = StyleSheet.shared.theme.secondaryLabelColor
         textView.font = UIFont.boldSystemFont(ofSize: UIFont.normalSize)
         textView.isScrollEnabled = false
         textView.dataDetectorTypes = .address
         textView.isSelectable = true
         textView.isEditable = false
         return textView
-    }()
-
-    var stackView: UIStackView = {
-        let stackView = UIStackView.init(frame: CGRect.zero)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.spacing = 10
-        return stackView
     }()
 
     var venue: Venue?

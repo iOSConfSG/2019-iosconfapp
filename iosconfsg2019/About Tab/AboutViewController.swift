@@ -62,7 +62,7 @@ extension AboutViewController {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: K.cellIdentifier)
             cell.textLabel?.font = UIFont.systemFont(ofSize: UIFont.largeSize)
             cell.textLabel?.numberOfLines = 1
-            cell.textLabel?.textColor = UIColor.black
+            cell.textLabel?.textColor = StyleSheet.shared.theme.secondaryLabelColor
             cell.accessoryType = .disclosureIndicator
         }
         cell.textLabel?.text = sections[indexPath.section][indexPath.row]
@@ -108,7 +108,7 @@ extension AboutViewController {
 extension AboutViewController: SFSafariViewControllerDelegate {
     func openSafariViewController(withURL url: URL) {
         let safariViewController = SFSafariViewController(url: url)
-        safariViewController.preferredControlTintColor = .purple
+        safariViewController.preferredControlTintColor = StyleSheet.shared.theme.primaryLabelColor
         safariViewController.delegate = self
         present(safariViewController, animated: true, completion: nil)
     }
