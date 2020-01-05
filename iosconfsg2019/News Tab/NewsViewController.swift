@@ -8,8 +8,9 @@
 
 import UIKit
 import WebKit
+import NVActivityIndicatorView
 
-class NewsViewController: BaseViewController {
+class NewsViewController: BaseViewController, NVActivityIndicatorViewable {
 
     private var webView: WKWebView!
     private var webViewConfiguration: WKWebViewConfiguration = {
@@ -41,6 +42,14 @@ class NewsViewController: BaseViewController {
 }
 
 extension NewsViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        startAnimating()
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        stopAnimating()
+    }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url, navigationAction.navigationType == WKNavigationType.linkActivated, UIApplication.shared.canOpenURL(url) {

@@ -72,6 +72,11 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         stopAnimating()
         print("Something wrong with Graphql connection")
     }
+
+    private func logTap(talkId: Int) {
+        let event = TrackingEvent(tap: "Activity \(talkId)", category: "Activity Detail")
+        AnalyticsManager.shared.log(event: event)
+    }
 }
 
 extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
@@ -99,6 +104,7 @@ extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true
             detailViewController.talk = talk
+            logTap(talkId: talk.id)
             let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }

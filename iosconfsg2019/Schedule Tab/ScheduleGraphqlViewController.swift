@@ -104,8 +104,14 @@ extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDeleg
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true
             detailViewController.talk = talk
+            logTap(talkId: talk.id)
             let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
+    }
+
+    private func logTap(talkId: Int) {
+        let event = TrackingEvent(tap: "Activity \(talkId)", category: "Activity Detail")
+        AnalyticsManager.shared.log(event: event)
     }
 }
 
