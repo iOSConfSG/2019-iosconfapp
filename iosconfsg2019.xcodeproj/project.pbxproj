@@ -45,6 +45,10 @@
 		5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */; };
 		5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC7B234F06E500024A13 /* ApolloManager.swift */; };
 		B57452C623C0E7C8004CD8C3 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */; };
+		D118B29723C180AB00C11A2D /* VenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D118B29623C180AB00C11A2D /* VenueTableViewCell.swift */; };
+		D118B29923C1878F00C11A2D /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D118B29823C1878F00C11A2D /* Venue.swift */; };
+		D118B29B23C187C200C11A2D /* VenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D118B29A23C187C200C11A2D /* VenueViewModel.swift */; };
+		D1D5A32723BE27D50070E787 /* VenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5A32623BE27D50070E787 /* VenueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,13 @@
 		C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
 		CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		68873BE0557401F7C443144E /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		6B361B75EE0BE0A8A309591C /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C20C45F00A52025B268BA8 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
+		D118B29623C180AB00C11A2D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
+		D118B29823C1878F00C11A2D /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		D118B29A23C187C200C11A2D /* VenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewModel.swift; sourceTree = "<group>"; };
+		D1D5A32623BE27D50070E787 /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				5A7B2BE42196CA3000D8FDC5 /* AboutViewController.swift */,
+				D1D5A32623BE27D50070E787 /* VenueViewController.swift */,
+				D118B29A23C187C200C11A2D /* VenueViewModel.swift */,
+				D118B29623C180AB00C11A2D /* VenueTableViewCell.swift */,
+				D118B29823C1878F00C11A2D /* Venue.swift */,
 			);
 			path = "About Tab";
 			sourceTree = "<group>";
@@ -534,6 +549,7 @@
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
 				5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */,
 				5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */,
+				D118B29B23C187C200C11A2D /* VenueViewModel.swift in Sources */,
 				5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */,
 				5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */,
 				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
@@ -546,10 +562,13 @@
 				24C8AC9021EE306E00829307 /* Helpers.swift in Sources */,
 				5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
+				D118B29923C1878F00C11A2D /* Venue.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */,
+				D1D5A32723BE27D50070E787 /* VenueViewController.swift in Sources */,
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
+				D118B29723C180AB00C11A2D /* VenueTableViewCell.swift in Sources */,
 				5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */,
 				5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */,
 				5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */,
