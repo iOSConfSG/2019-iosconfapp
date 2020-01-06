@@ -24,8 +24,8 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Location-sharing is used to find if you're really attending iOS Conf SG</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Location-sharing is used to find if you're really attending iOS Conf SG</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location-sharing is used to find if you're really attending iOS Conf SG</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

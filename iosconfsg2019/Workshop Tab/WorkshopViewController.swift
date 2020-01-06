@@ -16,6 +16,13 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
     private var tableView: UITableView!
+    private var isDarkMode: Bool {
+        if #available(iOS 12.0, *) {
+            return self.traitCollection.userInterfaceStyle == .dark
+        } else {
+            return false
+        }
+    }
 
     lazy var viewModel: WorkshopViewModel = {
         return WorkshopViewModel(failInitClosure: {
@@ -50,11 +57,14 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         tableView.register(TimelineCellV2.self, forCellReuseIdentifier: timelineCellId)
 
         let skylineView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
-        skylineView.image = UIImage(imageLiteralResourceName: "skyline")
+        if isDarkMode {
+            skylineView.image = UIImage(imageLiteralResourceName: "skyline-orange")
+        } else {
+            skylineView.image = UIImage(imageLiteralResourceName: "skyline")
+        }
         skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         skylineView.contentMode = .scaleAspectFill
         self.tableView.tableFooterView = skylineView
-
 
         let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
         let segmentTitles = viewModel.segmentedControlLabels()
@@ -70,7 +80,6 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
 
     func handleGraphqlError() {
         stopAnimating()
-        print("Something wrong with Graphql connection")
     }
 
     private func logTap(talkId: Int) {
@@ -84,13 +93,25 @@ extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows()
+        let numberOfRows = viewModel.numberOfRows()
+        if isDarkMode {
+            tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? StyleSheet.shared.theme.secondaryBackgroundColor : UIColor.black
+
+        } else {
+            tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? StyleSheet.shared.theme.secondaryBackgroundColor : StyleSheet.shared.theme.primaryBackgroundColor
+        }
+        return numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: timelineCellId) as! TimelineCellV2
         if let talk = viewModel.getTalkForIndexpath(indexPath: indexPath) {
             cell.setupCell(talk: talk)
+        }
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
+        } else {
+            cell.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         }
         return cell
     }
