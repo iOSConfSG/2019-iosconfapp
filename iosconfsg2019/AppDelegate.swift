@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window = UIWindow()
+        window?.tintColor = UIColor.purple
+        UINavigationBar.appearance().tintColor = UIColor.purple
+
         window?.makeKeyAndVisible()
         
         // Which screen to show?
