@@ -15,6 +15,13 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
     private var tableView: UITableView!
+    private var isDarkMode: Bool {
+        if #available(iOS 12.0, *) {
+            return self.traitCollection.userInterfaceStyle == .dark
+        } else {
+            return false
+        }
+    }
 
     lazy var viewModel: ScheduleGraphqlViewModel = {
         return ScheduleGraphqlViewModel(failInitClosure: {
@@ -49,7 +56,11 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         tableView.register(TimelineCellV2.self, forCellReuseIdentifier: timelineCellId)
 
         let skylineView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
-        skylineView.image = UIImage(imageLiteralResourceName: "skyline")
+        if isDarkMode {
+            skylineView.image = UIImage(imageLiteralResourceName: "skyline-orange")
+        } else {
+            skylineView.image = UIImage(imageLiteralResourceName: "skyline")
+        }
         skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         skylineView.contentMode = .scaleAspectFill
         self.tableView.tableFooterView = skylineView
@@ -68,7 +79,11 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
 
     func handleGraphqlError() {
         stopAnimating()
-        print("Something wrong with Graphql connection")
+    }
+
+    private func logTap(talkId: Int) {
+        let event = TrackingEvent(tap: "Activity \(talkId)", category: "Activity Detail")
+        AnalyticsManager.shared.log(event: event)
     }
 }
 
@@ -78,7 +93,12 @@ extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDeleg
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfRows = viewModel.numberOfRows()
-        tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? UIColor.lightGray.withAlphaComponent(0.1) : UIColor.lightGray.withAlphaComponent(0.2)
+        if isDarkMode {
+            tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? StyleSheet.shared.theme.secondaryBackgroundColor : UIColor.black
+
+        } else {
+            tableView.tableFooterView?.backgroundColor = numberOfRows % 2 == 0 ? StyleSheet.shared.theme.secondaryBackgroundColor : StyleSheet.shared.theme.primaryBackgroundColor
+        }
         return numberOfRows
     }
 
@@ -107,11 +127,6 @@ extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDeleg
             logTap(talkId: talk.id)
             let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
-    }
-
-    private func logTap(talkId: Int) {
-        let event = TrackingEvent(tap: "Activity \(talkId)", category: "Activity Detail")
-        AnalyticsManager.shared.log(event: event)
     }
 }
 

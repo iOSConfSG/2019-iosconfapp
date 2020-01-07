@@ -27,7 +27,7 @@ class NetworkManager {
             let configuration = URLSessionConfiguration.default
             guard let httpsEndpointUrl = URL(string: httpsEndpoint) else { return nil}
 
-            var request = URLRequest(url: wsEndpointUrl)
+            let request = URLRequest(url: wsEndpointUrl)
             let websocket = WebSocketTransport(request: request, sendOperationIdentifiers: false, reconnectionInterval: 30000, connectingPayload: map)
             let httpNetworkTransport: HTTPNetworkTransport = HTTPNetworkTransport(url: httpsEndpointUrl, session: URLSession(configuration: configuration))
             let splitNetworkTransport = SplitNetworkTransport(httpNetworkTransport: httpNetworkTransport, webSocketNetworkTransport: websocket)

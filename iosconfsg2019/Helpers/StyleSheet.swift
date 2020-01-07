@@ -7,9 +7,7 @@
 //
 
 import UIKit
-/*
- 
- */
+
 class StyleSheet  {
     static let shared = StyleSheet()
     public var theme : StyleSheetProtocol!
