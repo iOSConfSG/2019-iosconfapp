@@ -43,7 +43,7 @@ class CustomTabBarController: UITabBarController {
         
         tabBar.layer.addSublayer(topBorder)
         tabBar.clipsToBounds = true
-        tabBar.tintColor = UIColor.purple
+        tabBar.tintColor = StyleSheet.shared.theme.primaryLabelColor
     }
 }
 

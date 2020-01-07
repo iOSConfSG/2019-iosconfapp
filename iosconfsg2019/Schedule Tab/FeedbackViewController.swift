@@ -117,7 +117,7 @@ class FeedbackViewController: BaseViewController {
         btn.setTitle("Send", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = UIColor.purple
+        btn.backgroundColor = StyleSheet.shared.theme.primaryLabelColor
         return btn
     }()
 

@@ -21,7 +21,7 @@ class DetailGraphqlViewController: BaseViewController {
             self.speakerTwitter.text = twitter
             self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
                 UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
-            }).setLinkColor(UIColor.purple).size(UIFont.largeSize)
+            }).setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.largeSize)
             self.speakerTwitter.setContentOffset(.zero, animated: false)
 
             if let imageName = talk?.speakerImage {

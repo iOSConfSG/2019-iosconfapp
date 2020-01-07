@@ -46,7 +46,7 @@ fileprivate class iOS13AndAbove: StyleSheetProtocol {
     }
     
     var primaryLabelColor: UIColor {
-        return .purple
+        return UIColor(named: "Theme Primary Label Colour") ?? .purple
     }
     
     var secondaryLabelColor: UIColor {
