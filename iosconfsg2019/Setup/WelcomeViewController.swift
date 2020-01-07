@@ -53,7 +53,7 @@ class WelcomeViewController: BaseViewController {
         let btn = UIButton(type: UIButton.ButtonType.system)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Allow Notifications", for: .normal)
-        btn.setTitleColor(UIColor.purple, for: .normal)
+        btn.setTitleColor(StyleSheet.shared.theme.primaryLabelColor, for: .normal)
         btn.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
         btn.addTarget(self, action: #selector(requestNotificationPermission), for: .touchUpInside)
         return btn
@@ -127,7 +127,7 @@ class WelcomeViewController: BaseViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = UIColor.purple
+        view.backgroundColor = StyleSheet.shared.theme.primaryLabelColor
         
         view.addSubview(confImage)
         view.addSubview(titleLabel)

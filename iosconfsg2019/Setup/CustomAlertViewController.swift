@@ -19,7 +19,7 @@ class CustomAlertViewController: BaseViewController {
         tv.showsVerticalScrollIndicator = true
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.text = "Some description"
-        tv.backgroundColor = UIColor.purple
+        tv.backgroundColor = StyleSheet.shared.theme.primaryLabelColor
         tv.isSelectable = false
         tv.layer.cornerRadius = 10
         tv.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)

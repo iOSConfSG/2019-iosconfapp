@@ -145,7 +145,7 @@ class HeaderTableView: UIView {
     private func setupView(items: [String]) {
         daySegmentControl = UISegmentedControl(items: items)
         daySegmentControl.translatesAutoresizingMaskIntoConstraints = false
-        daySegmentControl.tintColor = UIColor.purple
+        daySegmentControl.tintColor = StyleSheet.shared.theme.primaryLabelColor
         daySegmentControl.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         addSubview(daySegmentControl)
         addConstraintsWithFormat("H:|-16-[v0]-16-|", views: daySegmentControl)
