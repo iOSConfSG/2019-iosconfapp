@@ -13,15 +13,20 @@ import Contacts
 class VenueViewModel {
     private(set) var venues: [Venue] = {
         let cPlaceMark = MKPlacemark.init(coordinate: CLLocationCoordinate2D(latitude: 1.292790, longitude: 103.770770),
-                                          addressDictionary: [CNPostalAddressStreetKey: "11 Kent Ridge Drive",
+                                          addressDictionary: [CNPostalAddressStreetKey: "Shaw Foundation Alumni House\n11 Kent Ridge Drive",
                                                               CNPostalAddressPostalCodeKey: "119244",
                                                               CNPostalAddressCityKey: "Singapore",
                                                               CNPostalAddressISOCountryCodeKey: "SG"])
+        let bPlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 1.2893532, longitude: 103.8442601), addressDictionary: [CNPostalAddressStreetKey: "30, Merchant Rd, #01-07 Riverside Point",
+                                CNPostalAddressPostalCodeKey: "058282",
+                                CNPostalAddressCityKey: "Singapore",
+                                CNPostalAddressISOCountryCodeKey: "SG"])
+
         let conferenceVenue = Venue(title: "Conference",
-                                    address: "11 Kent Ridge Drive Singapore 119244",
+                                    address: "Shaw Foundation Alumni House\n11 Kent Ridge Drive Singapore 119244",
                                     placeMark: cPlaceMark)
         let workshopVenue = Venue(title: "Workshop",
-                                  address: "11 Kent Ridge Drive Singapore 119244",
+                                  address: "Shaw Foundation Alumni House\n11 Kent Ridge Drive Singapore 119244",
                                   placeMark: cPlaceMark)
         let aPlaceMark = MKPlacemark.init(coordinate: CLLocationCoordinate2D(latitude: 1.292790, longitude: 103.770770),
                                           addressDictionary: [CNPostalAddressStreetKey: "11 Kent Ridge Drive",
@@ -29,8 +34,8 @@ class VenueViewModel {
                                                               CNPostalAddressCityKey: "Singapore",
                                                               CNPostalAddressISOCountryCodeKey: "SG"])
         let afterPartyVenue = Venue(title: "After Party",
-                                    address: "11 Kent Ridge Drive Singapore 119244",
-                                    placeMark: cPlaceMark)
+                                    address: "Brewerkz Riverside Point\n30, Merchant Rd, #01-07 Riverside Point, 058282",
+                                    placeMark: bPlaceMark)
         return [conferenceVenue, workshopVenue, afterPartyVenue]
     }()
 

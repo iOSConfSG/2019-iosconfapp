@@ -15,16 +15,30 @@ class AboutViewController: UITableViewController {
         static let sponsorURL: URL! = URL.init(string: "https://2020.iosconf.sg/#sponsors")
         static let slackURL: URL! = URL(string: "slack://open")
         static let faqURL: URL! = URL(string: "https://2020.iosconf.sg/faq/")
-        static let feedback: URL! = URL(string: "http://bit.ly/iosconfsg2020")
+        static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2020")
+        static let liveQa: URL! = URL(string: "https://pigeonhole.at/IOSCONFSG")
 
         static let cellIdentifier = "AboutCell"
     }
 
-    private var sections: [[String]] = [["Code of Conduct", "Venue", "Sponsors", "FAQ", "Feedback"], ["Open Slack"]]
+    private var isDarkMode: Bool {
+        if #available(iOS 12.0, *) {
+            return self.traitCollection.userInterfaceStyle == .dark
+        } else {
+            return false
+        }
+    }
+
+    private var sections: [[String]] = [["Code of Conduct", "Venue", "Sponsors", "FAQ", "Feedback"], ["Open Slack", "Live Q&A"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        adjustFooterView()
     }
 
     private func setupViews() {
@@ -36,13 +50,47 @@ class AboutViewController: UITableViewController {
         // configure tableview
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = UIEdgeInsets.zero
+        tableView.bounces = false
+        tableView.tableFooterView = UIView()
+    }
 
-        // add skyline view
-        let skylineView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
-        skylineView.image = UIImage(imageLiteralResourceName: "skyline")
-        skylineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
-        skylineView.contentMode = .scaleAspectFill
-        tableView.tableFooterView = skylineView
+    private func adjustFooterView() {
+        if let tableFooterView = tableView.tableFooterView {
+            let minHeight = tableFooterView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+            let currentFooterHeight = tableFooterView.frame.height
+
+            var fitHeight: CGFloat
+            if #available(iOS 11.0, *) {
+                fitHeight = tableView.frame.height - tableView.adjustedContentInset.top - tableView.contentSize.height + currentFooterHeight
+            } else {
+                fitHeight = tableView.frame.height - tableView.contentInset.top - tableView.contentSize.height + currentFooterHeight
+            }
+            let nextHeight = (fitHeight > minHeight) ? fitHeight : minHeight
+
+            // No height change needed ?
+            guard round(nextHeight) != round(currentFooterHeight) else { return }
+
+            // Pinning skyline to bottom
+            let skylineImageView = UIImageView()
+            if isDarkMode {
+                skylineImageView.image = UIImage(imageLiteralResourceName: "skyline-orange")
+            } else {
+                skylineImageView.image = UIImage(imageLiteralResourceName: "skyline")
+            }
+            skylineImageView.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
+            skylineImageView.contentMode = .scaleAspectFit
+            skylineImageView.translatesAutoresizingMaskIntoConstraints = false
+
+            let skylineView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: nextHeight))
+            skylineView.addSubview(skylineImageView)
+            skylineView.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor         
+            NSLayoutConstraint.activate([
+                skylineImageView.leftAnchor.constraint(equalTo: skylineView.leftAnchor),
+                skylineImageView.rightAnchor.constraint(equalTo: skylineView.rightAnchor),
+                skylineImageView.bottomAnchor.constraint(equalTo: skylineView.bottomAnchor, constant: 5)
+            ])
+            self.tableView.tableFooterView = skylineView
+        }
     }
 }
 
@@ -65,6 +113,11 @@ extension AboutViewController {
             cell.textLabel?.textColor = StyleSheet.shared.theme.secondaryLabelColor
             cell.accessoryType = .disclosureIndicator
         }
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
+        } else {
+            cell.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
+        }
         cell.textLabel?.text = sections[indexPath.section][indexPath.row]
 
         return cell
@@ -76,7 +129,7 @@ extension AboutViewController {
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: 0xF3F6F7)
+        view.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         return view
     }
 }
@@ -98,6 +151,8 @@ extension AboutViewController {
             openSafariViewController(withURL: K.feedback)
         case (1,0):
             openSlack()
+        case (1,1):
+            openSafariViewController(withURL: K.liveQa)
         default:
             break
         }
