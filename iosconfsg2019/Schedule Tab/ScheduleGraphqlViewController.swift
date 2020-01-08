@@ -15,13 +15,6 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
     private var tableView: UITableView!
-    private var isDarkMode: Bool {
-        if #available(iOS 12.0, *) {
-            return self.traitCollection.userInterfaceStyle == .dark
-        } else {
-            return false
-        }
-    }
 
     lazy var viewModel: ScheduleGraphqlViewModel = {
         return ScheduleGraphqlViewModel(failInitClosure: {

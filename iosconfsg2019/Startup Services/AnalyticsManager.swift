@@ -65,6 +65,7 @@ class TrackingEvent {
         case eventAction = "event_action"
         case screenName = "screen_name"
         case contentCategory = "content_category"
+        case userInterfaceStyle = "user_interface_style"
     }
 
     let eventType: EventType
@@ -88,8 +89,12 @@ class TrackingEvent {
             parameters[.screenName] = "Schedule Screen"
             parameters[.contentCategory] = "Schedule"
         case is DetailGraphqlViewController:
-            parameters[.screenName] = "Activity Detail Screen"
-//            parameters[.contentCategory] = "Schedule" -- need to add individually
+            if let screenName = screenName {
+                parameters[.screenName] = screenName
+            } else {
+                parameters[.screenName] = "Activity Detail Screen"
+            }
+            parameters[.contentCategory] = "Schedule"
         case is FeedbackViewController:
             parameters[.screenName] = "Feedback Popup"
             parameters[.contentCategory] = "Schedule"
