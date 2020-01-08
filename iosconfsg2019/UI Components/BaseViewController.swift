@@ -10,6 +10,14 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var isDarkMode: Bool {
+        if #available(iOS 12.0, *) {
+            return self.traitCollection.userInterfaceStyle == .dark
+        } else {
+            return false
+        }
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         logScreenView()
@@ -24,6 +32,8 @@ class BaseViewController: UIViewController {
     }
 
     open func trackingEvent() -> TrackingEvent? {
-        return TrackingEvent(screenView: self)
+        let trackingEvent = TrackingEvent(screenView: self)
+        trackingEvent?.addParameter(key: TrackingEvent.ParameterKey.userInterfaceStyle, value: isDarkMode ? "dark" : "light")
+        return trackingEvent
     }
 }
