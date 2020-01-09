@@ -194,7 +194,7 @@ extension AboutViewController {
     }
 
     private func showVenues() {
-        let viewController = VenueViewController.init(style: .plain)
+        let viewController = VenueViewController.init()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
