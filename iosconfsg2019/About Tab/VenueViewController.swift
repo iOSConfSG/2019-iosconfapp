@@ -54,7 +54,7 @@ extension VenueViewController: UITableViewDataSource {
         cell.configure(venue: venue) {
             self.logTap(event: "map")
             if self.viewModel.canOpenGoogleMaps {
-                self.showAlert(with: venue.placeMark)
+                self.showAlert(with: venue)
             } else {
                 self.openInAppleMaps(placemark: venue.placeMark)
             }
@@ -90,11 +90,11 @@ extension VenueViewController {
         MKMapItem(placemark: placemark).openInMaps(launchOptions: nil)
     }
 
-    func openInGoogleMaps(placemark: MKPlacemark) {
+    func openInGoogleMaps(placemarkString: String) {
         logTap(event: "Google Maps")
         let url: URL! = URL(string:
             "comgooglemaps-x-callback://" +
-            "?daddr=\(placemark.coordinate.latitude),\(placemark.coordinate.longitude)")
+            "?daddr=\(placemarkString)")
         UIApplication.shared.open(url)
     }
 

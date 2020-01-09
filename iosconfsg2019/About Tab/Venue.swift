@@ -13,4 +13,5 @@ struct Venue {
     let title: String
     let address: String
     let placeMark: MKPlacemark
+    let placeMarkString: String
 }
