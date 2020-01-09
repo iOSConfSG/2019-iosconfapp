@@ -9,7 +9,8 @@
 import UIKit
 import SafariServices
 
-class AboutViewController: UITableViewController {
+class AboutViewController: BaseViewController {
+    private var tableView: UITableView!
     private struct K {
         static let codeOfConductURL: URL! = URL.init(string: "https://2020.iosconf.sg/cod/")
         static let sponsorURL: URL! = URL.init(string: "https://2020.iosconf.sg/#sponsors")
@@ -19,14 +20,6 @@ class AboutViewController: UITableViewController {
         static let liveQa: URL! = URL(string: "https://pigeonhole.at/IOSCONFSG")
 
         static let cellIdentifier = "AboutCell"
-    }
-
-    private var isDarkMode: Bool {
-        if #available(iOS 12.0, *) {
-            return self.traitCollection.userInterfaceStyle == .dark
-        } else {
-            return false
-        }
     }
 
     private var sections: [[String]] = [["Code of Conduct", "Venue", "Sponsors", "FAQ", "Feedback"], ["Open Slack", "Live Q&A"]]
@@ -48,9 +41,15 @@ class AboutViewController: UITableViewController {
         }
 
         // configure tableview
+        tableView = UITableView(frame: view.frame, style: .plain)
+
+        view.addSubview(tableView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: tableView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = UIEdgeInsets.zero
-        tableView.bounces = false
         tableView.tableFooterView = UIView()
     }
 
@@ -77,7 +76,6 @@ class AboutViewController: UITableViewController {
             } else {
                 skylineImageView.image = UIImage(imageLiteralResourceName: "skyline")
             }
-            skylineImageView.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
             skylineImageView.contentMode = .scaleAspectFit
             skylineImageView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -92,19 +90,24 @@ class AboutViewController: UITableViewController {
             self.tableView.tableFooterView = skylineView
         }
     }
+
+    private func logTap(aboutName: String) {
+        let event = TrackingEvent(tap: aboutName, category: "About")
+        AnalyticsManager.shared.log(event: event)
+    }
 }
 
 
-extension AboutViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].count
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier)
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: K.cellIdentifier)
@@ -123,35 +126,40 @@ extension AboutViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         return view
     }
-}
 
-extension AboutViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
         switch (indexPath.section, indexPath.row) {
         case (0,0):
+            logTap(aboutName: "Code of conduct")
             openSafariViewController(withURL: K.codeOfConductURL)
         case (0,1):
+            logTap(aboutName: "Venues")
             showVenues()
         case (0,2):
+            logTap(aboutName: "Sponsors")
             openSafariViewController(withURL: K.sponsorURL)
         case (0,3):
+            logTap(aboutName: "FAQ")
             openSafariViewController(withURL: K.faqURL)
         case (0,4):
+            logTap(aboutName: "Feedback")
             openSafariViewController(withURL: K.feedback)
         case (1,0):
+            logTap(aboutName: "Open Slack")
             openSlack()
         case (1,1):
+            logTap(aboutName: "Live Q&A")
             openSafariViewController(withURL: K.liveQa)
         default:
             break

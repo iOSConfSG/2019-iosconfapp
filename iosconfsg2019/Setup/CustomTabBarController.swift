@@ -28,13 +28,12 @@ class CustomTabBarController: UITabBarController {
         newsTab.title = "News"
         newsTab.tabBarItem.image = UIImage(imageLiteralResourceName: "news_icon")
         
-        let aboutController = AboutViewController(style: .plain)
+        let aboutController = AboutViewController()
         let aboutTab = UINavigationController(rootViewController: aboutController)
         aboutTab.title = "About"
         aboutTab.tabBarItem.image = UIImage(imageLiteralResourceName: "iosconfsg_icon")
         
         viewControllers = [scheduleTab, workshopTab, newsTab, aboutTab]
-//        viewControllers = [scheduleTab, workshopTab, newsTab]
         tabBar.isTranslucent = false
         
         let topBorder = CALayer()
