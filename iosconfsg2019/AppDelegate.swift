@@ -25,9 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window = UIWindow()
-        window?.tintColor = UIColor.purple
-        UINavigationBar.appearance().tintColor = UIColor.purple
-
+        if #available(iOS 12.0, *) {
+            window?.tintColor = (window?.traitCollection.userInterfaceStyle == .dark) ? UIColor.orange : UIColor.purple
+        } else {
+            window?.tintColor = UIColor.purple
+        }
         window?.makeKeyAndVisible()
         
         // Which screen to show?

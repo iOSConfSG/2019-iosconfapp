@@ -36,9 +36,12 @@ class AboutViewController: BaseViewController {
 
     private func setupViews() {
         self.navigationItem.title = "About"
+
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
         }
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.orange : UIColor.black]
 
         // configure tableview
         tableView = UITableView(frame: view.frame, style: .plain)

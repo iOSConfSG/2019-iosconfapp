@@ -21,6 +21,7 @@ class VenueViewController: BaseViewController {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
         self.navigationItem.title = "Venue"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.orange : UIColor.purple]
 
         // configure tableview
         tableView = UITableView(frame: view.frame, style: .plain)
@@ -33,7 +34,6 @@ class VenueViewController: BaseViewController {
         tableView.dataSource = self
         // register cells
         tableView.register(VenueTableViewCell.self, forCellReuseIdentifier: "cell")
-
     }
 }
 
@@ -65,17 +65,23 @@ extension VenueViewController: UITableViewDataSource {
 }
 
 extension VenueViewController {
-    func showAlert(with placemark: MKPlacemark) {
+    func showAlert(with venue: Venue) {
         let alert = UIAlertController(title: "Open in", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Apple Maps", style: .default) { _ in
-            self.openInAppleMaps(placemark: placemark)
-        })
 
-        alert.addAction(UIAlertAction(title: "Google Maps", style: .default) { _ in
-            self.openInGoogleMaps(placemark: placemark)
-        })
+        let appleMapsAction = UIAlertAction(title: "Apple Maps", style: .default) { _ in
+            self.openInAppleMaps(placemark: venue.placeMark)
+        }
+        let googleMapsAction = UIAlertAction(title: "Google Maps", style: .default) { _ in
+            self.openInGoogleMaps(placemarkString: venue.placeMarkString)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        appleMapsAction.setValue(isDarkMode ? UIColor.orange : UIColor.purple, forKey: "titleTextColor")
+        googleMapsAction.setValue(isDarkMode ? UIColor.orange : UIColor.purple, forKey: "titleTextColor")
+        cancelAction.setValue(isDarkMode ? UIColor.white : UIColor.darkGray, forKey: "titleTextColor")
+        alert.addAction(appleMapsAction)
+        alert.addAction(googleMapsAction)
+        alert.addAction(cancelAction)
         present(alert, animated: true)
     }
 

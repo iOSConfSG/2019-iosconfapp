@@ -34,7 +34,7 @@ class NewsViewController: BaseViewController, NVActivityIndicatorViewable {
         navigationItem.title = "News"
 
         navigationController?.navigationBar.backgroundColor = isDarkMode ? UIColor.black : UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.orange : UIColor.black]
 
         webView = WKWebView(frame: self.view.frame, configuration: webViewConfiguration)
         webView.loadHTMLString(headerString + webContent, baseURL: nil)
