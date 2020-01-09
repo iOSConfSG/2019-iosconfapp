@@ -28,9 +28,14 @@ class NewsViewController: BaseViewController, NVActivityIndicatorViewable {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
         }
-        navigationItem.title = "News"
         view.backgroundColor = .white
+        navigationItem.title = "News"
+
+        navigationController?.navigationBar.backgroundColor = isDarkMode ? UIColor.black : UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
+
         webView = WKWebView(frame: self.view.frame, configuration: webViewConfiguration)
         webView.loadHTMLString(headerString + webContent, baseURL: nil)
         webView.navigationDelegate = self
@@ -38,6 +43,20 @@ class NewsViewController: BaseViewController, NVActivityIndicatorViewable {
         view.addSubview(webView)
         view.addConstraintsWithFormat("H:|[v0]|", views: webView)
         view.addConstraintsWithFormat("V:|[v0]|", views: webView)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if #available(iOS 13, *)
+        {
+            let statusBar = UIView(frame: (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame)!)
+            statusBar.backgroundColor = isDarkMode ? UIColor.black : UIColor.white
+            UIApplication.shared.keyWindow?.addSubview(statusBar)
+        } else {
+            guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+            statusBar.backgroundColor = isDarkMode ? UIColor.black : UIColor.white
+        }
     }
 }
 
