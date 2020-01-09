@@ -112,6 +112,9 @@ class TrackingEvent {
         case is NewsViewController:
             parameters[.screenName] = "News Screen"
             parameters[.contentCategory] = "News"
+        case is VenueViewController:
+            parameters[.screenName] = "Venue Screen"
+            parameters[.contentCategory] = "Venue"
         default:
             return nil
         }

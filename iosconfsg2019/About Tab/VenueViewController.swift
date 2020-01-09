@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 
-class VenueViewController: UITableViewController {
+class VenueViewController: BaseViewController {
 
     let viewModel = VenueViewModel()
+    private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,31 +20,39 @@ class VenueViewController: UITableViewController {
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
-
         self.navigationItem.title = "Venue"
+
+        // configure tableview
+        tableView = UITableView(frame: view.frame, style: .plain)
+        view.addSubview(tableView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: tableView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: tableView)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.tableFooterView = UIView()
+        tableView.dataSource = self
         // register cells
         tableView.register(VenueTableViewCell.self, forCellReuseIdentifier: "cell")
+
     }
 }
 
-extension VenueViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension VenueViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.venues.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let venue = viewModel.venues[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! VenueTableViewCell
         cell.selectionStyle = .none
         cell.separatorInset = .zero
-        cell.configure(venue: venue) { 
+        cell.configure(venue: venue) {
+            self.logTap(event: "map")
             if self.viewModel.canOpenGoogleMaps {
                 self.showAlert(with: venue.placeMark)
             } else {
@@ -71,13 +80,20 @@ extension VenueViewController {
     }
 
     func openInAppleMaps(placemark: MKPlacemark) {
+        logTap(event: "Apple Maps")
         MKMapItem(placemark: placemark).openInMaps(launchOptions: nil)
     }
 
     func openInGoogleMaps(placemark: MKPlacemark) {
+        logTap(event: "Google Maps")
         let url: URL! = URL(string:
             "comgooglemaps-x-callback://" +
             "?daddr=\(placemark.coordinate.latitude),\(placemark.coordinate.longitude)")
         UIApplication.shared.open(url)
+    }
+
+    private func logTap(event: String) {
+        let event = TrackingEvent(tap: event, category: "Venue")
+        AnalyticsManager.shared.log(event: event)
     }
 }

@@ -75,8 +75,8 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         stopAnimating()
     }
 
-    private func logTap(talkId: Int) {
-        let event = TrackingEvent(tap: "Activity \(talkId)", category: "Activity Detail")
+    private func logTap(talkTitle: String) {
+        let event = TrackingEvent(tap: "Workshop Detail - \(talkTitle)", category: "Workshop Detail")
         AnalyticsManager.shared.log(event: event)
     }
 }
@@ -118,7 +118,7 @@ extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true
             detailViewController.talk = talk
-            logTap(talkId: talk.id)
+            logTap(talkTitle: talk.title)
             let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
