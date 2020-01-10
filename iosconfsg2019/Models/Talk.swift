@@ -34,5 +34,6 @@ struct TalkV2 {
     var speakerCompany: String?
     var speakerName: String?
     var speakerBio: String?
+    var speakerLinkedin: String?
     var activityName: String?
 }

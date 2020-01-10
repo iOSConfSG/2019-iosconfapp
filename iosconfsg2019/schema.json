@@ -1174,6 +1174,12 @@
             "deprecationReason": null
           },
           {
+            "name": "speaker_linkedin",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "speaker_name",
             "description": "column name",
             "isDeprecated": false,
@@ -1270,6 +1276,16 @@
           },
           {
             "name": "speaker_image",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "speaker_linkedin",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -1448,6 +1464,16 @@
             "defaultValue": null
           },
           {
+            "name": "speaker_linkedin",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "text_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "speaker_name",
             "description": null,
             "type": {
@@ -1579,6 +1605,18 @@
           },
           {
             "name": "speaker_image",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "speaker_linkedin",
             "description": null,
             "args": [],
             "type": {
