@@ -19,6 +19,7 @@ public enum TalkType: String {
     case afterparty
     case workshop
     case groupPhoto
+    case quiz
 }
 
 struct TalkV2 {
@@ -33,5 +34,6 @@ struct TalkV2 {
     var speakerCompany: String?
     var speakerName: String?
     var speakerBio: String?
+    var speakerLinkedin: String?
     var activityName: String?
 }

@@ -17,12 +17,23 @@ class DetailGraphqlViewController: BaseViewController {
             self.talkTitle.text = talk?.title
             self.speakerName.text = talk?.speakerName
             self.speakerCompany.text = talk?.speakerCompany
-            let twitter = "@" + (talk?.speakerTwitter ?? "")
-            self.speakerTwitter.text = twitter
-            self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
-                UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
-            }).setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.largeSize)
-            self.speakerTwitter.setContentOffset(.zero, animated: false)
+
+            if let speakerTwitter = talk?.speakerTwitter, !speakerTwitter.isEmpty {
+                let twitter = "@\(speakerTwitter)"
+                self.speakerTwitter.text = twitter
+                self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
+                    UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
+                }).setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.largeSize)
+                self.speakerTwitter.setContentOffset(.zero, animated: false)
+            } else if let linkedinUrl = talk?.speakerLinkedin {
+                self.speakerTwitter.text = linkedinUrl
+                self.speakerTwitter.attributer = linkedinUrl.matchLinks.makeInteract { (link) in
+                    if let url = URL(string: link) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }.setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.smallSize)
+                self.speakerTwitter.setContentOffset(.zero, animated: false)
+            }
 
             if let imageName = talk?.speakerImage {
                 self.speakerImage.image = UIImage(imageLiteralResourceName: imageName)
@@ -92,6 +103,7 @@ class DetailGraphqlViewController: BaseViewController {
         label.textContainer.lineFragmentPadding = 0
         label.textContainerInset = .zero
         label.bounces = false
+        label.font = UIFont.systemFont(ofSize: UIFont.largeSize)
         return label
     }()
 
@@ -181,7 +193,7 @@ class DetailGraphqlViewController: BaseViewController {
         speakerTwitter.topAnchor.constraint(equalTo: speakerName.bottomAnchor, constant: 0).isActive = true
         speakerTwitter.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true
         speakerTwitter.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
-        speakerTwitter.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        speakerTwitter.heightAnchor.constraint(equalToConstant: 32).isActive = true
 
         speakerCompany.topAnchor.constraint(equalTo: speakerTwitter.bottomAnchor, constant: 0).isActive = true
         speakerCompany.leftAnchor.constraint(equalTo: speakerName.leftAnchor).isActive = true

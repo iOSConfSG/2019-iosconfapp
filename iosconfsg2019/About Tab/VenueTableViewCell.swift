@@ -62,7 +62,7 @@ class VenueTableViewCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
             titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor),
-            addressTextView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: -2),
+            addressTextView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: -4),
             addressTextView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
             addressTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
             mapView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor),

@@ -134,6 +134,7 @@ class WorkshopViewModel {
                               speakerCompany: item.speakerCompany ?? "N/A",
                               speakerName: item.speakerName ?? "iOS Conf SG",
                               speakerBio: item.speakerBio,
+                              speakerLinkedin: item.speakerLinkedin,
                               activityName: item.activity ?? "")
             self.schedule.append(talk)
         }
