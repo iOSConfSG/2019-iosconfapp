@@ -19,6 +19,7 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         speaker_name
         speaker_twitter
         speaker_linkedin
+        speaker_image_url
         start_at
         talk_description
         talk_type
@@ -73,6 +74,7 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         GraphQLField("speaker_name", type: .scalar(String.self)),
         GraphQLField("speaker_twitter", type: .scalar(String.self)),
         GraphQLField("speaker_linkedin", type: .scalar(String.self)),
+        GraphQLField("speaker_image_url", type: .scalar(String.self)),
         GraphQLField("start_at", type: .scalar(String.self)),
         GraphQLField("talk_description", type: .scalar(String.self)),
         GraphQLField("talk_type", type: .scalar(String.self)),
@@ -85,8 +87,8 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         self.resultMap = unsafeResultMap
       }
 
-      public init(activity: String? = nil, endAt: String? = nil, id: Int? = nil, speakerBio: String? = nil, speakerCompany: String? = nil, speakerImage: String? = nil, speakerName: String? = nil, speakerTwitter: String? = nil, speakerLinkedin: String? = nil, startAt: String? = nil, talkDescription: String? = nil, talkType: String? = nil, title: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "schedule", "activity": activity, "end_at": endAt, "id": id, "speaker_bio": speakerBio, "speaker_company": speakerCompany, "speaker_image": speakerImage, "speaker_name": speakerName, "speaker_twitter": speakerTwitter, "speaker_linkedin": speakerLinkedin, "start_at": startAt, "talk_description": talkDescription, "talk_type": talkType, "title": title])
+      public init(activity: String? = nil, endAt: String? = nil, id: Int? = nil, speakerBio: String? = nil, speakerCompany: String? = nil, speakerImage: String? = nil, speakerName: String? = nil, speakerTwitter: String? = nil, speakerLinkedin: String? = nil, speakerImageUrl: String? = nil, startAt: String? = nil, talkDescription: String? = nil, talkType: String? = nil, title: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "schedule", "activity": activity, "end_at": endAt, "id": id, "speaker_bio": speakerBio, "speaker_company": speakerCompany, "speaker_image": speakerImage, "speaker_name": speakerName, "speaker_twitter": speakerTwitter, "speaker_linkedin": speakerLinkedin, "speaker_image_url": speakerImageUrl, "start_at": startAt, "talk_description": talkDescription, "talk_type": talkType, "title": title])
       }
 
       public var __typename: String {
@@ -176,6 +178,15 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "speaker_linkedin")
+        }
+      }
+
+      public var speakerImageUrl: String? {
+        get {
+          return resultMap["speaker_image_url"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "speaker_image_url")
         }
       }
 

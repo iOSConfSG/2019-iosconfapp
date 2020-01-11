@@ -13,6 +13,7 @@ target 'iosconfsg2019' do
   pod 'Apollo/SQLite'
   pod 'Apollo/WebSocket'
   pod 'Firebase/Core'
+  pod 'Kingfisher', '~> 5.0'
 end
 
 target 'iosconfsgNotificationServiceExtension' do

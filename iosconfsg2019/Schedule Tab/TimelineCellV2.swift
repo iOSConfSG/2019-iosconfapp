@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TimelineCellV2: UITableViewCell {
 
@@ -68,6 +69,8 @@ class TimelineCellV2: UITableViewCell {
 
         if let imageFilename = talk.speakerImage, let profilePic = UIImage(named: imageFilename) {
             speakerImage.image = profilePic
+        } else if let imageUrlString = talk.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
+            speakerImage.kf.setImage(with: imageUrl)
         }
     }
 
