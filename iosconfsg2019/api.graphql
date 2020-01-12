@@ -9,6 +9,7 @@ subscription GetSchedule {
     speaker_name
     speaker_twitter
     speaker_linkedin
+    speaker_image_url
     start_at
     talk_description
     talk_type

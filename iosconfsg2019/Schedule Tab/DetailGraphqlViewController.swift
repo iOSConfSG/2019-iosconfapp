@@ -8,6 +8,7 @@
 
 import UIKit
 import AttributedTextView
+import Kingfisher
 
 class DetailGraphqlViewController: BaseViewController {
 
@@ -35,9 +36,12 @@ class DetailGraphqlViewController: BaseViewController {
                 self.speakerTwitter.setContentOffset(.zero, animated: false)
             }
 
-            if let imageName = talk?.speakerImage {
+            if let imageName = talk?.speakerImage, !imageName.isEmpty {
                 self.speakerImage.image = UIImage(imageLiteralResourceName: imageName)
+            } else if let imageUrlString = talk?.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
+                speakerImage.kf.setImage(with: imageUrl)
             }
+
             if let startAt = talk?.startAt, let endAt = talk?.endAt {
                 var duration = startAt.toConferenceDate()
                 duration.append(contentsOf: ", ")

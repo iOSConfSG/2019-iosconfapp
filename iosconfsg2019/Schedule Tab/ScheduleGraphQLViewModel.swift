@@ -135,6 +135,7 @@ class ScheduleGraphqlViewModel {
                               speakerName: item.speakerName ?? "iOS Conf SG",
                               speakerBio: item.speakerBio,
                               speakerLinkedin: item.speakerLinkedin,
+                              speakerImageUrl: item.speakerImageUrl,
                               activityName: item.activity ?? "")
             self.schedule.append(talk)
         }
