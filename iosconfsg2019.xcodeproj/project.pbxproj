@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140EEC5A4C16C22B295C417E /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */; };
 		24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */; };
 		24C8AC9021EE306E00829307 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8AC8F21EE306E00829307 /* Helpers.swift */; };
-		388E8DCB875D2A6E004A8B10 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */; };
 		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
@@ -35,6 +33,7 @@
 		5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4421E1EC9700A49FE1 /* Talk.swift */; };
 		5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88951421E2DD2B0015BEFD /* DateExtensions.swift */; };
 		5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */; };
+		5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7525A9FA00000FFE85 /* Apollo */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
 		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
 		5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */; };
@@ -116,17 +115,11 @@
 		5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphqlViewController.swift; sourceTree = "<group>"; };
 		5B5DFC7B234F06E500024A13 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
-		7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
-		A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
 		B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
-		C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
-		CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D118B29623C180AB00C11A2D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		D118B29823C1878F00C11A2D /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		D118B29A23C187C200C11A2D /* VenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewModel.swift; sourceTree = "<group>"; };
 		D1D5A32623BE27D50070E787 /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
-		DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +127,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388E8DCB875D2A6E004A8B10 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				140EEC5A4C16C22B295C417E /* Pods_iosconfsg2019.framework in Frameworks */,
+				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,15 +149,6 @@
 				5B5DFC7B234F06E500024A13 /* ApolloManager.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		31C3D23D7649EB9DF09DBFE0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */,
-				CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5A262BA621AC165A008BC34F /* Schedule Tab */ = {
@@ -274,8 +257,6 @@
 				5AFBF175218D6AA000FD2190 /* iosconfsg2019 */,
 				5A7C3E2F21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension */,
 				5AFBF174218D6AA000FD2190 /* Products */,
-				AE0B204DE0F126D371F9F527 /* Pods */,
-				31C3D23D7649EB9DF09DBFE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,17 +296,6 @@
 			path = iosconfsg2019;
 			sourceTree = "<group>";
 		};
-		AE0B204DE0F126D371F9F527 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */,
-				AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */,
-				DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */,
-				7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,7 +303,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A7C3E3821E1AA5700A49FE1 /* Build configuration list for PBXNativeTarget "iosconfsgNotificationServiceExtension" */;
 			buildPhases = (
-				A59B9329F36244FECEDC791B /* [CP] Check Pods Manifest.lock */,
 				5A7C3E2A21E1AA5700A49FE1 /* Sources */,
 				5A7C3E2B21E1AA5700A49FE1 /* Frameworks */,
 				5A7C3E2C21E1AA5700A49FE1 /* Resources */,
@@ -351,13 +320,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFBF185218D6AA200FD2190 /* Build configuration list for PBXNativeTarget "iosconfsg2019" */;
 			buildPhases = (
-				423A3963C1DFA6E08362B9C9 /* [CP] Check Pods Manifest.lock */,
 				5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */,
 				5AFBF16F218D6AA000FD2190 /* Sources */,
 				5AFBF170218D6AA000FD2190 /* Frameworks */,
 				5AFBF171218D6AA000FD2190 /* Resources */,
 				5A7C3E3921E1AA5700A49FE1 /* Embed App Extensions */,
-				DDAE4EA4F8D088513C4AD876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +332,9 @@
 				5A7C3E3421E1AA5700A49FE1 /* PBXTargetDependency */,
 			);
 			name = iosconfsg2019;
+			packageProductDependencies = (
+				5AAB6F7525A9FA00000FFE85 /* Apollo */,
+			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
 			productType = "com.apple.product-type.application";
@@ -376,7 +346,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Vina Melody";
 				TargetAttributes = {
 					5A7C3E2D21E1AA5700A49FE1 = {
@@ -411,6 +381,9 @@
 				Base,
 			);
 			mainGroup = 5AFBF16A218D6AA000FD2190;
+			packageReferences = (
+				5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 5AFBF174218D6AA000FD2190 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,28 +418,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		423A3963C1DFA6E08362B9C9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosconfsg2019-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,45 +435,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://iosconfsg.herokuapp.com/v1/graphql\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
-		};
-		A59B9329F36244FECEDC791B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosconfsgNotificationServiceExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DDAE4EA4F8D088513C4AD876 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -598,7 +510,6 @@
 /* Begin XCBuildConfiguration section */
 		5A7C3E3621E1AA5700A49FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
@@ -623,7 +534,6 @@
 		};
 		5A7C3E3721E1AA5700A49FE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
@@ -673,6 +583,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -735,6 +646,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -766,7 +678,6 @@
 		};
 		5AFBF186218D6AA200FD2190 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -775,7 +686,7 @@
 				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -790,7 +701,6 @@
 		};
 		5AFBF187218D6AA200FD2190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -799,7 +709,7 @@
 				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -843,6 +753,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.39.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AAB6F7525A9FA00000FFE85 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AFBF16B218D6AA000FD2190 /* Project object */;
 }
