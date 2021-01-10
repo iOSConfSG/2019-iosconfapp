@@ -9,6 +9,7 @@
 import UIKit
 import Apollo
 import NVActivityIndicatorView
+import NVActivityIndicatorViewExtended
 
 class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorViewable {
 

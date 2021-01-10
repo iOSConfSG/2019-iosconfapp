@@ -93,7 +93,7 @@ class ScheduleGraphqlViewModel {
 
     }
 
-    func tryFetchSchedule() {
+    func tryFetchSchedule() {        
         scheduleSubscription = apollo.subscribe(subscription: GetScheduleSubscription(), resultHandler: { [weak self] (result) in
             switch result {
             case .success(let object):
@@ -129,13 +129,13 @@ class ScheduleGraphqlViewModel {
                               startAt: dateFormatter.date(from: item.startAt ?? ""),
                               endAt: dateFormatter.date(from: item.endAt ?? ""),
                               talkDescription: item.talkDescription,
-                              speakerImage: item.speakerImage ?? "welcome_icon",
-                              speakerTwitter: item.speakerTwitter ?? "N/A",
-                              speakerCompany: item.speakerCompany ?? "N/A",
-                              speakerName: item.speakerName ?? "iOS Conf SG",
-                              speakerBio: item.speakerBio,
-                              speakerLinkedin: item.speakerLinkedin,
-                              speakerImageUrl: item.speakerImageUrl,
+                              speakerImage: "welcome_icon",
+                              speakerTwitter: "N/A",
+                              speakerCompany: "N/A",
+                              speakerName: "iOS Conf SG",
+                              speakerBio: "bio",
+                              speakerLinkedin: "speakerLinkedin",
+                              speakerImageUrl: "speakerImageUrl",
                               activityName: item.activity ?? "")
             self.schedule.append(talk)
         }

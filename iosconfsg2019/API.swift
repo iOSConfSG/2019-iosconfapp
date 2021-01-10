@@ -11,6 +11,7 @@ public final class GetScheduleSubscription: GraphQLSubscription {
     subscription GetSchedule {
       schedule {
         __typename
+        id
         activity
         title
         start_at
@@ -35,7 +36,7 @@ public final class GetScheduleSubscription: GraphQLSubscription {
 
   public let operationName: String = "GetSchedule"
 
-  public let operationIdentifier: String? = "bba9da6a50a371beec6e7fc04a2935afb7e929b155683cc60a905200e7bfcd9d"
+  public let operationIdentifier: String? = "76b503557b50aecf4d9e4d3f31f141eb6ff515d8377c6b429105907deeb499f1"
 
   public init() {
   }
@@ -75,6 +76,7 @@ public final class GetScheduleSubscription: GraphQLSubscription {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(Int.self)),
           GraphQLField("activity", type: .scalar(String.self)),
           GraphQLField("title", type: .scalar(String.self)),
           GraphQLField("start_at", type: .scalar(String.self)),
@@ -91,8 +93,8 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         self.resultMap = unsafeResultMap
       }
 
-      public init(activity: String? = nil, title: String? = nil, startAt: String? = nil, endAt: String? = nil, talkType: String? = nil, talkDescription: String? = nil, speakers: [Speaker]) {
-        self.init(unsafeResultMap: ["__typename": "schedule", "activity": activity, "title": title, "start_at": startAt, "end_at": endAt, "talk_type": talkType, "talk_description": talkDescription, "speakers": speakers.map { (value: Speaker) -> ResultMap in value.resultMap }])
+      public init(id: Int? = nil, activity: String? = nil, title: String? = nil, startAt: String? = nil, endAt: String? = nil, talkType: String? = nil, talkDescription: String? = nil, speakers: [Speaker]) {
+        self.init(unsafeResultMap: ["__typename": "schedule", "id": id, "activity": activity, "title": title, "start_at": startAt, "end_at": endAt, "talk_type": talkType, "talk_description": talkDescription, "speakers": speakers.map { (value: Speaker) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -101,6 +103,15 @@ public final class GetScheduleSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: Int? {
+        get {
+          return resultMap["id"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
         }
       }
 

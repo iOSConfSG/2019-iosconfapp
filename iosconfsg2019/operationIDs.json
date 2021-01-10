@@ -1,6 +1,6 @@
 {
-  "bba9da6a50a371beec6e7fc04a2935afb7e929b155683cc60a905200e7bfcd9d": {
+  "76b503557b50aecf4d9e4d3f31f141eb6ff515d8377c6b429105907deeb499f1": {
     "name": "GetSchedule",
-    "source": "subscription GetSchedule {\n  schedule {\n    __typename\n    activity\n    title\n    start_at\n    end_at\n    talk_type\n    talk_description\n    speakers {\n      __typename\n      id\n      name\n      company\n      company_url\n      image_url\n      image_filename\n      twitter\n      linkedin_url\n      short_bio\n    }\n  }\n}"
+    "source": "subscription GetSchedule {\n  schedule {\n    __typename\n    id\n    activity\n    title\n    start_at\n    end_at\n    talk_type\n    talk_description\n    speakers {\n      __typename\n      id\n      name\n      company\n      company_url\n      image_url\n      image_filename\n      twitter\n      linkedin_url\n      short_bio\n    }\n  }\n}"
   }
 }

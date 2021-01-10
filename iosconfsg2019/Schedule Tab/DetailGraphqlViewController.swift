@@ -22,18 +22,18 @@ class DetailGraphqlViewController: BaseViewController {
             if let speakerTwitter = talk?.speakerTwitter, !speakerTwitter.isEmpty {
                 let twitter = "@\(speakerTwitter)"
                 self.speakerTwitter.text = twitter
-                self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
-                    UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
-                }).setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.largeSize)
-                self.speakerTwitter.setContentOffset(.zero, animated: false)
+//                self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
+//                    UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
+//                }).setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.largeSize)
+//                self.speakerTwitter.setContentOffset(.zero, animated: false)
             } else if let linkedinUrl = talk?.speakerLinkedin {
                 self.speakerTwitter.text = linkedinUrl
-                self.speakerTwitter.attributer = linkedinUrl.matchLinks.makeInteract { (link) in
-                    if let url = URL(string: link) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                }.setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.smallSize)
-                self.speakerTwitter.setContentOffset(.zero, animated: false)
+//                self.speakerTwitter.attributer = linkedinUrl.matchLinks.makeInteract { (link) in
+//                    if let url = URL(string: link) {
+//                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                    }
+//                }.setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.smallSize)
+//                self.speakerTwitter.setContentOffset(.zero, animated: false)
             }
 
             if let imageName = talk?.speakerImage, !imageName.isEmpty {

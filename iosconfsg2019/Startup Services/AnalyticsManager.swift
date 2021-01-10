@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAnalytics
 
 class AnalyticsManager: NSObject {
     static let shared = AnalyticsManager()

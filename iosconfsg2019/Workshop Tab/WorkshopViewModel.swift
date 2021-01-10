@@ -129,12 +129,13 @@ class WorkshopViewModel {
                               startAt: dateFormatter.date(from: item.startAt ?? ""),
                               endAt: dateFormatter.date(from: item.endAt ?? ""),
                               talkDescription: item.talkDescription,
-                              speakerImage: item.speakerImage ?? "welcome_icon",
-                              speakerTwitter: item.speakerTwitter ?? "N/A",
-                              speakerCompany: item.speakerCompany ?? "N/A",
-                              speakerName: item.speakerName ?? "iOS Conf SG",
-                              speakerBio: item.speakerBio,
-                              speakerLinkedin: item.speakerLinkedin,
+                              speakerImage: "welcome_icon",
+                              speakerTwitter: "N/A",
+                              speakerCompany: "N/A",
+                              speakerName: "iOS Conf SG",
+                              speakerBio: "bio",
+                              speakerLinkedin: "speakerLinkedin",
+                              speakerImageUrl: "speakerImageUrl",
                               activityName: item.activity ?? "")
             self.schedule.append(talk)
         }

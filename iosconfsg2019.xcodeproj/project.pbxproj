@@ -17,6 +17,9 @@
 		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
 		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
 		5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */; };
+		5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809125AB2A79003A1721 /* ApolloWebSocket */; };
+		5A2E809625AB2CA1003A1721 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809525AB2CA1003A1721 /* FirebaseAnalytics */; };
+		5A2E809A25AB2CCE003A1721 /* ApolloCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809925AB2CCE003A1721 /* ApolloCore */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
 		5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519823C0924800D5FE5C /* AnalyticsManager.swift */; };
@@ -144,8 +147,11 @@
 			files = (
 				5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */,
 				5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */,
+				5A2E809A25AB2CCE003A1721 /* ApolloCore in Frameworks */,
+				5A2E809625AB2CA1003A1721 /* FirebaseAnalytics in Frameworks */,
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
 				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
+				5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */,
 				5AAB6F8C25AA98AF000FFE85 /* FirebaseStorage in Frameworks */,
 				5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */,
 			);
@@ -364,6 +370,9 @@
 				5AAB6F8625AA9636000FFE85 /* Kingfisher */,
 				5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */,
 				5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */,
+				5A2E809125AB2A79003A1721 /* ApolloWebSocket */,
+				5A2E809525AB2CA1003A1721 /* FirebaseAnalytics */,
+				5A2E809925AB2CCE003A1721 /* ApolloCore */,
 			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
@@ -726,6 +735,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -749,6 +759,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -836,6 +847,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
+		};
+		5A2E809125AB2A79003A1721 /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+		5A2E809525AB2CA1003A1721 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5A2E809925AB2CCE003A1721 /* ApolloCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCore;
 		};
 		5AAB6F7525A9FA00000FFE85 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;

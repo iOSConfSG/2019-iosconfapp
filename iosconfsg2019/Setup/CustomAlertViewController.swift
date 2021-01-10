@@ -28,7 +28,7 @@ class CustomAlertViewController: BaseViewController {
     
     var profileText: String? {
         didSet {
-            descriptionTextView.attributer = profileText?.font(UIFont.systemFont(ofSize: UIFont.normalSize)).color(UIColor.white).paragraphSpacing(2.0).matchLinks ?? Attributer("")
+//            descriptionTextView.attributer = profileText?.font(UIFont.systemFont(ofSize: UIFont.normalSize)).color(UIColor.white).paragraphSpacing(2.0).matchLinks ?? Attributer("")
         }
     }
     

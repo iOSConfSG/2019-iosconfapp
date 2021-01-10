@@ -1,5 +1,6 @@
 subscription GetSchedule {
   schedule {
+    id
     activity
     title
     start_at
