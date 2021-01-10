@@ -34,6 +34,11 @@
 		5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88951421E2DD2B0015BEFD /* DateExtensions.swift */; };
 		5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */; };
 		5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7525A9FA00000FFE85 /* Apollo */; };
+		5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */; };
+		5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8125AA95D7000FFE85 /* OneSignal */; };
+		5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8625AA9636000FFE85 /* Kingfisher */; };
+		5AAB6F8C25AA98AF000FFE85 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */; };
+		5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F9025AA9C66000FFE85 /* OneSignal */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
 		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
 		5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */; };
@@ -127,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +140,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */,
+				5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */,
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
+				5AAB6F8C25AA98AF000FFE85 /* FirebaseStorage in Frameworks */,
+				5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +252,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5AAB6F8F25AA9C66000FFE85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5ACB755321E89CE400A21F97 /* Workshop Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +274,7 @@
 				5AFBF175218D6AA000FD2190 /* iosconfsg2019 */,
 				5A7C3E2F21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension */,
 				5AFBF174218D6AA000FD2190 /* Products */,
+				5AAB6F8F25AA9C66000FFE85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +330,9 @@
 			dependencies = (
 			);
 			name = iosconfsgNotificationServiceExtension;
+			packageProductDependencies = (
+				5AAB6F9025AA9C66000FFE85 /* OneSignal */,
+			);
 			productName = iosconfsgNotificationServiceExtension;
 			productReference = 5A7C3E2E21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -334,6 +355,10 @@
 			name = iosconfsg2019;
 			packageProductDependencies = (
 				5AAB6F7525A9FA00000FFE85 /* Apollo */,
+				5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */,
+				5AAB6F8125AA95D7000FFE85 /* OneSignal */,
+				5AAB6F8625AA9636000FFE85 /* Kingfisher */,
+				5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */,
 			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
@@ -383,6 +408,10 @@
 			mainGroup = 5AFBF16A218D6AA000FD2190;
 			packageReferences = (
 				5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+				5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5AFBF174218D6AA000FD2190 /* Products */;
 			projectDirPath = "";
@@ -763,6 +792,38 @@
 				minimumVersion = 0.39.0;
 			};
 		};
+		5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+		5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.1;
+			};
+		};
+		5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -770,6 +831,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		5AAB6F8125AA95D7000FFE85 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignal;
+		};
+		5AAB6F8625AA9636000FFE85 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		5AAB6F9025AA9C66000FFE85 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignal;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
