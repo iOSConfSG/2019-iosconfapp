@@ -1,0 +1,6 @@
+{
+  "bba9da6a50a371beec6e7fc04a2935afb7e929b155683cc60a905200e7bfcd9d": {
+    "name": "GetSchedule",
+    "source": "subscription GetSchedule {\n  schedule {\n    __typename\n    activity\n    title\n    start_at\n    end_at\n    talk_type\n    talk_description\n    speakers {\n      __typename\n      id\n      name\n      company\n      company_url\n      image_url\n      image_filename\n      twitter\n      linkedin_url\n      short_bio\n    }\n  }\n}"
+  }
+}

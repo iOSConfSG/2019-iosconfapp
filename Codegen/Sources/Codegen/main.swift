@@ -19,12 +19,14 @@ try FileManager
   .default
   .apollo.createFolderIfNeeded(at: output)
 
-let schemaDownloadOptions = ApolloSchemaOptions(
-    schemaFileName: "schema",
-    schemaFileType: ApolloSchemaOptions.SchemaFileType.json,
-    endpointURL: endpoint,
-    headers: ["x-hasura-admin-secret: dingdong"],
-    outputFolderURL: output)
+let schemaDownloadOptions = ApolloSchemaOptions(endpointURL: endpoint, outputFolderURL: output)
+
+//let schemaDownloadOptions = ApolloSchemaOptions(
+//    schemaFileName: "schema",
+//    schemaFileType: ApolloSchemaOptions.SchemaFileType.json,
+//    endpointURL: endpoint,
+//    headers: ["x-hasura-admin-secret: dingdong"],
+//    outputFolderURL: output)
 
 do {
   try ApolloSchemaDownloader.run(with: cliFolderURL,
@@ -32,4 +34,23 @@ do {
 } catch {
   exit(1)
 }
+
+// Generating Swift code for a target
+
+let targetURL = sourceRootURL
+    .apollo.childFolderURL(folderName: "iosconfsg2019")
+
+try FileManager
+      .default
+      .apollo.createFolderIfNeeded(at: targetURL)
+let codegenOptions = ApolloCodegenOptions(targetRootURL: targetURL)
+do {
+    try ApolloCodegen.run(from: targetURL,
+                          with: cliFolderURL,
+                          options: codegenOptions)
+} catch {
+    exit(1)
+}
+
+
 

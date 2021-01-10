@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AttributedTextView
+//import AttributedTextView
 import Kingfisher
 
 class DetailGraphqlViewController: BaseViewController {
@@ -97,16 +97,16 @@ class DetailGraphqlViewController: BaseViewController {
         return name
     }()
 
-    let speakerTwitter: AttributedTextView = {
-        let label = AttributedTextView()
+    let speakerTwitter: UILabel = {
+        let label = UILabel()
         label.isUserInteractionEnabled = true
-        label.isEditable = false
-        label.isSelectable = true
+//        label.isEditable = false
+//        label.isSelectable = true
         label.textColor = StyleSheet.shared.theme.primaryLabelColor
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textContainer.lineFragmentPadding = 0
-        label.textContainerInset = .zero
-        label.bounces = false
+//        label.textContainer.lineFragmentPadding = 0
+//        label.textContainerInset = .zero
+//        label.bounces = false
         label.font = UIFont.systemFont(ofSize: UIFont.largeSize)
         return label
     }()

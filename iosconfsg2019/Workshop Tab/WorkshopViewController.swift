@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import AttributedTextView
+//import AttributedTextView
 import Apollo
 import NVActivityIndicatorView
+import NVActivityIndicatorViewExtended
 
 class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
     

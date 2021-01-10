@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import AttributedTextView
+//import AttributedTextView
 
 class CustomAlertViewController: BaseViewController {
     
-    let descriptionTextView: AttributedTextView = {
-        let tv = AttributedTextView()
+    let descriptionTextView: UITextView = {
+        let tv = UITextView()
         tv.isEditable = false
         tv.isScrollEnabled = true
         tv.showsHorizontalScrollIndicator = true

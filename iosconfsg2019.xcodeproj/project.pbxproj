@@ -16,6 +16,7 @@
 		5A287DD62333BF8600F20101 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD52333BF8600F20101 /* schema.json */; };
 		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
 		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
+		5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
 		5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519823C0924800D5FE5C /* AnalyticsManager.swift */; };
@@ -89,6 +90,7 @@
 		5A287DD52333BF8600F20101 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5A287DD82333C5F500F20101 /* api.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = api.graphql; sourceTree = "<group>"; };
 		5A287DDA2333C6AD00F20101 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5A2E805C25AB2122003A1721 /* AttributedTextView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AttributedTextView.framework; path = "../../../../Downloads/AttributedTextView-1.4.0/AttributedTextView.framework"; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5A61519823C0924800D5FE5C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */,
 				5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */,
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
+				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
 				5AAB6F8C25AA98AF000FFE85 /* FirebaseStorage in Frameworks */,
 				5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */,
 			);
@@ -255,6 +258,7 @@
 		5AAB6F8F25AA9C66000FFE85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A2E805C25AB2122003A1721 /* AttributedTextView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,6 +363,7 @@
 				5AAB6F8125AA95D7000FFE85 /* OneSignal */,
 				5AAB6F8625AA9636000FFE85 /* Kingfisher */,
 				5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */,
+				5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
@@ -463,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://iosconfsg.herokuapp.com/v1/graphql\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+			shellScript = "cd \"${SRCROOT}\"/Codegen\nxcrun -sdk macosx swift run\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -827,6 +832,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
 		5AAB6F7525A9FA00000FFE85 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
