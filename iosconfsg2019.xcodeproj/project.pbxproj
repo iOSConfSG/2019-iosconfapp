@@ -100,7 +100,6 @@
 		5A287DD52333BF8600F20101 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5A287DD82333C5F500F20101 /* api.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = api.graphql; sourceTree = "<group>"; };
 		5A287DDA2333C6AD00F20101 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		5A2E805C25AB2122003A1721 /* AttributedTextView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AttributedTextView.framework; path = "../../../../Downloads/AttributedTextView-1.4.0/AttributedTextView.framework"; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5A61519823C0924800D5FE5C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
@@ -280,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				5AE4747D25ABDB6C00FF4235 /* AttributedTextView.framework */,
-				5A2E805C25AB2122003A1721 /* AttributedTextView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -11,7 +11,7 @@ let cliFolderURL = sourceRootURL
   .apollo.childFolderURL(folderName: "Codegen")
   .apollo.childFolderURL(folderName: "ApolloCLI")
 
-let endpoint = URL(string: "https://iosconf.hasura.app/v1/graphql")!
+let endpoint = URL(string: "https://iosconfsg.herokuapp.com/v1/graphql")!
 let output = sourceRootURL
     .apollo.childFolderURL(folderName:"iosconfsg2019")
 
