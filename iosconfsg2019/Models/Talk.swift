@@ -20,6 +20,8 @@ public enum TalkType: String {
     case workshop
     case groupPhoto
     case quiz
+    case energyboost
+    case combinedTalk
 }
 
 struct TalkV2 {

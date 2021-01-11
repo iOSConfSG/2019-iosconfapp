@@ -119,7 +119,8 @@ class ScheduleGraphqlViewModel {
                 let title = item.title,
                 let talkTypeString = item.talkType,
                 let talkType = TalkType(rawValue: talkTypeString) else {
-                print("Incomplete data")
+                
+                print("Incomplete data \(item)")
                 return
             }
 
