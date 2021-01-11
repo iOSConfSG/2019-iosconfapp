@@ -12,8 +12,8 @@ import ApolloWebSocket
 
 class NetworkManager {
     static let shared = NetworkManager()
-    let httpsEndpoint = "https://iosconf.hasura.app/v1/graphql"
-    let wsEndpoint = "ws://iosconf.hasura.app/v1/graphql"
+    let httpsEndpoint = "https://iosconfsg.herokuapp.com/v1/graphql"
+    let wsEndpoint = "wss://iosconfsg.herokuapp.com/v1/graphql"
     var apolloClient: ApolloClient?
 
     private init() {
