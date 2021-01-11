@@ -12,35 +12,36 @@ import Kingfisher
 
 class DetailGraphqlViewController: BaseViewController {
 
-    var talk: TalkV2? {
+    var talk: Talk? {
         didSet {
             self.title = talk?.title
-            self.talkTitle.text = talk?.title
-            self.speakerName.text = talk?.speakerName
-            self.speakerCompany.text = talk?.speakerCompany
+//            self.talkTitle.text = talk?.title
+            talkTitle.text = talk?.title
+//            self.speakerName.text = talk?.speakerName
+//            self.speakerCompany.text = talk?.speakerCompany
 
-            if let speakerTwitter = talk?.speakerTwitter, !speakerTwitter.isEmpty {
-                let twitter = "@\(speakerTwitter)"
-                self.speakerTwitter.text = twitter
+//            if let speakerTwitter = talk?.speakerTwitter, !speakerTwitter.isEmpty {
+//                let twitter = "@\(speakerTwitter)"
+//                self.speakerTwitter.text = twitter
 //                self.speakerTwitter.attributer = twitter.matchMentions.makeInteract({ (link) in
 //                    UIApplication.shared.open(URL(string: "https://twitter.com/\(link.replacingOccurrences(of: "@", with: ""))")!, options: [:], completionHandler: { completed in })
 //                }).setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.largeSize)
 //                self.speakerTwitter.setContentOffset(.zero, animated: false)
-            } else if let linkedinUrl = talk?.speakerLinkedin {
-                self.speakerTwitter.text = linkedinUrl
+//            } else if let linkedinUrl = talk?.speakerLinkedin {
+//                self.speakerTwitter.text = linkedinUrl
 //                self.speakerTwitter.attributer = linkedinUrl.matchLinks.makeInteract { (link) in
 //                    if let url = URL(string: link) {
 //                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
 //                    }
 //                }.setLinkColor(StyleSheet.shared.theme.primaryLabelColor).size(UIFont.smallSize)
 //                self.speakerTwitter.setContentOffset(.zero, animated: false)
-            }
+//            }
 
-            if let imageName = talk?.speakerImage, !imageName.isEmpty {
-                self.speakerImage.image = UIImage(imageLiteralResourceName: imageName)
-            } else if let imageUrlString = talk?.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
-                speakerImage.kf.setImage(with: imageUrl)
-            }
+//            if let imageName = talk?.speakerImage, !imageName.isEmpty {
+//                self.speakerImage.image = UIImage(imageLiteralResourceName: imageName)
+//            } else if let imageUrlString = talk?.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
+//                speakerImage.kf.setImage(with: imageUrl)
+//            }
 
             if let startAt = talk?.startAt, let endAt = talk?.endAt {
                 var duration = startAt.toConferenceDate()
@@ -178,7 +179,7 @@ class DetailGraphqlViewController: BaseViewController {
         self.view.addSubview(descriptionTextView)
 
         talkTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12).isActive = true
-        talkTitle.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 12).isActive = true
+        talkTitle.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 12).isActive = true
         talkTitle.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12).isActive = true
 
         talkTime.topAnchor.constraint(equalTo: talkTitle.bottomAnchor, constant: 8).isActive = true
@@ -206,7 +207,7 @@ class DetailGraphqlViewController: BaseViewController {
         descriptionTextView.leftAnchor.constraint(equalTo: talkTitle.leftAnchor).isActive = true
         descriptionTextView.rightAnchor.constraint(equalTo: talkTitle.rightAnchor).isActive = true
         descriptionTextView.topAnchor.constraint(equalTo: speakerImage.bottomAnchor, constant: 22).isActive = true
-        descriptionTextView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.bottomAnchor, constant: -22).isActive = true
+        descriptionTextView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -22).isActive = true
 
         let descriptionStyle = NSMutableParagraphStyle()
         descriptionStyle.lineSpacing = 7
@@ -227,14 +228,15 @@ class DetailGraphqlViewController: BaseViewController {
         let bioViewController = CustomAlertViewController()
         bioViewController.modalTransitionStyle = .crossDissolve
         bioViewController.modalPresentationStyle = .overCurrentContext
-        bioViewController.profileText = self.talk?.speakerBio
+//        bioViewController.profileText = self.talk?.speakerBio
         self.navigationController?.present(bioViewController, animated: true, completion: nil)
     }
 
     private func setupFeedbackButton() {
-        if let speakerName = self.talk?.speakerName, speakerName != "Organiser" {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
-        }
+        // todo
+//        if let speakerName = self.talk?.speakerName, speakerName != "Organiser" {
+//            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
+//        }
     }
 
     private func logTap(talkId: Int) {

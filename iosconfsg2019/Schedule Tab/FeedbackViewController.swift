@@ -11,7 +11,7 @@ import UIKit
 class FeedbackViewController: BaseViewController {
     
     var selectedButton: MyButton?
-    var talk: TalkV2?
+    var talk: Talk?
     
     let qualityTitleLabel: UILabel = {
         let title = UILabel()
@@ -169,7 +169,7 @@ class FeedbackViewController: BaseViewController {
         NSLayoutConstraint.activate([
             qualityTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
             qualityTitleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 12),
-            qualityTitleLabel.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 12)
+            qualityTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 12)
             ])
         
         NSLayoutConstraint.activate([
@@ -238,24 +238,25 @@ class FeedbackViewController: BaseViewController {
             #endif
             return
         }
+        // todo
 
-        viewModel.submitFeedback(for: talk, feeling: feeling, comments: self.commentTextView.text, completionHandler: { [weak self] result in
-            switch result {
-            case .success:
-                self?.sendButton.loadingIndicator(show: false)
-                self?.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
-
-                let when = DispatchTime.now() + 1.53
-                DispatchQueue.main.asyncAfter(deadline: when, execute: {
-                    self?.logTap(talkId: talk.id)
-                    self?.dismiss(animated: true, completion: nil)
-                })
-            case .failure:
-                self?.sendButton.loadingIndicator(show: false)
-                self?.errorLabel.isHidden = false
-                self?.sendButton.setTitle("Send", for: .normal)
-            }
-        })
+//        viewModel.submitFeedback(for: talk, feeling: feeling, comments: self.commentTextView.text, completionHandler: { [weak self] result in
+//            switch result {
+//            case .success:
+//                self?.sendButton.loadingIndicator(show: false)
+//                self?.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
+//
+//                let when = DispatchTime.now() + 1.53
+//                DispatchQueue.main.asyncAfter(deadline: when, execute: {
+//                    self?.logTap(talkId: talk.id)
+//                    self?.dismiss(animated: true, completion: nil)
+//                })
+//            case .failure:
+//                self?.sendButton.loadingIndicator(show: false)
+//                self?.errorLabel.isHidden = false
+//                self?.sendButton.setTitle("Send", for: .normal)
+//            }
+//        })
     }
 
     func handleViewModelError() {

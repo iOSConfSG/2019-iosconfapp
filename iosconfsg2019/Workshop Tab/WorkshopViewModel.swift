@@ -18,7 +18,7 @@ class WorkshopViewModel {
     private var apollo: ApolloClient!
     private var scheduleSubscription: Cancellable!
     private var scheduleGraphql: [GetScheduleSubscription.Data.Schedule] = []
-    private var schedule: [TalkV2] = []
+    private var schedule: [Talk] = []
 
     var delegate: WorkshopViewModelDelegate?
     var selectedDay: Int?
@@ -114,39 +114,41 @@ class WorkshopViewModel {
         if !self.schedule.isEmpty {
             self.schedule.removeAll()
         }
-        for item in response {
-            guard let id = item.id,
-                let title = item.title,
-                let talkTypeString = item.talkType,
-                let talkType = TalkType(rawValue: talkTypeString) else {
-                print("Incomplete data")
-                return
-            }
-
-            let talk = TalkV2(id: id,
-                              title: title,
-                              talkType: talkType,
-                              startAt: dateFormatter.date(from: item.startAt ?? ""),
-                              endAt: dateFormatter.date(from: item.endAt ?? ""),
-                              talkDescription: item.talkDescription,
-                              speakerImage: "welcome_icon",
-                              speakerTwitter: "N/A",
-                              speakerCompany: "N/A",
-                              speakerName: "iOS Conf SG",
-                              speakerBio: "bio",
-                              speakerLinkedin: "speakerLinkedin",
-                              speakerImageUrl: "speakerImageUrl",
-                              activityName: item.activity ?? "")
-            self.schedule.append(talk)
-        }
-        delegate?.didFetchSchedule()
+        self.schedule.removeAll()
+        // todo
+//        for item in response {
+//            guard let id = item.id,
+//                let title = item.title,
+//                let talkTypeString = item.talkType,
+//                let talkType = TalkType(rawValue: talkTypeString) else {
+//                print("Incomplete data")
+//                return
+//            }
+//
+//            let talk = TalkV2(id: id,
+//                              title: title,
+//                              talkType: talkType,
+//                              startAt: dateFormatter.date(from: item.startAt ?? ""),
+//                              endAt: dateFormatter.date(from: item.endAt ?? ""),
+//                              talkDescription: item.talkDescription,
+//                              speakerImage: "welcome_icon",
+//                              speakerTwitter: "N/A",
+//                              speakerCompany: "N/A",
+//                              speakerName: "iOS Conf SG",
+//                              speakerBio: "bio",
+//                              speakerLinkedin: "speakerLinkedin",
+//                              speakerImageUrl: "speakerImageUrl",
+//                              activityName: item.activity ?? "")
+//            self.schedule.append(talk)
+//        }
+//        delegate?.didFetchSchedule()
     }
 
     func numberOfRows() -> Int {
         return scheduleFor(day: self.selectedDay ?? 0).count
     }
 
-    func getTalkForIndexpath(indexPath: IndexPath) -> TalkV2? {
+    func getTalkForIndexpath(indexPath: IndexPath) -> Talk? {
         guard !self.schedule.isEmpty else { return nil }
         let selectedDay = self.selectedDay ?? 0
         let scheduleOnSelectedDay = scheduleFor(day: selectedDay)
@@ -156,9 +158,9 @@ class WorkshopViewModel {
         return scheduleOnSelectedDay[indexPath.row]
     }
 
-    private func scheduleFor(day: Int) -> [TalkV2] {
+    private func scheduleFor(day: Int) -> [Talk] {
         guard let selectedDay = WorkshopDay(rawValue: day) else {
-            return [TalkV2]()
+            return [Talk]()
         }
 
         let talksOnThatDay = self.schedule.filter({ $0.activityName == selectedDay.activityName })

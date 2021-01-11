@@ -53,6 +53,7 @@
 		5AE4748F25ABDBE800FF4235 /* String+Attributer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4748825ABDBE800FF4235 /* String+Attributer.swift */; };
 		5AE4749025ABDBE800FF4235 /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4748925ABDBE800FF4235 /* String+NSRange.swift */; };
 		5AE4749125ABDBE800FF4235 /* AttributedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4748A25ABDBE800FF4235 /* AttributedTextView.swift */; };
+		5AFB3B9225AC7ACA00BDA680 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB3B9125AC7ACA00BDA680 /* Speaker.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
 		5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */; };
@@ -131,6 +132,7 @@
 		5AE4748825ABDBE800FF4235 /* String+Attributer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Attributer.swift"; path = "../../../../../../Downloads/AttributedTextView-1.4.0 2/Sources/String+Attributer.swift"; sourceTree = "<group>"; };
 		5AE4748925ABDBE800FF4235 /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+NSRange.swift"; path = "../../../../../../Downloads/AttributedTextView-1.4.0 2/Sources/String+NSRange.swift"; sourceTree = "<group>"; };
 		5AE4748A25ABDBE800FF4235 /* AttributedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttributedTextView.swift; path = "../../../../../../Downloads/AttributedTextView-1.4.0 2/Sources/AttributedTextView.swift"; sourceTree = "<group>"; };
+		5AFB3B9125AC7ACA00BDA680 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF17D218D6AA200FD2190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7C3E4421E1EC9700A49FE1 /* Talk.swift */,
+				5AFB3B9125AC7ACA00BDA680 /* Speaker.swift */,
 				5ABCCA2621E5E1010058A076 /* Feedback.swift */,
 			);
 			path = Models;
@@ -550,6 +553,7 @@
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
 				5AE4749025ABDBE800FF4235 /* String+NSRange.swift in Sources */,
 				D118B29923C1878F00C11A2D /* Venue.swift in Sources */,
+				5AFB3B9225AC7ACA00BDA680 /* Speaker.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */,
 				D1D5A32723BE27D50070E787 /* VenueViewController.swift in Sources */,

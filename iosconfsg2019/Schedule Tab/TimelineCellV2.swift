@@ -57,9 +57,9 @@ class TimelineCellV2: UITableViewCell {
         setupViews()
     }
 
-    func setupCell(talk: TalkV2) {
+    func setupCell(talk: Talk) {
         titleLabel.text = talk.title
-        speakerLabel.text = talk.speakerName
+//        speakerLabel.text = talk.speakerName
         if let startAt = talk.startAt, let endAt = talk.endAt {
             var duration = startAt.toConferenceTime()
             duration.append(contentsOf: " - ")
@@ -67,11 +67,11 @@ class TimelineCellV2: UITableViewCell {
             self.timeLabel.text = duration
         }
 
-        if let imageFilename = talk.speakerImage, let profilePic = UIImage(named: imageFilename) {
-            speakerImage.image = profilePic
-        } else if let imageUrlString = talk.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
-            speakerImage.kf.setImage(with: imageUrl)
-        }
+//        if let imageFilename = talk.speakerImage, let profilePic = UIImage(named: imageFilename) {
+//            speakerImage.image = profilePic
+//        } else if let imageUrlString = talk.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
+//            speakerImage.kf.setImage(with: imageUrl)
+//        }
     }
 
     private func setupViews() {
