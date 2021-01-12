@@ -20,6 +20,15 @@ class TimelineCellV2: UITableViewCell {
         face.isUserInteractionEnabled = true
         return face
     }()
+    
+    let secondSpeakerImage: UIImageView = {
+        let face = UIImageView()
+        face.translatesAutoresizingMaskIntoConstraints = false
+        face.layer.cornerRadius = 64/2
+        face.clipsToBounds = true
+        face.isUserInteractionEnabled = true
+        return face
+    }()
 
     let timeLabel: UILabel = {
         let label = UILabel()
@@ -59,19 +68,55 @@ class TimelineCellV2: UITableViewCell {
 
     func setupCell(talk: Talk) {
         titleLabel.text = talk.title
-//        speakerLabel.text = talk.speakerName
+
         if let startAt = talk.startAt, let endAt = talk.endAt {
             var duration = startAt.toConferenceTime()
             duration.append(contentsOf: " - ")
             duration.append(contentsOf: endAt.toConferenceTime())
             self.timeLabel.text = duration
         }
-
-//        if let imageFilename = talk.speakerImage, let profilePic = UIImage(named: imageFilename) {
-//            speakerImage.image = profilePic
-//        } else if let imageUrlString = talk.speakerImageUrl, let imageUrl = URL(string: imageUrlString) {
-//            speakerImage.kf.setImage(with: imageUrl)
-//        }
+        
+        guard let aSpeaker = talk.speakers.first else { return }
+        speakerLabel.text = aSpeaker.name
+        
+        if let imageUrlString = aSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
+            speakerImage.kf.setImage(with: imageUrl)
+        } else if let imageFilename = aSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
+            speakerImage.image = profilePic
+        }
+        
+        guard talk.speakers.count > 1, let secondSpeaker = talk.speakers.last else {
+            if contentView.subviews.contains(secondSpeakerImage) {
+                secondSpeakerImage.removeFromSuperview()
+            }
+            secondSpeakerImage.image = nil
+            secondSpeakerImage.isHidden = true
+            NSLayoutConstraint.activate([
+                speakerImage.bottomAnchor.constraint(lessThanOrEqualTo: contentView.layoutMarginsGuide.bottomAnchor)
+            ])
+            return
+        }
+        
+        // Going this route (add/remove 2ndSpeakerImage from contentView) to ensure cell height is correct
+        contentView.addSubview(secondSpeakerImage)
+        if let imageUrlString = secondSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
+            secondSpeakerImage.kf.setImage(with: imageUrl)
+        } else if let imageFilename = secondSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
+            secondSpeakerImage.image = profilePic
+        }
+        secondSpeakerImage.isHidden = false
+        
+        speakerLabel.text = "\(aSpeaker.name) & \(secondSpeaker.name)"
+        
+        NSLayoutConstraint.activate([
+            secondSpeakerImage.leadingAnchor.constraint(equalTo: speakerImage.leadingAnchor),
+            secondSpeakerImage.heightAnchor.constraint(equalTo: speakerImage.heightAnchor),
+            secondSpeakerImage.widthAnchor.constraint(equalTo: speakerImage.widthAnchor),
+            secondSpeakerImage.topAnchor.constraint(equalTo: speakerImage.bottomAnchor, constant: 8),
+            
+            speakerImage.bottomAnchor.constraint(equalTo: secondSpeakerImage.topAnchor, constant: -4),
+            secondSpeakerImage.bottomAnchor.constraint(lessThanOrEqualTo: contentView.layoutMarginsGuide.bottomAnchor)
+        ])
     }
 
     private func setupViews() {
@@ -89,17 +134,21 @@ class TimelineCellV2: UITableViewCell {
             titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor),
             titleLabel.leftAnchor.constraint(equalTo: speakerImage.rightAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
+            
             speakerImage.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor),
             speakerImage.heightAnchor.constraint(equalToConstant: 64),
             speakerImage.widthAnchor.constraint(equalToConstant: 64),
             speakerImage.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+            
             speakerLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
             speakerLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             speakerLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
+            
             timeLabel.topAnchor.constraint(equalTo: speakerLabel.bottomAnchor, constant: 4),
             timeLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             timeLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor),
             timeLabel.bottomAnchor.constraint(lessThanOrEqualTo: marginGuide.bottomAnchor),
+            
             speakerImage.bottomAnchor.constraint(lessThanOrEqualTo: marginGuide.bottomAnchor)
         ])
     }
