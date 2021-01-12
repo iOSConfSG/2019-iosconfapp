@@ -12,11 +12,11 @@ import SafariServices
 class AboutViewController: BaseViewController {
     private var tableView: UITableView!
     private struct K {
-        static let codeOfConductURL: URL! = URL.init(string: "https://2020.iosconf.sg/cod/")
-        static let sponsorURL: URL! = URL.init(string: "https://2020.iosconf.sg/#sponsors")
+        static let codeOfConductURL: URL! = URL.init(string: "https://iosconf.sg/coc")
+        static let sponsorURL: URL! = URL.init(string: "https://iosconf.sg/#sponsors")
         static let slackURL: URL! = URL(string: "slack://open")
-        static let faqURL: URL! = URL(string: "https://2020.iosconf.sg/faq/")
-        static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2020")
+        static let faqURL: URL! = URL(string: "https://iosconf.sg/faq/")
+        static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2021")
         static let liveQa: URL! = URL(string: "https://pigeonhole.at/IOSCONFSG")
 
         static let cellIdentifier = "AboutCell"

@@ -32,7 +32,7 @@ class WelcomeViewController: BaseViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: UIFont.xLargeSize, weight: .light)
-        label.text = "15-18 January 2020"
+        label.text = "18-22 January 2020"
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
@@ -136,7 +136,7 @@ class WelcomeViewController: BaseViewController {
         view.addSubview(allowNotificationButton)
         
         confImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        confImage.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 90).isActive = true
+        confImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 90).isActive = true
         confImage.heightAnchor.constraint(equalToConstant: 155).isActive = true
         confImage.widthAnchor.constraint(equalToConstant: 155).isActive = true
         
