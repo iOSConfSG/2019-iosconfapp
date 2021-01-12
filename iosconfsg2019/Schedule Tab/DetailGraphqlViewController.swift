@@ -284,10 +284,6 @@ class DetailGraphqlViewController: BaseViewController {
         view.layoutIfNeeded()
     }
     
-    private func removeSecondSpeakerViews() {
-        
-    }
-    
     private func setupViews() {
         self.view.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
 
@@ -402,10 +398,9 @@ class DetailGraphqlViewController: BaseViewController {
     }
 
     private func setupFeedbackButton() {
-        // todo
-//        if let speakerName = self.talk?.speakerName, speakerName != "Organiser" {
-//            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
-//        }
+        if let firstSpeaker = talk?.speakers.first, firstSpeaker.name != "Organiser" {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
+        }
     }
 
     private func logTap(talkId: Int) {

@@ -194,14 +194,14 @@ class FeedbackViewController: BaseViewController {
             starstruckButton.heightAnchor.constraint(equalTo: frowningButton.heightAnchor),
             starstruckButton.widthAnchor.constraint(equalTo: frowningButton.widthAnchor)
             ])
-        
+
         NSLayoutConstraint.activate([
             sendButton.heightAnchor.constraint(equalToConstant: 44),
             sendButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
             sendButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12),
             sendButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -12)
             ])
-        
+
         NSLayoutConstraint.activate([
             commentTextView.topAnchor.constraint(equalTo: frowningButton.bottomAnchor, constant: 12),
             commentTextView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
@@ -212,13 +212,13 @@ class FeedbackViewController: BaseViewController {
             errorLabel.rightAnchor.constraint(equalTo: commentTextView.rightAnchor),
             errorLabel.bottomAnchor.constraint(equalTo: sendButton.topAnchor, constant: -12)
             ])
-        
+
         commentTextView.layer.borderWidth = 1.0
         commentTextView.layer.borderColor = UIColor.lightGray.cgColor
         commentTextView.delegate = self
-        
+
         sendButton.addTarget(self, action: #selector(sendFeedback), for: .touchUpInside)
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
@@ -236,27 +236,26 @@ class FeedbackViewController: BaseViewController {
             #if DEBUG
             print("Empty feedback")
             #endif
+            sendButton.loadingIndicator(show: false)
             return
         }
-        // todo
+        viewModel.submitFeedback(for: talk, feeling: feeling, comments: self.commentTextView.text, completionHandler: { [weak self] result in
+            switch result {
+            case .success:
+                self?.sendButton.loadingIndicator(show: false)
+                self?.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
 
-//        viewModel.submitFeedback(for: talk, feeling: feeling, comments: self.commentTextView.text, completionHandler: { [weak self] result in
-//            switch result {
-//            case .success:
-//                self?.sendButton.loadingIndicator(show: false)
-//                self?.sendButton.setTitle("Thanks, feedback sent!", for: .normal)
-//
-//                let when = DispatchTime.now() + 1.53
-//                DispatchQueue.main.asyncAfter(deadline: when, execute: {
-//                    self?.logTap(talkId: talk.id)
-//                    self?.dismiss(animated: true, completion: nil)
-//                })
-//            case .failure:
-//                self?.sendButton.loadingIndicator(show: false)
-//                self?.errorLabel.isHidden = false
-//                self?.sendButton.setTitle("Send", for: .normal)
-//            }
-//        })
+                let when = DispatchTime.now() + 1.53
+                DispatchQueue.main.asyncAfter(deadline: when, execute: {
+                    self?.logTap(talkId: talk.id)
+                    self?.dismiss(animated: true, completion: nil)
+                })
+            case .failure:
+                self?.sendButton.loadingIndicator(show: false)
+                self?.errorLabel.isHidden = false
+                self?.sendButton.setTitle("Send", for: .normal)
+            }
+        })
     }
 
     func handleViewModelError() {
