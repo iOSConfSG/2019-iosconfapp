@@ -7,12 +7,11 @@
 //
 
 import UIKit
-//import AttributedTextView
 
 class CustomAlertViewController: BaseViewController {
     
-    let descriptionTextView: UITextView = {
-        let tv = UITextView()
+    let descriptionTextView: AttributedTextView = {
+        let tv = AttributedTextView()
         tv.isEditable = false
         tv.isScrollEnabled = true
         tv.showsHorizontalScrollIndicator = true
@@ -28,7 +27,7 @@ class CustomAlertViewController: BaseViewController {
     
     var profileText: String? {
         didSet {
-//            descriptionTextView.attributer = profileText?.font(UIFont.systemFont(ofSize: UIFont.normalSize)).color(UIColor.white).paragraphSpacing(2.0).matchLinks ?? Attributer("")
+            descriptionTextView.attributer = profileText?.font(UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)).color(UIColor.white).paragraphSpacing(2.0).matchLinks ?? Attributer("")
         }
     }
     
@@ -55,7 +54,7 @@ class CustomAlertViewController: BaseViewController {
     }
     
     @objc private func hideSelf() {
-        UIView.animate(withDuration: 0.7, delay: 0.3, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.2, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             self.view.alpha = 0
         }) { (finished) in
             self.dismiss(animated: false, completion: nil)

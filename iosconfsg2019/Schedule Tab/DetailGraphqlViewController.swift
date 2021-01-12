@@ -385,15 +385,27 @@ class DetailGraphqlViewController: BaseViewController {
         let speakerTap = UITapGestureRecognizer(target: self, action: #selector(showSpeakerBio))
         speakerTap.numberOfTapsRequired = 1
         self.speakerImage.addGestureRecognizer(speakerTap)
+        
+        let secondSpeakerTap = UITapGestureRecognizer(target: self, action: #selector(showSecondSpeakerBio))
+        secondSpeakerTap.numberOfTapsRequired = 1
+        self.secondSpeakerImage.addGestureRecognizer(secondSpeakerTap)
     }
-    
-    
 
     @objc private func showSpeakerBio() {
         let bioViewController = CustomAlertViewController()
         bioViewController.modalTransitionStyle = .crossDissolve
         bioViewController.modalPresentationStyle = .overCurrentContext
-//        bioViewController.profileText = self.talk?.spe
+        bioViewController.profileText = self.talk?.speakers.first?.shortBio
+        self.navigationController?.present(bioViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func showSecondSpeakerBio() {
+        guard let secondSpeaker = talk?.speakers.last else { return }
+        
+        let bioViewController = CustomAlertViewController()
+        bioViewController.modalTransitionStyle = .crossDissolve
+        bioViewController.modalPresentationStyle = .overCurrentContext
+        bioViewController.profileText = secondSpeaker.shortBio
         self.navigationController?.present(bioViewController, animated: true, completion: nil)
     }
 
