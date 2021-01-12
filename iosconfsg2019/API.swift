@@ -300,3 +300,106 @@ public final class GetScheduleSubscription: GraphQLSubscription {
     }
   }
 }
+
+public final class CreateFeedbackMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation CreateFeedback($talkId: Int!, $feeling: String!, $comment: String!) {
+      insert_feedback(
+        objects: [{talk_id: $talkId, feeling: $feeling, comment: $comment}]
+      ) {
+        __typename
+        affected_rows
+      }
+    }
+    """
+
+  public let operationName: String = "CreateFeedback"
+
+  public let operationIdentifier: String? = "3c733cf346d552a5ae2d3395deb9a9fa5ebdf60f9b319e51728c9cd201cc1adf"
+
+  public var talkId: Int
+  public var feeling: String
+  public var comment: String
+
+  public init(talkId: Int, feeling: String, comment: String) {
+    self.talkId = talkId
+    self.feeling = feeling
+    self.comment = comment
+  }
+
+  public var variables: GraphQLMap? {
+    return ["talkId": talkId, "feeling": feeling, "comment": comment]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["mutation_root"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("insert_feedback", arguments: ["objects": [["talk_id": GraphQLVariable("talkId"), "feeling": GraphQLVariable("feeling"), "comment": GraphQLVariable("comment")]]], type: .object(InsertFeedback.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(insertFeedback: InsertFeedback? = nil) {
+      self.init(unsafeResultMap: ["__typename": "mutation_root", "insert_feedback": insertFeedback.flatMap { (value: InsertFeedback) -> ResultMap in value.resultMap }])
+    }
+
+    /// insert data into the table: "feedback"
+    public var insertFeedback: InsertFeedback? {
+      get {
+        return (resultMap["insert_feedback"] as? ResultMap).flatMap { InsertFeedback(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "insert_feedback")
+      }
+    }
+
+    public struct InsertFeedback: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["feedback_mutation_response"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("affected_rows", type: .nonNull(.scalar(Int.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(affectedRows: Int) {
+        self.init(unsafeResultMap: ["__typename": "feedback_mutation_response", "affected_rows": affectedRows])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// number of affected rows by the mutation
+      public var affectedRows: Int {
+        get {
+          return resultMap["affected_rows"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "affected_rows")
+        }
+      }
+    }
+  }
+}
