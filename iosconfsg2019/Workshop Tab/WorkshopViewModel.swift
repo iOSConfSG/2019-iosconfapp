@@ -34,30 +34,31 @@ class WorkshopViewModel {
         case one = 0
         case two = 1
 
+        
         var dateString: String {
             switch self {
             case .one:
-                return "15 Jan"
+                return "18 Jan"
             case .two:
-                return "16 Jan"
+                return "19 Jan"
             }
         }
 
         var activityName: String {
             switch self {
             case .one:
-                return "iosconfsg20.workshop1"
+                return "iosconfsg21.workshop1"
             case .two:
-                return "iosconfsg20.workshop2"
+                return "iosconfsg21.workshop2"
             }
         }
 
         var dateInt: Int {
             switch self {
             case .one:
-                return 15
+                return 18
             case .two:
-                return 16
+                return 19
             }
         }
     }
@@ -114,34 +115,48 @@ class WorkshopViewModel {
         if !self.schedule.isEmpty {
             self.schedule.removeAll()
         }
-        self.schedule.removeAll()
-        // todo
-//        for item in response {
-//            guard let id = item.id,
-//                let title = item.title,
-//                let talkTypeString = item.talkType,
-//                let talkType = TalkType(rawValue: talkTypeString) else {
-//                print("Incomplete data")
-//                return
-//            }
-//
-//            let talk = TalkV2(id: id,
-//                              title: title,
-//                              talkType: talkType,
-//                              startAt: dateFormatter.date(from: item.startAt ?? ""),
-//                              endAt: dateFormatter.date(from: item.endAt ?? ""),
-//                              talkDescription: item.talkDescription,
-//                              speakerImage: "welcome_icon",
-//                              speakerTwitter: "N/A",
-//                              speakerCompany: "N/A",
-//                              speakerName: "iOS Conf SG",
-//                              speakerBio: "bio",
-//                              speakerLinkedin: "speakerLinkedin",
-//                              speakerImageUrl: "speakerImageUrl",
-//                              activityName: item.activity ?? "")
-//            self.schedule.append(talk)
-//        }
-//        delegate?.didFetchSchedule()
+
+        for item in response {
+            guard let id = item.id,
+                let title = item.title,
+                let talkTypeString = item.talkType,
+                let talkType = TalkType(rawValue: talkTypeString) else {
+                print("Incomplete data \(item)")
+                return
+            }
+            
+            var speakers: [Speaker] = []
+            if !item.speakers.isEmpty {
+                speakers = createSpeakers(from: item)
+            }
+
+            let talk = Talk(id: id,
+                            title: title,
+                            talkType: talkType,
+                            startAt: dateFormatter.date(from: item.startAt ?? ""),
+                            endAt: dateFormatter.date(from: item.endAt ?? ""),
+                            talkDescription: item.talkDescription,
+                            activityName: item.activity ?? "",
+                            speakers: speakers)
+            self.schedule.append(talk)
+        }
+        delegate?.didFetchSchedule()
+    }
+    
+    // TODO: refactor to a factory!
+    func createSpeakers(from talk: GetScheduleSubscription.Data.Schedule) -> [Speaker] {
+        let speakers = talk.speakers.map { (speaker) -> Speaker in
+            return Speaker(id: speaker.id ?? 1,
+                           name: speaker.name ?? "",
+                           shortBio: speaker.shortBio,
+                           twitter: speaker.twitter,
+                           linkedIn: speaker.linkedinUrl,
+                           company: speaker.company,
+                           companyUrl: speaker.companyUrl,
+                           imageUrl: speaker.imageUrl,
+                           imageFilename: speaker.imageFilename)
+        }
+        return speakers
     }
 
     func numberOfRows() -> Int {
