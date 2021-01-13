@@ -32,7 +32,6 @@ class Feedback {
     
     var feeling: Feeling
     var comments: String
-    var firebaseId: String?
     
     init(feeling: Feeling, comments: String) {
         self.feeling = feeling

@@ -169,7 +169,7 @@ class FeedbackViewController: BaseViewController {
         NSLayoutConstraint.activate([
             qualityTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
             qualityTitleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 12),
-            qualityTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 12)
+            qualityTitleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24),
             ])
         
         NSLayoutConstraint.activate([

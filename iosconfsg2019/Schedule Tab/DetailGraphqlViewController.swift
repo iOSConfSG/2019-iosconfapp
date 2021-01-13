@@ -227,9 +227,9 @@ class DetailGraphqlViewController: BaseViewController {
     // MARK: - Private methods
     @objc private func giveFeedback(_ sender: Any) {
         let feedbackViewController = FeedbackViewController()
+        feedbackViewController.talk = self.talk
         feedbackViewController.modalPresentationStyle = .popover
         feedbackViewController.preferredContentSize = CGSize(width: 300, height: 300)
-        feedbackViewController.talk = self.talk
 
         if let feedbackPopup = feedbackViewController.presentationController as? UIPopoverPresentationController {
             feedbackPopup.sourceView = sender as? UIView
