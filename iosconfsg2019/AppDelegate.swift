@@ -50,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     private func registerModules() {
         modules.append(PushNotificationManager())
-        modules.append(AnalyticsManager())
     }
 }
 

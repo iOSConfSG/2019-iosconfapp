@@ -18,7 +18,6 @@
 		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
 		5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */; };
 		5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809125AB2A79003A1721 /* ApolloWebSocket */; };
-		5A2E809625AB2CA1003A1721 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809525AB2CA1003A1721 /* FirebaseAnalytics */; };
 		5A2E809A25AB2CCE003A1721 /* ApolloCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809925AB2CCE003A1721 /* ApolloCore */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
@@ -41,7 +40,6 @@
 		5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */; };
 		5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8125AA95D7000FFE85 /* OneSignal */; };
 		5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8625AA9636000FFE85 /* Kingfisher */; };
-		5AAB6F8C25AA98AF000FFE85 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */; };
 		5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F9025AA9C66000FFE85 /* OneSignal */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
 		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
@@ -57,7 +55,6 @@
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
 		5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */; };
-		5B515F5323C4633D00CBE57B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */; };
 		5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */; };
 		5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC7B234F06E500024A13 /* ApolloManager.swift */; };
 		B57452C623C0E7C8004CD8C3 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */; };
@@ -138,7 +135,6 @@
 		5AFBF17D218D6AA200FD2190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFBF180218D6AA200FD2190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AFBF182218D6AA200FD2190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphqlViewController.swift; sourceTree = "<group>"; };
 		5B5DFC7B234F06E500024A13 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
 		B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
@@ -164,11 +160,9 @@
 				5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */,
 				5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */,
 				5A2E809A25AB2CCE003A1721 /* ApolloCore in Frameworks */,
-				5A2E809625AB2CA1003A1721 /* FirebaseAnalytics in Frameworks */,
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
 				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
 				5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */,
-				5AAB6F8C25AA98AF000FFE85 /* FirebaseStorage in Frameworks */,
 				5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +337,6 @@
 				5A262BA721AC1682008BC34F /* Extensions */,
 				24C8AC8E21EE305D00829307 /* Helpers */,
 				5AFBF176218D6AA100FD2190 /* AppDelegate.swift */,
-				5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */,
 				24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
@@ -400,10 +393,8 @@
 				5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */,
 				5AAB6F8125AA95D7000FFE85 /* OneSignal */,
 				5AAB6F8625AA9636000FFE85 /* Kingfisher */,
-				5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */,
 				5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */,
 				5A2E809125AB2A79003A1721 /* ApolloWebSocket */,
-				5A2E809525AB2CA1003A1721 /* FirebaseAnalytics */,
 				5A2E809925AB2CCE003A1721 /* ApolloCore */,
 			);
 			productName = iosconfsg2019;
@@ -486,7 +477,6 @@
 				5A287DD62333BF8600F20101 /* schema.json in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
 				24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */,
-				5B515F5323C4633D00CBE57B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,11 +883,6 @@
 			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
 		};
-		5A2E809525AB2CA1003A1721 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		5A2E809925AB2CCE003A1721 /* ApolloCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
@@ -922,11 +907,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		5AAB6F8B25AA98AF000FFE85 /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
 		};
 		5AAB6F9025AA9C66000FFE85 /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
