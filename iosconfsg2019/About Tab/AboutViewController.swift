@@ -14,15 +14,15 @@ class AboutViewController: BaseViewController {
     private struct K {
         static let codeOfConductURL: URL! = URL.init(string: "https://iosconf.sg/coc")
         static let sponsorURL: URL! = URL.init(string: "https://iosconf.sg/#sponsors")
+        static let softwareURL: URL! = URL.init(string: "https://iosconf.sg/software")
         static let slackURL: URL! = URL(string: "slack://open")
         static let faqURL: URL! = URL(string: "https://iosconf.sg/faq/")
         static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2021")
-        static let liveQa: URL! = URL(string: "https://pigeonhole.at/IOSCONFSG")
 
         static let cellIdentifier = "AboutCell"
     }
 
-    private var sections: [[String]] = [["Code of Conduct", "Venue", "Sponsors", "FAQ", "Feedback"], ["Open Slack", "Live Q&A"]]
+    private var sections: [[String]] = [["Code of Conduct", "Sponsors", "Software", "FAQ", "Feedback"], ["Open iOSConfSG Slack"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,11 +147,11 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
             logTap(aboutName: "Code of conduct")
             openSafariViewController(withURL: K.codeOfConductURL)
         case (0,1):
-            logTap(aboutName: "Venues")
-            showVenues()
-        case (0,2):
             logTap(aboutName: "Sponsors")
             openSafariViewController(withURL: K.sponsorURL)
+        case (0,2):
+            logTap(aboutName: "Software")
+            openSafariViewController(withURL: K.softwareURL)
         case (0,3):
             logTap(aboutName: "FAQ")
             openSafariViewController(withURL: K.faqURL)
@@ -159,11 +159,8 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
             logTap(aboutName: "Feedback")
             openSafariViewController(withURL: K.feedback)
         case (1,0):
-            logTap(aboutName: "Open Slack")
+            logTap(aboutName: "Open iOSConfSG Slack")
             openSlack()
-        case (1,1):
-            logTap(aboutName: "Live Q&A")
-            openSafariViewController(withURL: K.liveQa)
         default:
             break
         }
