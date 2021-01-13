@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import AttributedTextView
 import Apollo
 import NVActivityIndicatorView
 import NVActivityIndicatorViewExtended
@@ -17,6 +16,12 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
     private var tableView: UITableView!
+    var daySegmentedControlView: HeaderTableView?
+    
+    private let rezoneButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        return btn
+    }()
 
     lazy var viewModel: WorkshopViewModel = {
         return WorkshopViewModel(failInitClosure: {
@@ -60,16 +65,30 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         skylineView.contentMode = .scaleAspectFill
         self.tableView.tableFooterView = skylineView
 
-        let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
+        let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: DateTimeUtils.shared.shouldEnableZoneToggle() ? 64 : 44)
         let segmentTitles = viewModel.segmentedControlLabels()
         let selectedIndex = viewModel.segmentedControlSelectedIndex()
-        let daySegmentedControlView = HeaderTableView(frame: segmentFrame, initialItems: segmentTitles, selectedIndex: selectedIndex, didChangeAction: { [weak self] (selectedIndex) in
+        daySegmentedControlView = HeaderTableView(frame: segmentFrame, initialItems: segmentTitles, selectedIndex: selectedIndex, didChangeAction: { [weak self] (selectedIndex) in
             self?.viewModel.selectedDay = selectedIndex
             self?.tableView.reloadData()
         })
         self.tableView.tableHeaderView = daySegmentedControlView
 
         viewModel.delegate = self
+        if DateTimeUtils.shared.shouldEnableZoneToggle() {
+            rezoneButton.style = .plain
+            rezoneButton.target = self
+            rezoneButton.action = #selector(changeTimezone)
+            rezoneButton.title = DateTimeUtils.shared.titleForRezoneButton()
+            navigationItem.rightBarButtonItem = rezoneButton
+        }
+    }
+    
+    @objc private func changeTimezone() {
+        DateTimeUtils.shared.toggleSelectedTimezone()
+        rezoneButton.title = DateTimeUtils.shared.titleForRezoneButton()
+        daySegmentedControlView?.timezoneLabel.attributedText = DateTimeUtils.shared.titleForCurrentZoneInfo()
+        tableView.reloadData()
     }
 
     func handleGraphqlError() {

@@ -418,7 +418,7 @@ class DetailGraphqlViewController: BaseViewController {
     private func logTap(talkId: Int) {
         let event = TrackingEvent(tap: "Feedback Button \(talkId)", category: "Open Feedback")
         AnalyticsManager.shared.log(event: event)
-    }
+    } 
 
     override func trackingEvent() -> TrackingEvent? {
         if let talk = self.talk, let trackingEvent = TrackingEvent(screenView: self, screenName: "Detail - \(talk.title)") {

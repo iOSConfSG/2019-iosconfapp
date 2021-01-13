@@ -26,7 +26,6 @@ class ScheduleGraphqlViewModel {
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        df.timeZone = TimeZone(identifier: "Asia/Singapore")
         return df
     }()
 
