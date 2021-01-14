@@ -13,23 +13,30 @@ class PushNotificationManager: NSObject, UIApplicationDelegate {
 
     private func setupPushNotification(launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
         // OneSignal
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        OneSignal.initWithLaunchOptions(launchOptions)
+        
+//        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+//        if let oneSignalDict = Helpers.dictionaryFromPlist(filename: "OneSignal-Info") {
+//            if let oneSignalAppId = oneSignalDict["ONE_SIGNAL_APP_ID"] {
+//                let appIdString = oneSignalAppId as! String
+//
+//                OneSignal.initWithLaunchOptions(launchOptions,
+//                                                appId: appIdString,
+//                                                handleNotificationAction: nil,
+//                                                settings: onesignalInitSettings)
+//                OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+//            }
+//            else {
+//                print("ERROR: Failed to initialize OneSignal - ONE_SIGNAL_APP_ID missing from plist.")
+//            }
+//        }
+//        else {
+//            print("ERROR: Failed to initialize OneSignal - missing OneSignal-Info.plist file.")
+//        }
         if let oneSignalDict = Helpers.dictionaryFromPlist(filename: "OneSignal-Info") {
-            if let oneSignalAppId = oneSignalDict["ONE_SIGNAL_APP_ID"] {
-                let appIdString = oneSignalAppId as! String
-
-                OneSignal.initWithLaunchOptions(launchOptions,
-                                                appId: appIdString,
-                                                handleNotificationAction: nil,
-                                                settings: onesignalInitSettings)
-                OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+            if let appId = oneSignalDict["ONE_SIGNAL_APP_ID"] as? String {
+                OneSignal.setAppId(appId)
             }
-            else {
-                print("ERROR: Failed to initialize OneSignal - ONE_SIGNAL_APP_ID missing from plist.")
-            }
-        }
-        else {
-            print("ERROR: Failed to initialize OneSignal - missing OneSignal-Info.plist file.")
         }
     }
 

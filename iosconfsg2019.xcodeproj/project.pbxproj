@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140EEC5A4C16C22B295C417E /* Pods_iosconfsg2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */; };
 		24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */; };
 		24C8AC9021EE306E00829307 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8AC8F21EE306E00829307 /* Helpers.swift */; };
-		388E8DCB875D2A6E004A8B10 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */; };
 		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
 		5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79421912C25006EA97E /* UIFontExtensions.swift */; };
@@ -18,6 +16,9 @@
 		5A287DD62333BF8600F20101 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD52333BF8600F20101 /* schema.json */; };
 		5A287DD92333C5F600F20101 /* api.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5A287DD82333C5F500F20101 /* api.graphql */; };
 		5A287DDB2333C6AD00F20101 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A287DDA2333C6AD00F20101 /* API.swift */; };
+		5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */; };
+		5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809125AB2A79003A1721 /* ApolloWebSocket */; };
+		5A2E809A25AB2CCE003A1721 /* ApolloCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809925AB2CCE003A1721 /* ApolloCore */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
 		5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519823C0924800D5FE5C /* AnalyticsManager.swift */; };
@@ -35,13 +36,27 @@
 		5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3E4421E1EC9700A49FE1 /* Talk.swift */; };
 		5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88951421E2DD2B0015BEFD /* DateExtensions.swift */; };
 		5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */; };
+		5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7525A9FA00000FFE85 /* Apollo */; };
+		5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */; };
+		5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8125AA95D7000FFE85 /* OneSignal */; };
+		5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8625AA9636000FFE85 /* Kingfisher */; };
+		5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F9025AA9C66000FFE85 /* OneSignal */; };
+		5AB1851825AEDEBE004CEACD /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1851725AEDEBE004CEACD /* DateTimeUtils.swift */; };
+		5AB1851C25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1851B25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
 		5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */; };
 		5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */; };
+		5AE8E23D25AFD17700C6B8DB /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E23A25AFD17700C6B8DB /* String+NSRange.swift */; };
+		5AE8E23E25AFD17700C6B8DB /* String+Attributer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E23B25AFD17700C6B8DB /* String+Attributer.swift */; };
+		5AE8E23F25AFD17700C6B8DB /* NSAttributedString+Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E23C25AFD17700C6B8DB /* NSAttributedString+Html.swift */; };
+		5AE8E24625AFD1A600C6B8DB /* AttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E24225AFD1A500C6B8DB /* AttributedLabel.swift */; };
+		5AE8E24725AFD1A600C6B8DB /* AttributedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E24325AFD1A600C6B8DB /* AttributedTextView.swift */; };
+		5AE8E24825AFD1A600C6B8DB /* CGFloatDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E24425AFD1A600C6B8DB /* CGFloatDP.swift */; };
+		5AE8E24925AFD1A600C6B8DB /* Attributer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE8E24525AFD1A600C6B8DB /* Attributer.swift */; };
+		5AFB3B9225AC7ACA00BDA680 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB3B9125AC7ACA00BDA680 /* Speaker.swift */; };
 		5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF176218D6AA100FD2190 /* AppDelegate.swift */; };
 		5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17D218D6AA200FD2190 /* Assets.xcassets */; };
 		5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */; };
-		5B515F5323C4633D00CBE57B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */; };
 		5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */; };
 		5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DFC7B234F06E500024A13 /* ApolloManager.swift */; };
 		B57452C623C0E7C8004CD8C3 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */; };
@@ -105,28 +120,32 @@
 		5A7C3E4421E1EC9700A49FE1 /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		5A88951421E2DD2B0015BEFD /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopViewModel.swift; sourceTree = "<group>"; };
+		5AB1851725AEDEBE004CEACD /* DateTimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
+		5AB1851B25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtensions.swift; sourceTree = "<group>"; };
 		5ABCCA2621E5E1010058A076 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5ACB755421E89CFC00A21F97 /* WorkshopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopViewController.swift; sourceTree = "<group>"; };
+		5AE4747D25ABDB6C00FF4235 /* AttributedTextView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AttributedTextView.framework; path = ../../../../Desktop/AttributedTextView.framework; sourceTree = "<group>"; };
+		5AE8E23A25AFD17700C6B8DB /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
+		5AE8E23B25AFD17700C6B8DB /* String+Attributer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributer.swift"; sourceTree = "<group>"; };
+		5AE8E23C25AFD17700C6B8DB /* NSAttributedString+Html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Html.swift"; sourceTree = "<group>"; };
+		5AE8E24225AFD1A500C6B8DB /* AttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedLabel.swift; sourceTree = "<group>"; };
+		5AE8E24325AFD1A600C6B8DB /* AttributedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedTextView.swift; sourceTree = "<group>"; };
+		5AE8E24425AFD1A600C6B8DB /* CGFloatDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatDP.swift; sourceTree = "<group>"; };
+		5AE8E24525AFD1A600C6B8DB /* Attributer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributer.swift; sourceTree = "<group>"; };
+		5AFB3B9125AC7ACA00BDA680 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosconfsg2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF176218D6AA100FD2190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFBF17D218D6AA200FD2190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFBF180218D6AA200FD2190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AFBF182218D6AA200FD2190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B5DFC79234F063D00024A13 /* ScheduleGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphqlViewController.swift; sourceTree = "<group>"; };
 		5B5DFC7B234F06E500024A13 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
-		7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
-		A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsg2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.release.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.release.xcconfig"; sourceTree = "<group>"; };
 		B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
-		C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsg2019.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019.debug.xcconfig"; sourceTree = "<group>"; };
-		CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosconfsgNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D118B29623C180AB00C11A2D /* VenueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTableViewCell.swift; sourceTree = "<group>"; };
 		D118B29823C1878F00C11A2D /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		D118B29A23C187C200C11A2D /* VenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewModel.swift; sourceTree = "<group>"; };
 		D1D5A32623BE27D50070E787 /* VenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewController.swift; sourceTree = "<group>"; };
-		DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-iosconfsgNotificationServiceExtension/Pods-iosconfsgNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388E8DCB875D2A6E004A8B10 /* Pods_iosconfsgNotificationServiceExtension.framework in Frameworks */,
+				5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +161,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				140EEC5A4C16C22B295C417E /* Pods_iosconfsg2019.framework in Frameworks */,
+				5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */,
+				5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */,
+				5A2E809A25AB2CCE003A1721 /* ApolloCore in Frameworks */,
+				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
+				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
+				5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */,
+				5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,18 +179,10 @@
 			children = (
 				B57452C523C0E7C8004CD8C3 /* StyleSheet.swift */,
 				24C8AC8F21EE306E00829307 /* Helpers.swift */,
+				5AB1851725AEDEBE004CEACD /* DateTimeUtils.swift */,
 				5B5DFC7B234F06E500024A13 /* ApolloManager.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		31C3D23D7649EB9DF09DBFE0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A687F4C88F2DFEB4BEBBABFE /* Pods_iosconfsg2019.framework */,
-				CFF5E427C2FCD371D1B7B538 /* Pods_iosconfsgNotificationServiceExtension.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5A262BA621AC165A008BC34F /* Schedule Tab */ = {
@@ -189,6 +206,7 @@
 				5A15A79221908C0E006EA97E /* UIViewExtensions.swift */,
 				5A88951421E2DD2B0015BEFD /* DateExtensions.swift */,
 				5ABCCA2C21E623CF0058A076 /* UIImageViewExtensions.swift */,
+				5AB1851B25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,9 +272,18 @@
 			isa = PBXGroup;
 			children = (
 				5A7C3E4421E1EC9700A49FE1 /* Talk.swift */,
+				5AFB3B9125AC7ACA00BDA680 /* Speaker.swift */,
 				5ABCCA2621E5E1010058A076 /* Feedback.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5AAB6F8F25AA9C66000FFE85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AE4747D25ABDB6C00FF4235 /* AttributedTextView.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5ACB755321E89CE400A21F97 /* Workshop Tab */ = {
@@ -268,14 +295,27 @@
 			path = "Workshop Tab";
 			sourceTree = "<group>";
 		};
+		5AE4748325ABDBCF00FF4235 /* AttributedTextView */ = {
+			isa = PBXGroup;
+			children = (
+				5AE8E23C25AFD17700C6B8DB /* NSAttributedString+Html.swift */,
+				5AE8E23B25AFD17700C6B8DB /* String+Attributer.swift */,
+				5AE8E23A25AFD17700C6B8DB /* String+NSRange.swift */,
+				5AE8E24225AFD1A500C6B8DB /* AttributedLabel.swift */,
+				5AE8E24325AFD1A600C6B8DB /* AttributedTextView.swift */,
+				5AE8E24525AFD1A600C6B8DB /* Attributer.swift */,
+				5AE8E24425AFD1A600C6B8DB /* CGFloatDP.swift */,
+			);
+			path = AttributedTextView;
+			sourceTree = "<group>";
+		};
 		5AFBF16A218D6AA000FD2190 = {
 			isa = PBXGroup;
 			children = (
 				5AFBF175218D6AA000FD2190 /* iosconfsg2019 */,
 				5A7C3E2F21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension */,
 				5AFBF174218D6AA000FD2190 /* Products */,
-				AE0B204DE0F126D371F9F527 /* Pods */,
-				31C3D23D7649EB9DF09DBFE0 /* Frameworks */,
+				5AAB6F8F25AA9C66000FFE85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +331,7 @@
 		5AFBF175218D6AA000FD2190 /* iosconfsg2019 */ = {
 			isa = PBXGroup;
 			children = (
+				5AE4748325ABDBCF00FF4235 /* AttributedTextView */,
 				5A61519C23C0A30E00D5FE5C /* UI Components */,
 				5A61519723C0923800D5FE5C /* Startup Services */,
 				5A7C3E4321E1EC8A00A49FE1 /* Models */,
@@ -302,7 +343,6 @@
 				5A262BA721AC1682008BC34F /* Extensions */,
 				24C8AC8E21EE305D00829307 /* Helpers */,
 				5AFBF176218D6AA100FD2190 /* AppDelegate.swift */,
-				5B515F5223C4633D00CBE57B /* GoogleService-Info.plist */,
 				24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
@@ -315,17 +355,6 @@
 			path = iosconfsg2019;
 			sourceTree = "<group>";
 		};
-		AE0B204DE0F126D371F9F527 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */,
-				AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */,
-				DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */,
-				7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,7 +362,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A7C3E3821E1AA5700A49FE1 /* Build configuration list for PBXNativeTarget "iosconfsgNotificationServiceExtension" */;
 			buildPhases = (
-				A59B9329F36244FECEDC791B /* [CP] Check Pods Manifest.lock */,
 				5A7C3E2A21E1AA5700A49FE1 /* Sources */,
 				5A7C3E2B21E1AA5700A49FE1 /* Frameworks */,
 				5A7C3E2C21E1AA5700A49FE1 /* Resources */,
@@ -343,6 +371,9 @@
 			dependencies = (
 			);
 			name = iosconfsgNotificationServiceExtension;
+			packageProductDependencies = (
+				5AAB6F9025AA9C66000FFE85 /* OneSignal */,
+			);
 			productName = iosconfsgNotificationServiceExtension;
 			productReference = 5A7C3E2E21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -351,13 +382,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFBF185218D6AA200FD2190 /* Build configuration list for PBXNativeTarget "iosconfsg2019" */;
 			buildPhases = (
-				423A3963C1DFA6E08362B9C9 /* [CP] Check Pods Manifest.lock */,
 				5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */,
 				5AFBF16F218D6AA000FD2190 /* Sources */,
 				5AFBF170218D6AA000FD2190 /* Frameworks */,
 				5AFBF171218D6AA000FD2190 /* Resources */,
 				5A7C3E3921E1AA5700A49FE1 /* Embed App Extensions */,
-				DDAE4EA4F8D088513C4AD876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +394,15 @@
 				5A7C3E3421E1AA5700A49FE1 /* PBXTargetDependency */,
 			);
 			name = iosconfsg2019;
+			packageProductDependencies = (
+				5AAB6F7525A9FA00000FFE85 /* Apollo */,
+				5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */,
+				5AAB6F8125AA95D7000FFE85 /* OneSignal */,
+				5AAB6F8625AA9636000FFE85 /* Kingfisher */,
+				5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */,
+				5A2E809125AB2A79003A1721 /* ApolloWebSocket */,
+				5A2E809925AB2CCE003A1721 /* ApolloCore */,
+			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
 			productType = "com.apple.product-type.application";
@@ -376,7 +414,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Vina Melody";
 				TargetAttributes = {
 					5A7C3E2D21E1AA5700A49FE1 = {
@@ -411,6 +449,13 @@
 				Base,
 			);
 			mainGroup = 5AFBF16A218D6AA000FD2190;
+			packageReferences = (
+				5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+				5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5AFBF174218D6AA000FD2190 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,35 +483,12 @@
 				5A287DD62333BF8600F20101 /* schema.json in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
 				24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */,
-				5B515F5323C4633D00CBE57B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		423A3963C1DFA6E08362B9C9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosconfsg2019-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5A287DD72333C1CB00F20101 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,46 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://iosconfsg.herokuapp.com/v1/graphql\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
-		};
-		A59B9329F36244FECEDC791B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosconfsgNotificationServiceExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DDAE4EA4F8D088513C4AD876 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosconfsg2019/Pods-iosconfsg2019-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "cd \"${SRCROOT}\"/Codegen\nxcrun -sdk macosx swift run\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -543,23 +526,30 @@
 				5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */,
 				5A61519B23C0928E00D5FE5C /* PushNotificationManager.swift in Sources */,
 				5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */,
+				5AB1851C25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
 				5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */,
 				5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */,
 				D118B29B23C187C200C11A2D /* VenueViewModel.swift in Sources */,
 				5B5DFC7A234F063D00024A13 /* ScheduleGraphqlViewController.swift in Sources */,
 				5A1AAFBA235DEFDA0030239C /* DetailGraphqlViewController.swift in Sources */,
+				5AE8E24725AFD1A600C6B8DB /* AttributedTextView.swift in Sources */,
 				5ABCCA2D21E623CF0058A076 /* UIImageViewExtensions.swift in Sources */,
 				5A287DDB2333C6AD00F20101 /* API.swift in Sources */,
 				5A7B2BE32196C9D100D8FDC5 /* NewsViewController.swift in Sources */,
+				5AE8E24825AFD1A600C6B8DB /* CGFloatDP.swift in Sources */,
 				5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */,
 				B57452C623C0E7C8004CD8C3 /* StyleSheet.swift in Sources */,
 				5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */,
 				5A7B2BE52196CA3000D8FDC5 /* AboutViewController.swift in Sources */,
 				24C8AC9021EE306E00829307 /* Helpers.swift in Sources */,
 				5A7C3E4521E1EC9700A49FE1 /* Talk.swift in Sources */,
+				5AE8E24625AFD1A600C6B8DB /* AttributedLabel.swift in Sources */,
 				5A15A79521912C25006EA97E /* UIFontExtensions.swift in Sources */,
+				5AE8E23E25AFD17700C6B8DB /* String+Attributer.swift in Sources */,
 				D118B29923C1878F00C11A2D /* Venue.swift in Sources */,
+				5AFB3B9225AC7ACA00BDA680 /* Speaker.swift in Sources */,
+				5AE8E23F25AFD17700C6B8DB /* NSAttributedString+Html.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
 				5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */,
 				D1D5A32723BE27D50070E787 /* VenueViewController.swift in Sources */,
@@ -569,8 +559,11 @@
 				5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */,
 				5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */,
 				5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */,
+				5AE8E24925AFD1A600C6B8DB /* Attributer.swift in Sources */,
 				5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */,
+				5AB1851825AEDEBE004CEACD /* DateTimeUtils.swift in Sources */,
 				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
+				5AE8E23D25AFD17700C6B8DB /* String+NSRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,12 +591,11 @@
 /* Begin XCBuildConfiguration section */
 		5A7C3E3621E1AA5700A49FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE9E30AFD0FC6339E6284F73 /* Pods-iosconfsgNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsgNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -612,7 +604,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.21;
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSG2019NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -623,12 +615,11 @@
 		};
 		5A7C3E3721E1AA5700A49FE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D04ACA7C1D48B4D9EA2501C /* Pods-iosconfsgNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = iosconfsgNotificationServiceExtension/iosconfsgNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsgNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -637,7 +628,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.21;
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG.iOSConfSG2019NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -673,6 +664,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -735,6 +727,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -766,21 +759,21 @@
 		};
 		5AFBF186218D6AA200FD2190 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4D864E03AF46983527B718A /* Pods-iosconfsg2019.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iosconfsg2019/iosconfsg2019.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.21;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -790,21 +783,21 @@
 		};
 		5AFBF187218D6AA200FD2190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AACE8BB2373B58FD4B9CCD75 /* Pods-iosconfsg2019.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iosconfsg2019/iosconfsg2019.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.21;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niveumlabs.iOSConfSG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -843,6 +836,92 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.39.0;
+			};
+		};
+		5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+		5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.1;
+			};
+		};
+		5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		5A2E809125AB2A79003A1721 /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+		5A2E809925AB2CCE003A1721 /* ApolloCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCore;
+		};
+		5AAB6F7525A9FA00000FFE85 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		5AAB6F8125AA95D7000FFE85 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignal;
+		};
+		5AAB6F8625AA9636000FFE85 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5AAB6F9025AA9C66000FFE85 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5AFBF16B218D6AA000FD2190 /* Project object */;
 }

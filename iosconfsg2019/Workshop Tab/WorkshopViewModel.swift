@@ -18,7 +18,7 @@ class WorkshopViewModel {
     private var apollo: ApolloClient!
     private var scheduleSubscription: Cancellable!
     private var scheduleGraphql: [GetScheduleSubscription.Data.Schedule] = []
-    private var schedule: [TalkV2] = []
+    private var schedule: [Talk] = []
 
     var delegate: WorkshopViewModelDelegate?
     var selectedDay: Int?
@@ -26,7 +26,6 @@ class WorkshopViewModel {
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        df.timeZone = TimeZone(identifier: "Asia/Singapore")
         return df
     }()
 
@@ -34,30 +33,31 @@ class WorkshopViewModel {
         case one = 0
         case two = 1
 
+        
         var dateString: String {
             switch self {
             case .one:
-                return "15 Jan"
+                return "18 Jan"
             case .two:
-                return "16 Jan"
+                return "19 Jan"
             }
         }
 
         var activityName: String {
             switch self {
             case .one:
-                return "iosconfsg20.workshop1"
+                return "iosconfsg21.workshop1"
             case .two:
-                return "iosconfsg20.workshop2"
+                return "iosconfsg21.workshop2"
             }
         }
 
         var dateInt: Int {
             switch self {
             case .one:
-                return 15
+                return 18
             case .two:
-                return 16
+                return 19
             }
         }
     }
@@ -114,38 +114,55 @@ class WorkshopViewModel {
         if !self.schedule.isEmpty {
             self.schedule.removeAll()
         }
+
         for item in response {
             guard let id = item.id,
                 let title = item.title,
                 let talkTypeString = item.talkType,
                 let talkType = TalkType(rawValue: talkTypeString) else {
-                print("Incomplete data")
+                print("Incomplete data \(item)")
                 return
             }
+            
+            var speakers: [Speaker] = []
+            if !item.speakers.isEmpty {
+                speakers = createSpeakers(from: item)
+            }
 
-            let talk = TalkV2(id: id,
-                              title: title,
-                              talkType: talkType,
-                              startAt: dateFormatter.date(from: item.startAt ?? ""),
-                              endAt: dateFormatter.date(from: item.endAt ?? ""),
-                              talkDescription: item.talkDescription,
-                              speakerImage: item.speakerImage ?? "welcome_icon",
-                              speakerTwitter: item.speakerTwitter ?? "N/A",
-                              speakerCompany: item.speakerCompany ?? "N/A",
-                              speakerName: item.speakerName ?? "iOS Conf SG",
-                              speakerBio: item.speakerBio,
-                              speakerLinkedin: item.speakerLinkedin,
-                              activityName: item.activity ?? "")
+            let talk = Talk(id: id,
+                            title: title,
+                            talkType: talkType,
+                            startAt: dateFormatter.date(from: item.startAt ?? ""),
+                            endAt: dateFormatter.date(from: item.endAt ?? ""),
+                            talkDescription: item.talkDescription,
+                            activityName: item.activity ?? "",
+                            speakers: speakers)
             self.schedule.append(talk)
         }
         delegate?.didFetchSchedule()
+    }
+    
+    // TODO: refactor to a factory!
+    func createSpeakers(from talk: GetScheduleSubscription.Data.Schedule) -> [Speaker] {
+        let speakers = talk.speakers.map { (speaker) -> Speaker in
+            return Speaker(id: speaker.id ?? 1,
+                           name: speaker.name ?? "",
+                           shortBio: speaker.shortBio,
+                           twitter: speaker.twitter,
+                           linkedIn: speaker.linkedinUrl,
+                           company: speaker.company,
+                           companyUrl: speaker.companyUrl,
+                           imageUrl: speaker.imageUrl,
+                           imageFilename: speaker.imageFilename)
+        }
+        return speakers
     }
 
     func numberOfRows() -> Int {
         return scheduleFor(day: self.selectedDay ?? 0).count
     }
 
-    func getTalkForIndexpath(indexPath: IndexPath) -> TalkV2? {
+    func getTalkForIndexpath(indexPath: IndexPath) -> Talk? {
         guard !self.schedule.isEmpty else { return nil }
         let selectedDay = self.selectedDay ?? 0
         let scheduleOnSelectedDay = scheduleFor(day: selectedDay)
@@ -155,9 +172,9 @@ class WorkshopViewModel {
         return scheduleOnSelectedDay[indexPath.row]
     }
 
-    private func scheduleFor(day: Int) -> [TalkV2] {
+    private func scheduleFor(day: Int) -> [Talk] {
         guard let selectedDay = WorkshopDay(rawValue: day) else {
-            return [TalkV2]()
+            return [Talk]()
         }
 
         let talksOnThatDay = self.schedule.filter({ $0.activityName == selectedDay.activityName })

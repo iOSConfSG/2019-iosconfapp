@@ -30,8 +30,7 @@ class FeedbackViewModel {
         self.apollo = connection
     }
 
-    func submitFeedback(for talk: TalkV2, feeling: Feedback.Feeling, comments: String, completionHandler: @escaping ((Result<Bool, FeedbackError>) -> Void)) {
-
+    func submitFeedback(for talk: Talk, feeling: Feedback.Feeling, comments: String, completionHandler: @escaping ((Result<Bool, FeedbackError>) -> Void)) {
         apollo.perform(mutation: CreateFeedbackMutation(talkId: talk.id, feeling: feeling.emoji, comment: comments)) { [weak self] (result) in
             switch result {
             case .success(let object):

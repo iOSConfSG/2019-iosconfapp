@@ -14,15 +14,14 @@ extension Date {
     public func toConferenceTime() -> String {
         
         let df = DateFormatter()
-        df.timeZone = TimeZone(abbreviation: "SGT")
+        df.timeZone = DateTimeUtils.shared.selectedTimezone
         df.dateFormat = "HH:mm"
-        
         return df.string(from: self)
     }
     
     public func toConferenceDate() -> String {
         let df = DateFormatter()
-        df.timeZone = TimeZone(abbreviation: "SGT")
+        df.timeZone = DateTimeUtils.shared.selectedTimezone
         df.dateFormat = "d MMM yyyy"
         return df.string(from: self)
     }

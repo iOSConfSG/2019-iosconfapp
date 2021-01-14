@@ -1,28 +1,33 @@
 subscription GetSchedule {
   schedule {
-    activity
-    end_at
     id
-    speaker_bio
-    speaker_company
-    speaker_image
-    speaker_name
-    speaker_twitter
-    speaker_linkedin
-    speaker_image_url
-    start_at
-    talk_description
-    talk_type
+    activity
     title
+    start_at
+    end_at
+    talk_type
+    talk_description
+    speakers {
+      id
+      name
+      company
+      company_url
+      image_url
+      image_filename
+      twitter
+      linkedin_url
+      short_bio
+    }
   }
 }
 
 mutation CreateFeedback($talkId: Int!, $feeling: String!, $comment: String!) {
-  insert_feedback(objects: [{
-    talk_id: $talkId,
-    feeling: $feeling,
-    comment: $comment
-  }]) {
-    affected_rows
-  }
+    insert_feedback(objects: [{
+        talk_id: $talkId,
+        feeling: $feeling,
+        comment: $comment
+    }]) {
+        affected_rows
+    }
 }
+

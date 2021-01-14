@@ -7,18 +7,13 @@
 //
 
 import UIKit
-import Firebase
 
 class AnalyticsManager: NSObject {
     static let shared = AnalyticsManager()
 
     func log(event: TrackingEvent) {
-        switch event.eventType {
-        case .tap:
-            fallthrough
-        default:
-            Analytics.logEvent(event.eventType.identifier, parameters: convertParameters(event.parameters))
-        }
+        // do nothing for this time round
+        return
     }
 
     private func convertParameters(_ trackingEventParams: [TrackingEvent.ParameterKey: String]) -> [String: String] {
@@ -34,7 +29,8 @@ class AnalyticsManager: NSObject {
 extension AnalyticsManager: UIApplicationDelegate {
 
     private func setupAnalytics() {
-        FirebaseApp.configure()
+        // another analytics in the future
+        // FirebaseApp.configure()
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

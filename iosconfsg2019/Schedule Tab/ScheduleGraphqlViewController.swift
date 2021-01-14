@@ -8,19 +8,25 @@
 
 import UIKit
 import Apollo
-import NVActivityIndicatorView
+import NVActivityIndicatorViewExtended
 
 class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorViewable {
 
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
     private var tableView: UITableView!
+    var daySegmentedControlView: HeaderTableView?
+    
+    private let rezoneButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        return btn
+    }()
 
     lazy var viewModel: ScheduleGraphqlViewModel = {
         return ScheduleGraphqlViewModel(failInitClosure: {
             handleGraphqlError()
         })
-    }()
+    }()    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,16 +64,30 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         skylineView.contentMode = .scaleAspectFill
         self.tableView.tableFooterView = skylineView
 
-        let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
+        let segmentFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: DateTimeUtils.shared.shouldEnableZoneToggle() ? 64 : 44)
         let segmentTitles = viewModel.segmentedControlLabels()
         let selectedIndex = viewModel.segmentedControlSelectedIndex()
-        let daySegmentedControlView = HeaderTableView(frame: segmentFrame, initialItems: segmentTitles, selectedIndex: selectedIndex, didChangeAction: { [weak self] (selectedIndex) in
+        daySegmentedControlView = HeaderTableView(frame: segmentFrame, initialItems: segmentTitles, selectedIndex: selectedIndex, didChangeAction: { [weak self] (selectedIndex) in
             self?.viewModel.selectedDay = selectedIndex
             self?.tableView.reloadData()
         })
         self.tableView.tableHeaderView = daySegmentedControlView
 
         viewModel.delegate = self
+        if DateTimeUtils.shared.shouldEnableZoneToggle() {
+            rezoneButton.style = .plain
+            rezoneButton.target = self
+            rezoneButton.action = #selector(changeTimezone)
+            rezoneButton.title = DateTimeUtils.shared.titleForRezoneButton()
+            navigationItem.rightBarButtonItem = rezoneButton
+        }        
+    }
+    
+    @objc private func changeTimezone() {
+        DateTimeUtils.shared.toggleSelectedTimezone()
+        rezoneButton.title = DateTimeUtils.shared.titleForRezoneButton()
+        daySegmentedControlView?.timezoneLabel.attributedText = DateTimeUtils.shared.titleForCurrentZoneInfo()
+        tableView.reloadData()        
     }
 
     func handleGraphqlError() {
@@ -136,6 +156,21 @@ class HeaderTableView: UIView {
 
     var daySegmentControl: UISegmentedControl!
     var didChangeAction: ((_ selectedIndex: Int) -> Void)?
+    
+    let timezoneLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: UIFont.smallSize)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let timezoneContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
+        return view
+    }()
 
     init(frame: CGRect, initialItems: [String], selectedIndex: Int, didChangeAction: ((_ selectedIndex: Int) -> Void)?) {
         super.init(frame: frame)
@@ -156,8 +191,24 @@ class HeaderTableView: UIView {
         daySegmentControl.tintColor = StyleSheet.shared.theme.primaryLabelColor
         daySegmentControl.backgroundColor = StyleSheet.shared.theme.secondaryBackgroundColor
         addSubview(daySegmentControl)
-        addConstraintsWithFormat("H:|-16-[v0]-16-|", views: daySegmentControl)
-        addConstraintsWithFormat("V:|-8-[v0]-8-|", views: daySegmentControl)
+        
+        if DateTimeUtils.shared.shouldEnableZoneToggle() {
+            timezoneContainer.addSubview(timezoneLabel)
+            timezoneContainer.addConstraintsWithFormat("H:|[v0]|", views: timezoneLabel)
+            timezoneContainer.addConstraintsWithFormat("V:|-4-[v0]-4-|", views: timezoneLabel)
+            addSubview(timezoneContainer)
+            
+            addConstraintsWithFormat("H:|[v0]|", views: timezoneContainer)
+            addConstraintsWithFormat("H:|-16-[v0]-16-|", views: daySegmentControl)
+            addConstraintsWithFormat("V:|-8-[v0]-2-[v1(22)]-8-|", views: daySegmentControl, timezoneContainer)
+            
+            timezoneContainer.isHidden = false
+            timezoneLabel.attributedText = DateTimeUtils.shared.titleForCurrentZoneInfo()
+        } else {
+            timezoneContainer.isHidden = true
+            addConstraintsWithFormat("H:|-16-[v0]-16-|", views: daySegmentControl)
+            addConstraintsWithFormat("V:|-8-[v0]-8-|", views: daySegmentControl)
+        }
     }
 
     required init?(coder: NSCoder) {

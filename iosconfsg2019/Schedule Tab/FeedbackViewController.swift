@@ -11,7 +11,7 @@ import UIKit
 class FeedbackViewController: BaseViewController {
     
     var selectedButton: MyButton?
-    var talk: TalkV2?
+    var talk: Talk?
     
     let qualityTitleLabel: UILabel = {
         let title = UILabel()
@@ -169,7 +169,7 @@ class FeedbackViewController: BaseViewController {
         NSLayoutConstraint.activate([
             qualityTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
             qualityTitleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 12),
-            qualityTitleLabel.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 12)
+            qualityTitleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24),
             ])
         
         NSLayoutConstraint.activate([
@@ -194,14 +194,14 @@ class FeedbackViewController: BaseViewController {
             starstruckButton.heightAnchor.constraint(equalTo: frowningButton.heightAnchor),
             starstruckButton.widthAnchor.constraint(equalTo: frowningButton.widthAnchor)
             ])
-        
+
         NSLayoutConstraint.activate([
             sendButton.heightAnchor.constraint(equalToConstant: 44),
             sendButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
             sendButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12),
             sendButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -12)
             ])
-        
+
         NSLayoutConstraint.activate([
             commentTextView.topAnchor.constraint(equalTo: frowningButton.bottomAnchor, constant: 12),
             commentTextView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
@@ -212,13 +212,13 @@ class FeedbackViewController: BaseViewController {
             errorLabel.rightAnchor.constraint(equalTo: commentTextView.rightAnchor),
             errorLabel.bottomAnchor.constraint(equalTo: sendButton.topAnchor, constant: -12)
             ])
-        
+
         commentTextView.layer.borderWidth = 1.0
         commentTextView.layer.borderColor = UIColor.lightGray.cgColor
         commentTextView.delegate = self
-        
+
         sendButton.addTarget(self, action: #selector(sendFeedback), for: .touchUpInside)
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
@@ -236,9 +236,9 @@ class FeedbackViewController: BaseViewController {
             #if DEBUG
             print("Empty feedback")
             #endif
+            sendButton.loadingIndicator(show: false)
             return
         }
-
         viewModel.submitFeedback(for: talk, feeling: feeling, comments: self.commentTextView.text, completionHandler: { [weak self] result in
             switch result {
             case .success:

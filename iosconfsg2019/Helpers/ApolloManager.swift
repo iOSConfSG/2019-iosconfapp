@@ -8,11 +8,12 @@
 
 import Foundation
 import Apollo
+import ApolloWebSocket
 
 class NetworkManager {
     static let shared = NetworkManager()
     let httpsEndpoint = "https://iosconfsg.herokuapp.com/v1/graphql"
-    let wsEndpoint = "wss://iosconfsg.herokuapp.com/v1/graphql"
+    let wsEndpoint = "ws://iosconfsg.herokuapp.com/v1/graphql"
     var apolloClient: ApolloClient?
 
     private init() {
@@ -24,14 +25,23 @@ class NetworkManager {
             let map: GraphQLMap = [:]
             guard let wsEndpointUrl = URL(string: wsEndpoint) else { return nil }
 
-            let configuration = URLSessionConfiguration.default
+//            let configuration = URLSessionConfiguration.default
             guard let httpsEndpointUrl = URL(string: httpsEndpoint) else { return nil}
 
             let request = URLRequest(url: wsEndpointUrl)
-            let websocket = WebSocketTransport(request: request, sendOperationIdentifiers: false, reconnectionInterval: 30000, connectingPayload: map)
-            let httpNetworkTransport: HTTPNetworkTransport = HTTPNetworkTransport(url: httpsEndpointUrl, session: URLSession(configuration: configuration))
-            let splitNetworkTransport = SplitNetworkTransport(httpNetworkTransport: httpNetworkTransport, webSocketNetworkTransport: websocket)
-            return ApolloClient(networkTransport: splitNetworkTransport)
+//            let websocket = WebSocketTransport(request: request, sendOperationIdentifiers: true, reconnectionInterval: 30000, connectingPayload: map)
+            let websocket = WebSocketTransport(request: request)
+            
+            
+            let store = ApolloStore(cache: InMemoryNormalizedCache())
+//            let client = URLSessionClient()
+            let provider = LegacyInterceptorProvider(store: store)
+            let httpNetworkTransport = RequestChainNetworkTransport(interceptorProvider: provider, endpointURL: httpsEndpointUrl)
+//            let httpNetworkTransport: HTTPNetworkTransport = HTTPNetworkTransport(url: httpsEndpointUrl, session: URLSession(configuration: configuration))
+            let splitNetworkTransport = SplitNetworkTransport(uploadingNetworkTransport: httpNetworkTransport, webSocketNetworkTransport: websocket)
+//            let splitNetworkTransport = SplitNetworkTransport(httpNetworkTransport: httpNetworkTransport, webSocketNetworkTransport: websocket)
+            
+            return ApolloClient(networkTransport: splitNetworkTransport, store: store)
         }()
     }
 }

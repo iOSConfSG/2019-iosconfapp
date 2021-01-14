@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import NVActivityIndicatorView
+import NVActivityIndicatorViewExtended
 
 class NewsViewController: BaseViewController, NVActivityIndicatorViewable {
 
