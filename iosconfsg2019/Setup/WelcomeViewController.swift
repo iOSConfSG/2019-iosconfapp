@@ -22,7 +22,7 @@ class WelcomeViewController: BaseViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: UIFont.largeTitleSize, weight: .bold)
-        label.text = "iOS Conf SG"
+        label.text = "welcome.title".localized
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
@@ -32,7 +32,7 @@ class WelcomeViewController: BaseViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: UIFont.xLargeSize, weight: .light)
-        label.text = "18-22 January 2020"
+        label.text = "welcome.dateOfConference".localized
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
@@ -42,7 +42,7 @@ class WelcomeViewController: BaseViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: UIFont.normalSize, weight: .light)
-        label.text = "Hi there, please allow us to send you notifications so that we can keep you updated with important announcements. We hope you will enjoy the conference. Thank you!"
+        label.text = "welcome.notification.description".localized
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -52,7 +52,7 @@ class WelcomeViewController: BaseViewController {
     let allowNotificationButton: UIButton = {
         let btn = UIButton(type: UIButton.ButtonType.system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Allow Notifications", for: .normal)
+        btn.setTitle("welcome.notification.allowNotificationButton.title".localized, for: .normal)
         btn.setTitleColor(StyleSheet.shared.theme.primaryLabelColor, for: .normal)
         btn.backgroundColor = UIColor.init(white: 0.9, alpha: 1)
         btn.addTarget(self, action: #selector(requestNotificationPermission), for: .touchUpInside)
@@ -78,11 +78,11 @@ class WelcomeViewController: BaseViewController {
     
     @objc private func requestNotificationPermission() {
         
-        let acceptedAlert = UIAlertController(title: nil, message: "👏🏼 Thank you! You'll now be notified of the latest updates from iOS Conf SG.", preferredStyle: UIAlertController.Style.alert)
+        let acceptedAlert = UIAlertController(title: nil, message: "welcome.notification.accepted.message".localized, preferredStyle: UIAlertController.Style.alert)
         
-        let rejectedAlert = UIAlertController(title: nil, message: "😱 You won't see the latest updates from iOS Conf SG for now, but you can enable notifications in Settings.", preferredStyle: UIAlertController.Style.alert)
+        let rejectedAlert = UIAlertController(title: nil, message: "welcome.notification.rejected.message".localized, preferredStyle: UIAlertController.Style.alert)
         
-        let settingsAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) in
+        let settingsAction = UIAlertAction(title: "welcome.notification.goToSettings.title".localized, style: .default) { (_) in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 return
             }

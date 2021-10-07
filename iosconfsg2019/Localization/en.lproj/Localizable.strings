@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  iosconfsg2019
+
+  Created by Vina Melody on 18/12/21.
+  Copyright © 2021 Vina Melody. All rights reserved.
+*/
+
+"welcome.title" = "iOS Conf SG";
+"welcome.dateOfConference" = "18-22 January 2020";
+"welcome.notification.description" = "Hi there, please allow us to send you notifications so that we can keep you updated with important announcements. We hope you will enjoy the conference. Thank you!";
+"welcome.notification.allowNotificationButton.title" = "Allow Notifications";
+"welcome.notification.accepted.message" = "👏🏼 Thank you! You'll now be notified of the latest updates from iOS Conf SG.";
+"welcome.notification.rejected.message" = "😱 You won't see the latest updates from iOS Conf SG for now, but you can enable notifications in Settings.";
+"welcome.notification.goToSettings.title" = "Go to Settings";
+"schedule.navigation.title" = "Schedule";
+

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Apollo
+import Apollo   
 import NVActivityIndicatorViewExtended
 
 class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorViewable {
@@ -39,7 +39,7 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
-        navigationItem.title = "Conference Schedule"
+        navigationItem.title = "schedule.navigation.title".localized
         view.backgroundColor = .white
 
         tableView = UITableView(frame: view.frame, style: .plain)
