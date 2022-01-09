@@ -8,13 +8,14 @@
 
 import UIKit
 import Apollo   
-import NVActivityIndicatorViewExtended
+import NVActivityIndicatorView
 
-class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorViewable {
+class ScheduleGraphqlViewController: BaseViewController {
 
     private let timelineCellId: String = "timelineCell"
     private let headerViewId: String = "headerView"
     private var tableView: UITableView!
+    private let activityIndicatorView = NVActivityIndicatorView(frame: .zero)
     var daySegmentedControlView: HeaderTableView?
     
     private let rezoneButton: UIBarButtonItem = {
@@ -32,7 +33,7 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         super.viewDidLoad()
         setupViews()
         viewModel.tryFetchSchedule()
-        startAnimating()
+        activityIndicatorView.startAnimating()
     }
 
     private func setupViews() {
@@ -91,7 +92,7 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
     }
 
     func handleGraphqlError() {
-        stopAnimating()
+        activityIndicatorView.stopAnimating()
     }
 
     private func logTap(talkId: Int) {
@@ -145,9 +146,9 @@ extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDeleg
 
 extension ScheduleGraphqlViewController: ScheduleGraphqlViewModelDelegate {
     func didFetchSchedule() {
-        DispatchQueue.main.async {
-            self.stopAnimating()
-            self.tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicatorView.stopAnimating()
+            self?.tableView.reloadData()
         }
     }
 }
