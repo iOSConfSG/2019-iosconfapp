@@ -17,12 +17,11 @@ class AboutViewController: BaseViewController {
         static let softwareURL: URL! = URL.init(string: "https://iosconf.sg/software")
         static let slackURL: URL! = URL(string: "slack://open")
         static let faqURL: URL! = URL(string: "https://iosconf.sg/faq/")
-        static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2021")
 
         static let cellIdentifier = "AboutCell"
     }
 
-    private var sections: [[String]] = [["Code of Conduct", "Sponsors", "Software", "FAQ", "Feedback"], ["Open iOSConfSG Slack"]]
+    private var sections: [[String]] = [["Code of Conduct", "Sponsors", "Software", "FAQ"], ["Open iOSConfSG Slack"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,9 +154,6 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
         case (0,3):
             logTap(aboutName: "FAQ")
             openSafariViewController(withURL: K.faqURL)
-        case (0,4):
-            logTap(aboutName: "Feedback")
-            openSafariViewController(withURL: K.feedback)
         case (1,0):
             logTap(aboutName: "Open iOSConfSG Slack")
             openSlack()

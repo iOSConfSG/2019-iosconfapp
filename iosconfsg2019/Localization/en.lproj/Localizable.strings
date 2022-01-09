@@ -7,7 +7,7 @@
 */
 
 "welcome.title" = "iOS Conf SG";
-"welcome.dateOfConference" = "18-22 January 2020";
+"welcome.dateOfConference" = "17-21 January 2022";
 "welcome.notification.description" = "Hi there, please allow us to send you notifications so that we can keep you updated with important announcements. We hope you will enjoy the conference. Thank you!";
 "welcome.notification.allowNotificationButton.title" = "Allow Notifications";
 "welcome.notification.accepted.message" = "👏🏼 Thank you! You'll now be notified of the latest updates from iOS Conf SG.";
