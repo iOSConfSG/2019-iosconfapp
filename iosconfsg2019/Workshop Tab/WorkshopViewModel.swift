@@ -37,18 +37,18 @@ class WorkshopViewModel {
         var dateString: String {
             switch self {
             case .one:
-                return "18 Jan"
+                return "Day 1"
             case .two:
-                return "19 Jan"
+                return "Day 2"
             }
         }
 
         var activityName: String {
             switch self {
             case .one:
-                return "iosconfsg21.workshop1"
+                return "iosconfsg22.workshop1"
             case .two:
-                return "iosconfsg21.workshop2"
+                return "iosconfsg22.workshop2"
             }
         }
 

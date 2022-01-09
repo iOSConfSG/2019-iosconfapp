@@ -36,27 +36,27 @@ class ScheduleGraphqlViewModel {
         var dateString: String {
             switch self {
             case .one:
-                return "21 Jan"
+                return "Day 1"
             case .two:
-                return "22 Jan"
+                return "Day 2"
             }
         }
 
         var activityName: String {
             switch self {
             case .one:
-                return "iosconfsg21.day1"
+                return "iosconfsg22.day1"
             case .two:
-                return "iosconfsg21.day2"
+                return "iosconfsg22.day2"
             }
         }
 
         var dateInt: Int {
             switch self {
             case .one:
-                return 21
+                return 20
             case .two:
-                return 22
+                return 21
             }
         }
     }
