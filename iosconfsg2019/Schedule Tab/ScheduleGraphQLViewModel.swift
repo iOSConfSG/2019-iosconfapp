@@ -8,6 +8,7 @@
 
 import Foundation
 import Apollo
+import ConfAPI
 
 protocol ScheduleGraphqlViewModelDelegate {
     func didFetchSchedule()
@@ -36,37 +37,33 @@ class ScheduleGraphqlViewModel {
         var dateString: String {
             switch self {
             case .one:
-                return "21 Jan"
+                return "12 Jan"
             case .two:
-                return "22 Jan"
+                return "13 Jan"
             }
         }
 
         var activityName: String {
             switch self {
             case .one:
-                return "iosconfsg21.day1"
+                return "iosconfsg23.day1"
             case .two:
-                return "iosconfsg21.day2"
+                return "iosconfsg23.day2"
             }
         }
 
         var dateInt: Int {
             switch self {
             case .one:
-                return 21
+                return 12
             case .two:
-                return 22
+                return 13
             }
         }
     }
 
-    init(failInitClosure: (()-> Void)) {
-        guard let connection = NetworkManager.shared.apolloClient else {
-            failInitClosure()
-            return
-        }
-        self.apollo = connection
+    init() {
+        self.apollo = NetworkManager.shared.client
     }
 
     func segmentedControlLabels() -> [String] {
@@ -116,7 +113,7 @@ class ScheduleGraphqlViewModel {
         for item in response {
             guard let id = item.id,
                 let title = item.title,
-                let talkTypeString = item.talkType,
+                let talkTypeString = item.talk_type,
                 let talkType = TalkType(rawValue: talkTypeString) else {
                 print("Incomplete data \(item)")
                 return
@@ -130,9 +127,9 @@ class ScheduleGraphqlViewModel {
             let talk = Talk(id: id,
                             title: title,
                             talkType: talkType,
-                            startAt: dateFormatter.date(from: item.startAt ?? ""),
-                            endAt: dateFormatter.date(from: item.endAt ?? ""),
-                            talkDescription: item.talkDescription,
+                            startAt: dateFormatter.date(from: item.start_at ?? ""),
+                            endAt: dateFormatter.date(from: item.end_at ?? ""),
+                            talkDescription: item.talk_description,
                             activityName: item.activity ?? "",
                             speakers: speakers)
             self.schedule.append(talk)
@@ -144,13 +141,11 @@ class ScheduleGraphqlViewModel {
         let speakers = talk.speakers.map { (speaker) -> Speaker in
             return Speaker(id: speaker.id ?? 1,
                            name: speaker.name ?? "",
-                           shortBio: speaker.shortBio,
+                           shortBio: speaker.short_bio,
                            twitter: speaker.twitter,
-                           linkedIn: speaker.linkedinUrl,
+                           linkedIn: speaker.linkedin,
                            company: speaker.company,
-                           companyUrl: speaker.companyUrl,
-                           imageUrl: speaker.imageUrl,
-                           imageFilename: speaker.imageFilename)
+                           imageUrl: speaker.image_url)
         }
         return speakers
     }

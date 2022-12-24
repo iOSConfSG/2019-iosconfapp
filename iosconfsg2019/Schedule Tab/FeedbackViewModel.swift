@@ -23,31 +23,27 @@ class FeedbackViewModel {
     private var feedbackClient: Cancellable?
 
     init(failInitClosure: (() -> Void)) {
-        guard let connection = NetworkManager.shared.apolloClient else {
-            failInitClosure()
-            return
-        }
-        self.apollo = connection
+        self.apollo = NetworkManager.shared.client
     }
 
     func submitFeedback(for talk: Talk, feeling: Feedback.Feeling, comments: String, completionHandler: @escaping ((Result<Bool, FeedbackError>) -> Void)) {
-        apollo.perform(mutation: CreateFeedbackMutation(talkId: talk.id, feeling: feeling.emoji, comment: comments)) { [weak self] (result) in
-            switch result {
-            case .success(let object):
-                if let data = object.data {
-                    #if DEBUG
-                    print(data)
-                    #endif
-                    completionHandler(.success(true))
-                }
-                if let errors = object.errors {
-                    self?.handleError(errors: errors)
-                    completionHandler(.failure(FeedbackError.apolloError))
-                }
-            case .failure:
-                completionHandler(.failure(FeedbackError.apolloError))
-            }
-        }
+//        apollo.perform(mutation: CreateFeedbackMutation(talkId: talk.id, feeling: feeling.emoji, comment: comments)) { [weak self] (result) in
+//            switch result {
+//            case .success(let object):
+//                if let data = object.data {
+//                    #if DEBUG
+//                    print(data)
+//                    #endif
+//                    completionHandler(.success(true))
+//                }
+//                if let errors = object.errors {
+//                    self?.handleError(errors: errors)
+//                    completionHandler(.failure(FeedbackError.apolloError))
+//                }
+//            case .failure:
+//                completionHandler(.failure(FeedbackError.apolloError))
+//            }
+//        }
     }
 
     func handleError(errors: [GraphQLError]) {

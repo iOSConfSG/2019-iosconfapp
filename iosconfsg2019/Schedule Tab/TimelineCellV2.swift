@@ -13,7 +13,7 @@ class TimelineCellV2: UITableViewCell {
 
     let speakerImage: UIImageView = {
         let face = UIImageView()
-        face.image = UIImage(named: "kenneth")
+        face.image = UIImage(named: "organiser")
         face.translatesAutoresizingMaskIntoConstraints = false
         face.layer.cornerRadius = 64/2
         face.clipsToBounds = true
@@ -54,7 +54,7 @@ class TimelineCellV2: UITableViewCell {
     let speakerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sam Davies"
+        label.text = "Organiser"
         label.font = UIFont.systemFont(ofSize: UIFont.normalSize)
         label.numberOfLines = 1
         label.textColor = StyleSheet.shared.theme.secondaryLabelColor
@@ -81,8 +81,8 @@ class TimelineCellV2: UITableViewCell {
         
         if let imageUrlString = aSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
             speakerImage.kf.setImage(with: imageUrl)
-        } else if let imageFilename = aSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
-            speakerImage.image = profilePic
+        } else {
+            speakerImage.image = UIImage(named: "organiser")
         }
         
         guard talk.speakers.count > 1, let secondSpeaker = talk.speakers.last else {
@@ -101,8 +101,8 @@ class TimelineCellV2: UITableViewCell {
         contentView.addSubview(secondSpeakerImage)
         if let imageUrlString = secondSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
             secondSpeakerImage.kf.setImage(with: imageUrl)
-        } else if let imageFilename = secondSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
-            secondSpeakerImage.image = profilePic
+        } else {
+            secondSpeakerImage.image = UIImage(named: "organiser")
         }
         secondSpeakerImage.isHidden = false
         

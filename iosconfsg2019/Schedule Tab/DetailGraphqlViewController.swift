@@ -45,8 +45,8 @@ class DetailGraphqlViewController: BaseViewController {
             
             if let imageUrlString = firstSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
                 speakerImage.kf.setImage(with: imageUrl)
-            } else if let imageFilename = firstSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
-                speakerImage.image = profilePic
+            } else {
+                speakerImage.image = UIImage(named: "organiser")
             }
             
             if talk.speakers.count == 2, let secondSpeaker = talk.speakers.last {
@@ -63,8 +63,8 @@ class DetailGraphqlViewController: BaseViewController {
                 
                 if let imageUrlString = secondSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
                     secondSpeakerImage.kf.setImage(with: imageUrl)
-                } else if let imageFilename = secondSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
-                    secondSpeakerImage.image = profilePic
+                } else {
+                    secondSpeakerImage.image = UIImage(named: "organiser")
                 }
                 secondSpeakerContainerView.isHidden = false
                 

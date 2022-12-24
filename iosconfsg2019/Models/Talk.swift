@@ -22,6 +22,7 @@ public enum TalkType: String {
     case quiz
     case energyboost
     case combinedTalk
+    case panel
 }
 
 //struct TalkV2 {

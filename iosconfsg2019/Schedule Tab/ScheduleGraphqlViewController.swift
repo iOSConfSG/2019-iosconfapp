@@ -22,11 +22,7 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         return btn
     }()
 
-    lazy var viewModel: ScheduleGraphqlViewModel = {
-        return ScheduleGraphqlViewModel(failInitClosure: {
-            handleGraphqlError()
-        })
-    }()    
+    lazy var viewModel: ScheduleGraphqlViewModel = ScheduleGraphqlViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

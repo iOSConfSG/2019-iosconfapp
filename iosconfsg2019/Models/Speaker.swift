@@ -15,7 +15,5 @@ struct Speaker {
     var twitter: String?
     var linkedIn: String?
     var company: String?
-    var companyUrl: String?
     var imageUrl: String?
-    var imageFilename: String?
 }

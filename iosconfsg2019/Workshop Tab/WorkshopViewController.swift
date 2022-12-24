@@ -23,11 +23,7 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         return btn
     }()
 
-    lazy var viewModel: WorkshopViewModel = {
-        return WorkshopViewModel(failInitClosure: {
-            handleGraphqlError()
-        })
-    }()
+    lazy var viewModel: WorkshopViewModel = WorkshopViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
