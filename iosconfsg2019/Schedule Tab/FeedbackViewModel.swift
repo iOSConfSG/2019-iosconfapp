@@ -22,7 +22,7 @@ class FeedbackViewModel {
     private var apollo: ApolloClient!
     private var feedbackClient: Cancellable?
 
-    init(failInitClosure: (() -> Void)) {
+    init() {
         self.apollo = NetworkManager.shared.client
     }
 

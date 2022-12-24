@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */; };
 		24C8AC9021EE306E00829307 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C8AC8F21EE306E00829307 /* Helpers.swift */; };
 		5A02AC1423520AA900C3CC39 /* TimelineCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */; };
 		5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A15A79221908C0E006EA97E /* UIViewExtensions.swift */; };
@@ -17,9 +16,6 @@
 		5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */; };
 		5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 5A2E809125AB2A79003A1721 /* ApolloWebSocket */; };
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
-		5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848C21D110CA007E1905 /* WelcomeViewController.swift */; };
-		5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519823C0924800D5FE5C /* AnalyticsManager.swift */; };
-		5A61519B23C0928E00D5FE5C /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519A23C0928E00D5FE5C /* PushNotificationManager.swift */; };
 		5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519D23C0A32600D5FE5C /* BaseViewController.swift */; };
 		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
 		5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */; };
@@ -35,9 +31,7 @@
 		5A9154132365BBE300A4AC04 /* WorkshopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9154122365BBE300A4AC04 /* WorkshopViewModel.swift */; };
 		5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7525A9FA00000FFE85 /* Apollo */; };
 		5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */; };
-		5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8125AA95D7000FFE85 /* OneSignal */; };
 		5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F8625AA9636000FFE85 /* Kingfisher */; };
-		5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 5AAB6F9025AA9C66000FFE85 /* OneSignal */; };
 		5AB1851825AEDEBE004CEACD /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1851725AEDEBE004CEACD /* DateTimeUtils.swift */; };
 		5AB1851C25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1851B25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift */; };
 		5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCA2621E5E1010058A076 /* Feedback.swift */; };
@@ -89,7 +83,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OneSignal-Info.plist"; path = "iosconfsg2019/OneSignal-Info.plist"; sourceTree = SOURCE_ROOT; };
 		24C8AC8F21EE306E00829307 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellV2.swift; sourceTree = "<group>"; };
 		5A15A79221908C0E006EA97E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -97,9 +90,6 @@
 		5A15CEFA2956798100745522 /* apollo-codegen-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apollo-codegen-config.json"; sourceTree = "<group>"; };
 		5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphqlViewController.swift; sourceTree = "<group>"; };
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
-		5A41848C21D110CA007E1905 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		5A61519823C0924800D5FE5C /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
-		5A61519A23C0928E00D5FE5C /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		5A61519D23C0A32600D5FE5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphQLViewModel.swift; sourceTree = "<group>"; };
@@ -150,7 +140,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AAB6F9125AA9C66000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +153,6 @@
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
 				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
 				5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */,
-				5AAB6F8225AA95D7000FFE85 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,20 +219,10 @@
 		5A41848B21D110BB007E1905 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
-				5A41848C21D110CA007E1905 /* WelcomeViewController.swift */,
 				5A7B2BE02196C24200D8FDC5 /* CustomTabBarController.swift */,
 				5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */,
 			);
 			path = Setup;
-			sourceTree = "<group>";
-		};
-		5A61519723C0923800D5FE5C /* Startup Services */ = {
-			isa = PBXGroup;
-			children = (
-				5A61519823C0924800D5FE5C /* AnalyticsManager.swift */,
-				5A61519A23C0928E00D5FE5C /* PushNotificationManager.swift */,
-			);
-			path = "Startup Services";
 			sourceTree = "<group>";
 		};
 		5A61519C23C0A30E00D5FE5C /* UI Components */ = {
@@ -340,7 +318,6 @@
 			children = (
 				5AE4748325ABDBCF00FF4235 /* AttributedTextView */,
 				5A61519C23C0A30E00D5FE5C /* UI Components */,
-				5A61519723C0923800D5FE5C /* Startup Services */,
 				5A7C3E4321E1EC8A00A49FE1 /* Models */,
 				5A41848B21D110BB007E1905 /* Setup */,
 				5A262BA621AC165A008BC34F /* Schedule Tab */,
@@ -350,7 +327,6 @@
 				5A262BA721AC1682008BC34F /* Extensions */,
 				24C8AC8E21EE305D00829307 /* Helpers */,
 				5AFBF176218D6AA100FD2190 /* AppDelegate.swift */,
-				24C8AC8C21EE2FD500829307 /* OneSignal-Info.plist */,
 				5A7C3E3C21E1AB3200A49FE1 /* iosconfsg2019.entitlements */,
 				5AFBF17D218D6AA200FD2190 /* Assets.xcassets */,
 				5AFBF17F218D6AA200FD2190 /* LaunchScreen.storyboard */,
@@ -376,7 +352,6 @@
 			);
 			name = iosconfsgNotificationServiceExtension;
 			packageProductDependencies = (
-				5AAB6F9025AA9C66000FFE85 /* OneSignal */,
 			);
 			productName = iosconfsgNotificationServiceExtension;
 			productReference = 5A7C3E2E21E1AA5700A49FE1 /* iosconfsgNotificationServiceExtension.appex */;
@@ -400,7 +375,6 @@
 			packageProductDependencies = (
 				5AAB6F7525A9FA00000FFE85 /* Apollo */,
 				5AAB6F7C25AA93BF000FFE85 /* NVActivityIndicatorView */,
-				5AAB6F8125AA95D7000FFE85 /* OneSignal */,
 				5AAB6F8625AA9636000FFE85 /* Kingfisher */,
 				5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */,
 				5A2E809125AB2A79003A1721 /* ApolloWebSocket */,
@@ -455,9 +429,7 @@
 			packageReferences = (
 				5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
-				5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 				5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5AFBF174218D6AA000FD2190 /* Products */;
 			projectDirPath = "";
@@ -484,7 +456,6 @@
 				5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
 				5A15CEFB2956798100745522 /* apollo-codegen-config.json in Resources */,
-				24C8AC8D21EE2FD500829307 /* OneSignal-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +476,6 @@
 			files = (
 				5A88951521E2DD2B0015BEFD /* DateExtensions.swift in Sources */,
 				5ABCCA2721E5E1010058A076 /* Feedback.swift in Sources */,
-				5A61519B23C0928E00D5FE5C /* PushNotificationManager.swift in Sources */,
 				5B5DFC7C234F06E500024A13 /* ApolloManager.swift in Sources */,
 				5AB1851C25AF22DE004CEACD /* NSMutableAttributedStringExtensions.swift in Sources */,
 				5A7B2BE12196C24200D8FDC5 /* CustomTabBarController.swift in Sources */,
@@ -531,7 +501,6 @@
 				5AFB3B9225AC7ACA00BDA680 /* Speaker.swift in Sources */,
 				5AE8E23F25AFD17700C6B8DB /* NSAttributedString+Html.swift in Sources */,
 				5A15A79321908C0E006EA97E /* UIViewExtensions.swift in Sources */,
-				5A61519923C0924800D5FE5C /* AnalyticsManager.swift in Sources */,
 				D1D5A32723BE27D50070E787 /* VenueViewController.swift in Sources */,
 				5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */,
 				5AFBF177218D6AA100FD2190 /* AppDelegate.swift in Sources */,
@@ -542,7 +511,6 @@
 				5AE8E24925AFD1A600C6B8DB /* Attributer.swift in Sources */,
 				5ACB755521E89CFC00A21F97 /* WorkshopViewController.swift in Sources */,
 				5AB1851825AEDEBE004CEACD /* DateTimeUtils.swift in Sources */,
-				5A41848D21D110CA007E1905 /* WelcomeViewController.swift in Sources */,
 				5AE8E23D25AFD17700C6B8DB /* String+NSRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +715,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iOSConfSG;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -771,6 +740,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X8ZFLUE894;
 				INFOPLIST_FILE = iosconfsg2019/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iOSConfSG;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -834,28 +804,12 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.0;
-			};
-		};
 		5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.1;
-			};
-		};
-		5AAB6F8A25AA98AF000FFE85 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.3.1;
+				minimumVersion = 7.4.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -881,20 +835,10 @@
 			package = 5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
 		};
-		5AAB6F8125AA95D7000FFE85 /* OneSignal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignal;
-		};
 		5AAB6F8625AA9636000FFE85 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		5AAB6F9025AA9C66000FFE85 /* OneSignal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5AAB6F8025AA95D7000FFE85 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignal;
 		};
 		5AC5ABC6295679EB00A91025 /* ConfAPI */ = {
 			isa = XCSwiftPackageProductDependency;

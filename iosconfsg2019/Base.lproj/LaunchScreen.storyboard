@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +15,47 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="singapore" translatesAutoresizingMaskIntoConstraints="NO" id="VEf-na-zAU">
+                                <rect key="frame" x="-541" y="0.0" width="1457" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-d7-7YM">
+                                <rect key="frame" x="16" y="200" width="343" height="217"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" image="welcome_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-8T-zSp">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="155.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="0ej-1e-AaC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Conf SG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7u-Uv-VQe">
+                                        <rect key="frame" x="0.0" y="155.5" width="343" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="12-13 January 2023" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9E-LK-rGy">
+                                        <rect key="frame" x="0.0" y="196.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5dr-d7-7YM" secondAttribute="bottom" constant="250" id="6SC-Jl-RD9"/>
+                            <constraint firstItem="5dr-d7-7YM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BNK-sm-SHy"/>
+                            <constraint firstItem="VEf-na-zAU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aeP-9p-dSk"/>
+                            <constraint firstItem="5dr-d7-7YM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="gCW-Yq-lte"/>
+                            <constraint firstItem="5dr-d7-7YM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jqf-bN-VGG"/>
+                            <constraint firstItem="VEf-na-zAU" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="oeD-CE-7v0"/>
+                            <constraint firstItem="VEf-na-zAU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rCR-jh-Go9"/>
+                            <constraint firstItem="VEf-na-zAU" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="3.884" id="v9a-Az-za3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5dr-d7-7YM" secondAttribute="trailing" constant="16" id="wKl-sm-4uK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -26,4 +63,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="singapore" width="1456.5" height="1942"/>
+        <image name="welcome_icon" width="341" height="341"/>
+    </resources>
 </document>

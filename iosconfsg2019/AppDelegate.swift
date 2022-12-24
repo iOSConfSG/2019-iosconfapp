@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,25 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.tintColor = UIColor.purple
         }
         window?.makeKeyAndVisible()
-        
-        // Which screen to show?
-        if UserDefaults.standard.object(forKey: "sawWelcomeScreen") == nil {
-            window?.rootViewController = WelcomeViewController()
-            return true
-        } else {
-            window?.rootViewController = CustomTabBarController()
-            return true
-        }
-//        window?.rootViewController = UINavigationController(rootViewController: ScheduleGraphqlViewController())
-//        window?.rootViewController = CustomTabBarController()
-//        return true
+        window?.rootViewController = CustomTabBarController()
+        return true
     }
 
 }
 
 extension AppDelegate {
     private func registerModules() {
-        modules.append(PushNotificationManager())
+        // Nothing to append
     }
 }
 

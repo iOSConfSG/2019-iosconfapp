@@ -16,7 +16,7 @@ class CustomTabBarController: UITabBarController {
         let scheduleController = ScheduleGraphqlViewController()
         let scheduleTab = UINavigationController(rootViewController: scheduleController)
         scheduleTab.title = "Conference"
-        scheduleTab.tabBarItem.image = UIImage(imageLiteralResourceName: "schedule_icon")
+        scheduleTab.tabBarItem.image = UIImage(systemName: "calendar")
         
         let newsController = NewsViewController()
         let newsTab = UINavigationController(rootViewController: newsController)

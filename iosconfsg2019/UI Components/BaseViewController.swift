@@ -17,23 +17,4 @@ class BaseViewController: UIViewController {
             return false
         }
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        logScreenView()
-    }
-
-    func logScreenView() {
-        if let trackingEvent = self.trackingEvent() {
-            AnalyticsManager.shared.log(event: trackingEvent)
-        } else {
-            print("Screen not tracked")
-        }
-    }
-
-    open func trackingEvent() -> TrackingEvent? {
-        let trackingEvent = TrackingEvent(screenView: self)
-        trackingEvent?.addParameter(key: TrackingEvent.ParameterKey.userInterfaceStyle, value: isDarkMode ? "dark" : "light")
-        return trackingEvent
-    }
 }

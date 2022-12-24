@@ -85,15 +85,6 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         daySegmentedControlView?.timezoneLabel.attributedText = DateTimeUtils.shared.titleForCurrentZoneInfo()
         tableView.reloadData()        
     }
-
-    func handleGraphqlError() {
-        stopAnimating()
-    }
-
-    private func logTap(talkId: Int) {
-        let event = TrackingEvent(tap: "Activity \(talkId)", category: "Activity Detail")
-        AnalyticsManager.shared.log(event: event)
-    }
 }
 
 extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDelegate {
@@ -133,7 +124,6 @@ extension ScheduleGraphqlViewController: UITableViewDataSource, UITableViewDeleg
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true
             detailViewController.talk = talk
-            logTap(talkId: talk.id)
             let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }

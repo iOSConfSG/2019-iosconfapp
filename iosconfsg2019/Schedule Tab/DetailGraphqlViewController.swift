@@ -236,9 +236,7 @@ class DetailGraphqlViewController: BaseViewController {
             feedbackPopup.barButtonItem = navigationItem.rightBarButtonItem
             feedbackPopup.permittedArrowDirections = [.down, .up]
             feedbackPopup.delegate = self
-            present(feedbackViewController, animated: true, completion: {
-                self.logTap(talkId: self.talk?.id ?? 0)
-            })
+            present(feedbackViewController, animated: true)
         }
     }
 
@@ -413,18 +411,6 @@ class DetailGraphqlViewController: BaseViewController {
         if let firstSpeaker = talk?.speakers.first, firstSpeaker.name != "Organiser" {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
         }
-    }
-
-    private func logTap(talkId: Int) {
-        let event = TrackingEvent(tap: "Feedback Button \(talkId)", category: "Open Feedback")
-        AnalyticsManager.shared.log(event: event)
-    } 
-
-    override func trackingEvent() -> TrackingEvent? {
-        if let talk = self.talk, let trackingEvent = TrackingEvent(screenView: self, screenName: "Detail - \(talk.title)") {
-            return trackingEvent
-        }
-        return nil
     }
 }
 

@@ -1,57 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "abseil-cpp-swiftpm",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/abseil-cpp-SwiftPM.git",
-      "state" : {
-        "revision" : "05d8107f2971a37e6c77245b7c4c6b0a7e97bc99",
-        "version" : "0.20200225.0"
-      }
-    },
-    {
       "identity" : "apollo-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apollographql/apollo-ios.git",
       "state" : {
         "revision" : "014660b14262df15f0d2c7b7e973d0a53be27b7e",
         "version" : "1.0.5"
-      }
-    },
-    {
-      "identity" : "boringssl-swiftpm",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/boringssl-SwiftPM.git",
-      "state" : {
-        "revision" : "7bcafa2660bc58715c39637494550d1ed7cd7229",
-        "version" : "0.0.7"
-      }
-    },
-    {
-      "identity" : "firebase-ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/firebase-ios-sdk.git",
-      "state" : {
-        "revision" : "c67d97dc802aafe5474042156dce828e1c4145ca",
-        "version" : "7.3.1"
-      }
-    },
-    {
-      "identity" : "grpc-swiftpm",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/grpc-SwiftPM.git",
-      "state" : {
-        "revision" : "91b62619e6c83bc5f1b99d9d60fe46b2862d3a5a",
-        "version" : "1.28.2"
-      }
-    },
-    {
-      "identity" : "gtm-session-fetcher",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/gtm-session-fetcher.git",
-      "state" : {
-        "revision" : "91ed3d188eb95705fef3c249453b81f32dc557d1",
-        "version" : "1.5.0"
       }
     },
     {
@@ -68,26 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "d0d669fba45e16b0669ce4986725b71da41c4049",
-        "version" : "6.0.1"
-      }
-    },
-    {
-      "identity" : "leveldb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/leveldb.git",
-      "state" : {
-        "revision" : "fa1f25f296a766e5a789c4dacd4798dea798b2c2",
-        "version" : "1.22.1"
-      }
-    },
-    {
-      "identity" : "nanopb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/nanopb.git",
-      "state" : {
-        "revision" : "8119dfe5631f2616d11e50ead95448d12e816062",
-        "version" : "2.30906.0"
+        "revision" : "44e891bdb61426a95e31492a67c7c0dfad1f87c5",
+        "version" : "7.4.1"
       }
     },
     {
@@ -97,24 +34,6 @@
       "state" : {
         "revision" : "bcb52371f2259254bac6690f92bb474a61768c47",
         "version" : "5.1.1"
-      }
-    },
-    {
-      "identity" : "onesignal-ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/OneSignal/OneSignal-iOS-SDK",
-      "state" : {
-        "revision" : "af4d52eac5f9e19e7af80fab7eaaa5088f102b0b",
-        "version" : "3.1.0"
-      }
-    },
-    {
-      "identity" : "promises",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/promises.git",
-      "state" : {
-        "revision" : "afa9a1ace74e116848d4f743599ab83e584ff8cb",
-        "version" : "1.2.12"
       }
     },
     {
