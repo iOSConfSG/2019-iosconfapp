@@ -35,7 +35,7 @@ class ScheduleGraphqlViewController: BaseViewController, NVActivityIndicatorView
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
-        navigationItem.title = "Conference Schedule"
+        navigationItem.title = "Schedule"
         view.backgroundColor = .white
 
         tableView = UITableView(frame: view.frame, style: .plain)

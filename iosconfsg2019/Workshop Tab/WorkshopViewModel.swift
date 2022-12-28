@@ -130,7 +130,6 @@ class WorkshopViewModel {
                             title: title,
                             talkType: talkType,
                             startAt: dateFormatter.date(from: item.start_at ?? ""),
-                            endAt: dateFormatter.date(from: item.end_at ?? ""),
                             talkDescription: item.talk_description,
                             activityName: item.activity ?? "",
                             speakers: speakers)

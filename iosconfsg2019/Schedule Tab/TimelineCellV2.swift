@@ -69,10 +69,8 @@ class TimelineCellV2: UITableViewCell {
     func setupCell(talk: Talk) {
         titleLabel.text = talk.title
 
-        if let startAt = talk.startAt, let endAt = talk.endAt {
+        if let startAt = talk.startAt {
             var duration = startAt.toConferenceTime()
-            duration.append(contentsOf: " - ")
-            duration.append(contentsOf: endAt.toConferenceTime())
             self.timeLabel.text = duration
         }
         

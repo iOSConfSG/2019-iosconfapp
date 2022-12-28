@@ -19,12 +19,10 @@ class DetailGraphqlViewController: BaseViewController {
             self.title = talk.title
             talkTitle.text = talk.title
             
-            if let startAt = talk.startAt, let endAt = talk.endAt {
+            if let startAt = talk.startAt {
                 var duration = startAt.toConferenceDate()
                 duration.append(contentsOf: ", ")
                 duration.append(contentsOf: startAt.toConferenceTime())
-                duration.append(contentsOf: " - ")
-                duration.append(contentsOf: endAt.toConferenceTime())
                 self.talkTime.text = duration
             }
             let offset = self.descriptionTextView.contentOffset
