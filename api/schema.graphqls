@@ -1,5 +1,6 @@
 schema {
   query: query_root
+  mutation: mutation_root
   subscription: subscription_root
 }
 
@@ -78,6 +79,34 @@ input String_comparison_exp {
 
   """does the column match the given SQL regular expression"""
   _similar: String
+}
+
+"""
+input type for inserting data into table "feedback"
+"""
+input feedback_insert_input {
+  comment: String
+  feeling: String
+  talk_id: Int
+}
+
+"""
+response of any mutation on the table "feedback"
+"""
+type feedback_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+}
+
+"""mutation root"""
+type mutation_root {
+  """
+  insert data into the table: "feedback"
+  """
+  insert_feedback(
+    """the rows to be inserted"""
+    objects: [feedback_insert_input!]!
+  ): feedback_mutation_response
 }
 
 """column ordering options"""
@@ -468,3 +497,4 @@ input timestamptz_comparison_exp {
   _neq: timestamptz
   _nin: [timestamptz!]
 }
+

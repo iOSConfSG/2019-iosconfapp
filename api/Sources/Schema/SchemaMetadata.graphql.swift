@@ -25,6 +25,8 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "subscription_root": return ConfAPI.Objects.Subscription_root
     case "schedule": return ConfAPI.Objects.Schedule
     case "talk_speakers_view": return ConfAPI.Objects.Talk_speakers_view
+    case "mutation_root": return ConfAPI.Objects.Mutation_root
+    case "feedback_mutation_response": return ConfAPI.Objects.Feedback_mutation_response
     default: return nil
     }
   }

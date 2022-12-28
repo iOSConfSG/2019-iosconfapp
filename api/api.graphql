@@ -19,3 +19,13 @@ subscription GetSchedule {
   }
 }
 
+mutation CreateFeedback($talkId: Int!, $feeling: String!, $comment: String!) {
+  insert_feedback(objects: [{
+    talk_id: $talkId,
+    feeling: $feeling,
+    comment: $comment
+  }]) {
+    affected_rows
+  }
+}
+
