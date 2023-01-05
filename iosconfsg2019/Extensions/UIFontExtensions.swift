@@ -10,31 +10,31 @@ import UIKit
 
 extension UIFont {
     
-    open class var smallSize: CGFloat {
+    public class var smallSize: CGFloat {
         get {
             return 13.0
         }
     }
     
-    open class var normalSize: CGFloat {
+    public class var normalSize: CGFloat {
         get {
             return 15.0
         }
     }
     
-    open class var largeSize: CGFloat {
+    public class var largeSize: CGFloat {
         get {
             return 17.0
         }
     }
     
-    open class var xLargeSize: CGFloat {
+    public class var xLargeSize: CGFloat {
         get {
             return 22.0
         }
     }
     
-    open class var largeTitleSize: CGFloat {
+    public  class var largeTitleSize: CGFloat {
         get {
             return 48.0
         }

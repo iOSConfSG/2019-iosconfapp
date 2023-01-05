@@ -13,7 +13,7 @@ class AboutViewController: BaseViewController {
     private var tableView: UITableView!
     private struct K {
         static let codeOfConductURL: URL! = URL.init(string: "https://iosconf.sg/coc")
-        static let sponsorURL: URL! = URL.init(string: "https://iosconf.sg/#sponsorsship")
+        static let sponsorURL: URL! = URL.init(string: "https://iosconf.sg/#sponsorship")
         static let slackURL: URL! = URL(string: "slack://open")
         static let faqURL: URL! = URL(string: "https://iosconf.sg/faq")
         static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2023")
@@ -141,9 +141,9 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
             openSafariViewController(withURL: K.codeOfConductURL)
         case (0,1):
             openSafariViewController(withURL: K.sponsorURL)
-        case (0,3):
+        case (0,2):
             openSafariViewController(withURL: K.faqURL)
-        case (0,4):
+        case (0,3):
             openSafariViewController(withURL: K.feedback)
         case (1,0):
             openSlack()
