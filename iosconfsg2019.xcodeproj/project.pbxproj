@@ -18,6 +18,7 @@
 		5A41848A21CE73E5007E1905 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */; };
 		5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519D23C0A32600D5FE5C /* BaseViewController.swift */; };
 		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
+		5A6C3AE329E01D65008C23D2 /* FlagsmithClient in Frameworks */ = {isa = PBXBuildFile; productRef = 5A6C3AE229E01D65008C23D2 /* FlagsmithClient */; };
 		5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */; };
 		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
 		5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */; };
@@ -150,6 +151,7 @@
 				5AAB6F8725AA9636000FFE85 /* Kingfisher in Frameworks */,
 				5AC5ABC7295679EB00A91025 /* ConfAPI in Frameworks */,
 				5AAB6F7D25AA93BF000FFE85 /* NVActivityIndicatorView in Frameworks */,
+				5A6C3AE329E01D65008C23D2 /* FlagsmithClient in Frameworks */,
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
 				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
 				5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */,
@@ -379,6 +381,7 @@
 				5A2E808D25AB2929003A1721 /* NVActivityIndicatorViewExtended */,
 				5A2E809125AB2A79003A1721 /* ApolloWebSocket */,
 				5AC5ABC6295679EB00A91025 /* ConfAPI */,
+				5A6C3AE229E01D65008C23D2 /* FlagsmithClient */,
 			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
@@ -430,6 +433,7 @@
 				5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				5AAB6F7B25AA93BF000FFE85 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				5AAB6F8525AA9636000FFE85 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5A6C3AE129E01D65008C23D2 /* XCRemoteSwiftPackageReference "flagsmith-ios-client" */,
 			);
 			productRefGroup = 5AFBF174218D6AA000FD2190 /* Products */;
 			projectDirPath = "";
@@ -788,6 +792,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5A6C3AE129E01D65008C23D2 /* XCRemoteSwiftPackageReference "flagsmith-ios-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flagsmith/flagsmith-ios-client.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.2.1;
+			};
+		};
 		5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -824,6 +836,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5AAB6F7425A9FA00000FFE85 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		5A6C3AE229E01D65008C23D2 /* FlagsmithClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A6C3AE129E01D65008C23D2 /* XCRemoteSwiftPackageReference "flagsmith-ios-client" */;
+			productName = FlagsmithClient;
 		};
 		5AAB6F7525A9FA00000FFE85 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;

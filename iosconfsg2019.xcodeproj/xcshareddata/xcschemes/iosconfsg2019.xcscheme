@@ -50,12 +50,13 @@
             ReferencedContainer = "container:iosconfsg2019.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-FIRAnalyticsDebugEnabled"
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "FLAGSMITH_KEY"
+            value = "ENTER_KEY"
             isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
