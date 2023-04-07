@@ -120,16 +120,19 @@ class FeedbackViewController: BaseViewController {
         btn.backgroundColor = StyleSheet.shared.theme.primaryLabelColor
         return btn
     }()
-
-    lazy var viewModel: FeedbackViewModel = {
-        return FeedbackViewModel(failInitClosure: {
-            self.handleViewModelError()
-        })
+    
+    let parentScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
+        return scrollView
     }()
+
+    lazy var viewModel: FeedbackViewModel = FeedbackViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        handleKeyboard()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -156,24 +159,32 @@ class FeedbackViewController: BaseViewController {
     
     private func setupViews() {
         self.view.backgroundColor = StyleSheet.shared.theme.primaryBackgroundColor
-        self.view.addSubview(qualityTitleLabel)
-        self.view.addSubview(frowningButton)
-        self.view.addSubview(smileButton)
-        self.view.addSubview(neutralButton)
-        self.view.addSubview(grinButton)
-        self.view.addSubview(starstruckButton)
-        self.view.addSubview(commentTextView)
-        self.view.addSubview(sendButton)
-        self.view.addSubview(errorLabel)
+        self.view.addSubview(parentScrollView)
+        
+        self.parentScrollView.addSubview(qualityTitleLabel)
+        self.parentScrollView.addSubview(frowningButton)
+        self.parentScrollView.addSubview(smileButton)
+        self.parentScrollView.addSubview(neutralButton)
+        self.parentScrollView.addSubview(grinButton)
+        self.parentScrollView.addSubview(starstruckButton)
+        self.parentScrollView.addSubview(commentTextView)
+        self.parentScrollView.addSubview(sendButton)
+        self.parentScrollView.addSubview(errorLabel)
+        
+        parentScrollView.translatesAutoresizingMaskIntoConstraints = false
+        let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .right, .left]
+        NSLayoutConstraint.activate(attributes.map {
+            NSLayoutConstraint(item: parentScrollView, attribute: $0, relatedBy: .equal, toItem: parentScrollView.superview, attribute: $0, multiplier: 1, constant: 0)
+        })
         
         NSLayoutConstraint.activate([
-            qualityTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
-            qualityTitleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 12),
-            qualityTitleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24),
+            qualityTitleLabel.leftAnchor.constraint(equalTo: self.parentScrollView.leftAnchor, constant: 12),
+            qualityTitleLabel.rightAnchor.constraint(equalTo: self.parentScrollView.rightAnchor, constant: 12),
+            qualityTitleLabel.topAnchor.constraint(equalTo: self.parentScrollView.topAnchor, constant: 24),
             ])
         
         NSLayoutConstraint.activate([
-            frowningButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
+            frowningButton.leftAnchor.constraint(equalTo: self.parentScrollView.leftAnchor, constant: 12),
             frowningButton.topAnchor.constraint(equalTo: qualityTitleLabel.bottomAnchor, constant: 12),
             frowningButton.heightAnchor.constraint(equalToConstant: 40),
             frowningButton.widthAnchor.constraint(equalToConstant: 40),
@@ -197,16 +208,17 @@ class FeedbackViewController: BaseViewController {
 
         NSLayoutConstraint.activate([
             sendButton.heightAnchor.constraint(equalToConstant: 44),
-            sendButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
-            sendButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12),
-            sendButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -12)
+            sendButton.leftAnchor.constraint(equalTo: self.parentScrollView.leftAnchor, constant: 12),
+            sendButton.rightAnchor.constraint(equalTo: self.parentScrollView.rightAnchor, constant: -12),
+            sendButton.bottomAnchor.constraint(equalTo: self.parentScrollView.bottomAnchor, constant: -12)
             ])
 
         NSLayoutConstraint.activate([
             commentTextView.topAnchor.constraint(equalTo: frowningButton.bottomAnchor, constant: 12),
-            commentTextView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 12),
-            commentTextView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -12),
+            commentTextView.leftAnchor.constraint(equalTo: self.parentScrollView.leftAnchor, constant: 12),
+            commentTextView.rightAnchor.constraint(equalTo: self.parentScrollView.rightAnchor, constant: -12),
             commentTextView.bottomAnchor.constraint(equalTo: errorLabel.topAnchor, constant: -12),
+            commentTextView.heightAnchor.constraint(equalToConstant: 90),
             errorLabel.topAnchor.constraint(equalTo: commentTextView.bottomAnchor, constant: 8),
             errorLabel.leftAnchor.constraint(equalTo: commentTextView.leftAnchor),
             errorLabel.rightAnchor.constraint(equalTo: commentTextView.rightAnchor),
@@ -220,7 +232,13 @@ class FeedbackViewController: BaseViewController {
         sendButton.addTarget(self, action: #selector(sendFeedback), for: .touchUpInside)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tapGesture)
+        self.parentScrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    private func handleKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: nil) { (notification) in
+            self.parentScrollView.scrollToView(view: self.commentTextView, animated: true)
+        }
     }
     
     @objc private func dismissKeyboard() {
@@ -247,7 +265,6 @@ class FeedbackViewController: BaseViewController {
 
                 let when = DispatchTime.now() + 1.53
                 DispatchQueue.main.asyncAfter(deadline: when, execute: {
-                    self?.logTap(talkId: talk.id)
                     self?.dismiss(animated: true, completion: nil)
                 })
             case .failure:
@@ -257,16 +274,6 @@ class FeedbackViewController: BaseViewController {
             }
         })
     }
-
-    func handleViewModelError() {
-        //todo
-    }
-
-    private func logTap(talkId: Int) {
-        let event = TrackingEvent(tap: "Submit Feedback Button \(talkId)", category: "Submit Feedback")
-        AnalyticsManager.shared.log(event: event)
-    }
-    
 }
 
 extension FeedbackViewController: UITextViewDelegate {
@@ -288,4 +295,10 @@ extension FeedbackViewController: UITextViewDelegate {
     
 }
 
-
+private extension UIScrollView {
+    func scrollToView(view: UIView, animated: Bool) {
+        if view.superview == self {
+            self.scrollRectToVisible(view.frame, animated: animated)
+        }
+    }
+}

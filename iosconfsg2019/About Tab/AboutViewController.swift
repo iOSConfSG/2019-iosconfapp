@@ -13,16 +13,15 @@ class AboutViewController: BaseViewController {
     private var tableView: UITableView!
     private struct K {
         static let codeOfConductURL: URL! = URL.init(string: "https://iosconf.sg/coc")
-        static let sponsorURL: URL! = URL.init(string: "https://iosconf.sg/#sponsors")
-        static let softwareURL: URL! = URL.init(string: "https://iosconf.sg/software")
+        static let sponsorURL: URL! = URL.init(string: "https://iosconf.sg/#sponsorship")
         static let slackURL: URL! = URL(string: "slack://open")
-        static let faqURL: URL! = URL(string: "https://iosconf.sg/faq/")
-        static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2021")
+        static let faqURL: URL! = URL(string: "https://iosconf.sg/faq")
+        static let feedback: URL! = URL(string: "https://bit.ly/iosconfsg2023")
 
         static let cellIdentifier = "AboutCell"
     }
 
-    private var sections: [[String]] = [["Code of Conduct", "Sponsors", "Software", "FAQ", "Feedback"], ["Open iOSConfSG Slack"]]
+    private var sections: [[String]] = [["Code of Conduct", "Sponsors", "FAQ", "Feedback"], ["Open iOSConfSG Slack"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,11 +92,6 @@ class AboutViewController: BaseViewController {
             self.tableView.tableFooterView = skylineView
         }
     }
-
-    private func logTap(aboutName: String) {
-        let event = TrackingEvent(tap: aboutName, category: "About")
-        AnalyticsManager.shared.log(event: event)
-    }
 }
 
 
@@ -141,25 +135,17 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
         switch (indexPath.section, indexPath.row) {
         case (0,0):
-            logTap(aboutName: "Code of conduct")
             openSafariViewController(withURL: K.codeOfConductURL)
         case (0,1):
-            logTap(aboutName: "Sponsors")
             openSafariViewController(withURL: K.sponsorURL)
         case (0,2):
-            logTap(aboutName: "Software")
-            openSafariViewController(withURL: K.softwareURL)
-        case (0,3):
-            logTap(aboutName: "FAQ")
             openSafariViewController(withURL: K.faqURL)
-        case (0,4):
-            logTap(aboutName: "Feedback")
+        case (0,3):
             openSafariViewController(withURL: K.feedback)
         case (1,0):
-            logTap(aboutName: "Open iOSConfSG Slack")
             openSlack()
         default:
             break

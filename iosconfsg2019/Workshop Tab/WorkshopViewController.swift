@@ -23,11 +23,7 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         return btn
     }()
 
-    lazy var viewModel: WorkshopViewModel = {
-        return WorkshopViewModel(failInitClosure: {
-            handleGraphqlError()
-        })
-    }()
+    lazy var viewModel: WorkshopViewModel = WorkshopViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,15 +86,6 @@ class WorkshopViewController: BaseViewController, NVActivityIndicatorViewable {
         daySegmentedControlView?.timezoneLabel.attributedText = DateTimeUtils.shared.titleForCurrentZoneInfo()
         tableView.reloadData()
     }
-
-    func handleGraphqlError() {
-        stopAnimating()
-    }
-
-    private func logTap(talkTitle: String) {
-        let event = TrackingEvent(tap: "Workshop Detail - \(talkTitle)", category: "Workshop Detail")
-        AnalyticsManager.shared.log(event: event)
-    }
 }
 
 extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
@@ -138,7 +125,6 @@ extension WorkshopViewController: UITableViewDelegate, UITableViewDataSource {
             let detailViewController = DetailGraphqlViewController()
             detailViewController.hidesBottomBarWhenPushed = true
             detailViewController.talk = talk
-            logTap(talkTitle: talk.title)
             let _ = self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }

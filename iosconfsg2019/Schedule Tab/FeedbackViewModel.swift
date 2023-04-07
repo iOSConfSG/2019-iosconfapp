@@ -8,6 +8,7 @@
 
 import Foundation
 import Apollo
+import ConfAPI
 
 class FeedbackViewModel {
 
@@ -22,12 +23,8 @@ class FeedbackViewModel {
     private var apollo: ApolloClient!
     private var feedbackClient: Cancellable?
 
-    init(failInitClosure: (() -> Void)) {
-        guard let connection = NetworkManager.shared.apolloClient else {
-            failInitClosure()
-            return
-        }
-        self.apollo = connection
+    init() {
+        self.apollo = NetworkManager.shared.client
     }
 
     func submitFeedback(for talk: Talk, feeling: Feedback.Feeling, comments: String, completionHandler: @escaping ((Result<Bool, FeedbackError>) -> Void)) {

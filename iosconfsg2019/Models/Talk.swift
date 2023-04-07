@@ -22,31 +22,14 @@ public enum TalkType: String {
     case quiz
     case energyboost
     case combinedTalk
+    case panel
 }
-
-//struct TalkV2 {
-//    var id: Int
-//    var title: String
-//    var talkType: TalkType
-//    var startAt: Date?
-//    var endAt: Date?
-//    var talkDescription: String?
-//    var speakerImage: String?
-//    var speakerTwitter: String?
-//    var speakerCompany: String?
-//    var speakerName: String?
-//    var speakerBio: String?
-//    var speakerLinkedin: String?
-//    var speakerImageUrl: String?
-//    var activityName: String?
-//}
 
 struct Talk {
     var id: Int
     var title: String
     var talkType: TalkType
     var startAt: Date?
-    var endAt: Date?
     var talkDescription: String?
     var activityName: String?
     var speakers: [Speaker]

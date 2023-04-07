@@ -19,12 +19,10 @@ class DetailGraphqlViewController: BaseViewController {
             self.title = talk.title
             talkTitle.text = talk.title
             
-            if let startAt = talk.startAt, let endAt = talk.endAt {
+            if let startAt = talk.startAt {
                 var duration = startAt.toConferenceDate()
                 duration.append(contentsOf: ", ")
                 duration.append(contentsOf: startAt.toConferenceTime())
-                duration.append(contentsOf: " - ")
-                duration.append(contentsOf: endAt.toConferenceTime())
                 self.talkTime.text = duration
             }
             let offset = self.descriptionTextView.contentOffset
@@ -45,8 +43,8 @@ class DetailGraphqlViewController: BaseViewController {
             
             if let imageUrlString = firstSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
                 speakerImage.kf.setImage(with: imageUrl)
-            } else if let imageFilename = firstSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
-                speakerImage.image = profilePic
+            } else {
+                speakerImage.image = UIImage(named: "organiser")
             }
             
             if talk.speakers.count == 2, let secondSpeaker = talk.speakers.last {
@@ -63,8 +61,8 @@ class DetailGraphqlViewController: BaseViewController {
                 
                 if let imageUrlString = secondSpeaker.imageUrl, let imageUrl = URL(string: imageUrlString) {
                     secondSpeakerImage.kf.setImage(with: imageUrl)
-                } else if let imageFilename = secondSpeaker.imageFilename, let profilePic = UIImage(named: imageFilename) {
-                    secondSpeakerImage.image = profilePic
+                } else {
+                    secondSpeakerImage.image = UIImage(named: "organiser")
                 }
                 secondSpeakerContainerView.isHidden = false
                 
@@ -236,9 +234,7 @@ class DetailGraphqlViewController: BaseViewController {
             feedbackPopup.barButtonItem = navigationItem.rightBarButtonItem
             feedbackPopup.permittedArrowDirections = [.down, .up]
             feedbackPopup.delegate = self
-            present(feedbackViewController, animated: true, completion: {
-                self.logTap(talkId: self.talk?.id ?? 0)
-            })
+            present(feedbackViewController, animated: true)
         }
     }
 
@@ -413,18 +409,6 @@ class DetailGraphqlViewController: BaseViewController {
         if let firstSpeaker = talk?.speakers.first, firstSpeaker.name != "Organiser" {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
         }
-    }
-
-    private func logTap(talkId: Int) {
-        let event = TrackingEvent(tap: "Feedback Button \(talkId)", category: "Open Feedback")
-        AnalyticsManager.shared.log(event: event)
-    } 
-
-    override func trackingEvent() -> TrackingEvent? {
-        if let talk = self.talk, let trackingEvent = TrackingEvent(screenView: self, screenName: "Detail - \(talk.title)") {
-            return trackingEvent
-        }
-        return nil
     }
 }
 

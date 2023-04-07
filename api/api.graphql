@@ -1,0 +1,31 @@
+subscription GetSchedule {
+  schedule {
+    id
+    activity
+    title
+    start_at
+    end_at
+    talk_type
+    talk_description
+    speakers {
+      id
+      name
+      company
+      image_url
+      twitter
+      linkedin
+      short_bio
+    }
+  }
+}
+
+mutation CreateFeedback($talkId: Int!, $feeling: String!, $comment: String!) {
+  insert_feedback(objects: [{
+    talk_id: $talkId,
+    feeling: $feeling,
+    comment: $comment
+  }]) {
+    affected_rows
+  }
+}
+

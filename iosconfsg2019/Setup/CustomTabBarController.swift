@@ -16,12 +16,7 @@ class CustomTabBarController: UITabBarController {
         let scheduleController = ScheduleGraphqlViewController()
         let scheduleTab = UINavigationController(rootViewController: scheduleController)
         scheduleTab.title = "Conference"
-        scheduleTab.tabBarItem.image = UIImage(imageLiteralResourceName: "schedule_icon")
-        
-        let workshopController = WorkshopViewController()
-        let workshopTab = UINavigationController(rootViewController: workshopController)
-        workshopTab.title = "Workshops"
-        workshopTab.tabBarItem.image = UIImage(imageLiteralResourceName: "workshop_icon")
+        scheduleTab.tabBarItem.image = UIImage(systemName: "calendar")
         
         let newsController = NewsViewController()
         let newsTab = UINavigationController(rootViewController: newsController)
@@ -33,8 +28,8 @@ class CustomTabBarController: UITabBarController {
         aboutTab.title = "About"
         aboutTab.tabBarItem.image = UIImage(imageLiteralResourceName: "iosconfsg_icon")
         
-        viewControllers = [scheduleTab, workshopTab, newsTab, aboutTab]
-        tabBar.isTranslucent = false
+        viewControllers = [scheduleTab, newsTab, aboutTab]
+//        tabBar.isTranslucent = false
         
         let topBorder = CALayer()
         topBorder.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0.5)
