@@ -19,7 +19,6 @@
 		5A61519E23C0A32600D5FE5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A61519D23C0A32600D5FE5C /* BaseViewController.swift */; };
 		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
 		5A6C3AE329E01D65008C23D2 /* FlagsmithClient in Frameworks */ = {isa = PBXBuildFile; productRef = 5A6C3AE229E01D65008C23D2 /* FlagsmithClient */; };
-		5A6C3AE629E02495008C23D2 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 5A6C3AE529E02495008C23D2 /* Yams */; };
 		5A6C3AE829E0527A008C23D2 /* schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6C3AE729E0527A008C23D2 /* schedule.json */; };
 		5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */; };
 		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
@@ -157,7 +156,6 @@
 				5A6C3AE329E01D65008C23D2 /* FlagsmithClient in Frameworks */,
 				5AAB6F7625A9FA00000FFE85 /* Apollo in Frameworks */,
 				5A2E808E25AB2929003A1721 /* NVActivityIndicatorViewExtended in Frameworks */,
-				5A6C3AE629E02495008C23D2 /* Yams in Frameworks */,
 				5A2E809225AB2A79003A1721 /* ApolloWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +385,6 @@
 				5A2E809125AB2A79003A1721 /* ApolloWebSocket */,
 				5AC5ABC6295679EB00A91025 /* ConfAPI */,
 				5A6C3AE229E01D65008C23D2 /* FlagsmithClient */,
-				5A6C3AE529E02495008C23D2 /* Yams */,
 			);
 			productName = iosconfsg2019;
 			productReference = 5AFBF173218D6AA000FD2190 /* iosconfsg2019.app */;
@@ -857,11 +854,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A6C3AE129E01D65008C23D2 /* XCRemoteSwiftPackageReference "flagsmith-ios-client" */;
 			productName = FlagsmithClient;
-		};
-		5A6C3AE529E02495008C23D2 /* Yams */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A6C3AE429E02495008C23D2 /* XCRemoteSwiftPackageReference "Yams" */;
-			productName = Yams;
 		};
 		5AAB6F7525A9FA00000FFE85 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
