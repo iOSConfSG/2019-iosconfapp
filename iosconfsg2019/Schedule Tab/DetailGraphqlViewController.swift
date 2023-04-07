@@ -8,6 +8,7 @@
 
 import UIKit
 
+import FlagsmithClient
 import Kingfisher
 
 class DetailGraphqlViewController: BaseViewController {
@@ -406,9 +407,18 @@ class DetailGraphqlViewController: BaseViewController {
     }
 
     private func setupFeedbackButton() {
-        if let firstSpeaker = talk?.speakers.first, firstSpeaker.name != "Organiser" {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(giveFeedback(_:)))
+        Flagsmith.shared.getValueForFeature(withID: "submit_feedback") { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case let .success(.bool(canSubmitFeedback)):
+                if canSubmitFeedback, let firstSpeaker = self.talk?.speakers.first, firstSpeaker.name != "Organiser" {
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Feedback", style: .plain, target: self, action: #selector(self.giveFeedback(_:)))
+                }
+            default:
+                break
+            }
         }
+        
     }
 }
 

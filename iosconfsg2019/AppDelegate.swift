@@ -8,6 +8,7 @@
 
 import UIKit
 import FlagsmithClient
+import Yams
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +38,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+struct Fig: Codable {
+    var minimumVersion: String
+    var scheduleMode: ScheduleMode
+    var flags: Flags
+    
+    enum ScheduleMode: String, Codable {
+        case local
+        case remote
+    }
+    
+    struct Flags: Codable {
+        var submitFeedback: Bool
+    }
+}
+
+extension Fig: CustomStringConvertible {
+    var description: String {
+        """
+        ----- REMOTE CONFIG -----
+        minimumVersion: \(minimumVersion)
+        scheduleMode: \(scheduleMode)
+        
+        ----- Flags -----
+        submitFeedback: \(flags.submitFeedback)
+        """
+    }
+}
+
 extension AppDelegate {
     private func registerModules() {
         
@@ -47,10 +76,15 @@ extension AppDelegate {
                 switch result {
                 case .success(let flags):
                     for flag in flags {
-                        let name = flag.feature.name
-                        let value = flag.value.stringValue
-                        let enabled = flag.enabled
-                        print(name, "= enabled:", enabled, "value:", value ?? "nil")
+                        let decoder = YAMLDecoder()
+                        
+                        do {
+                            guard let value = flag.value.stringValue else { return }
+                            let decoded = try decoder.decode(Fig.self, from: value)
+                            print(decoded)
+                        } catch {
+                            // TODO: Fallback to local config
+                        }
                     }
                 case .failure(let error):
                     print(error)
