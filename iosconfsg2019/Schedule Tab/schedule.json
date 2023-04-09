@@ -1,0 +1,786 @@
+{
+  "data": {
+    "schedule": [
+      {
+        "id": 1,
+        "activity": "iosconfsg23.day1",
+        "title": "Check-in 💻 for the Workshop participants!",
+        "start_at": "2023-01-12T00:00:00+00:00",
+        "end_at": null,
+        "talk_type": "registration",
+        "talk_description": "Get ready with your QR code from Tito registration. Breakfast bento will be served. Do bring your own Mac.",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "activity": "iosconfsg23.day1",
+        "title": "Workshop Kick-off ⚽️! - Participants with Workshop tickets",
+        "start_at": "2023-01-12T00:50:00+00:00",
+        "end_at": null,
+        "talk_type": "registration",
+        "talk_description": "",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "activity": "iosconfsg23.day1",
+        "title": "An Async/Await Kickstart",
+        "start_at": "2023-01-12T01:00:00+00:00",
+        "end_at": null,
+        "talk_type": "workshop",
+        "talk_description": "Over the past two years Apple has introduced their new framework for working with asynchronous code. It is well thought out but consists of so many pieces and techniques that it might feel overwhelming.\n\nIn this fast-moving code-along workshop we will explore many of the areas of async / await and friends.\n\nThe goal is for you to get an overall idea of what is going on and how it works while briefly exploring many of the areas.\n\nWe’ll motivate the topic with error handling in Swift and move on to async methods, the await keyword, and Tasks.",
+        "speakers": [
+          {
+            "id": 20,
+            "name": "Daniel Steinberg",
+            "company": "Dim Sum Thinking",
+            "image_url": "https://iosconf.sg/images/speakers/daniel.jpg",
+            "twitter": "dimsumthinking",
+            "linkedin": null,
+            "short_bio": "Daniel is the author of more than a dozen books including the best selling books A Functional Programming Kickstart, A SwiftUI Kickstart, A Swift Kickstart and Dear Elena. He presents iOS, Functional Programming, SwiftUI, and Swift training and consults through his company Dim Sum Thinking. He has written apps for the iPhone and the iPad since the SDKs first appeared and has written programs for the Mac all the way back to System 7. When he's not coding or talking about coding for the Mac, the iPhone, and the iPad he's probably cooking, baking bread, or hanging out with friends."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "activity": "iosconfsg23.day1",
+        "title": "Break ☕ 🚻 💬",
+        "start_at": "2023-01-12T03:00:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "15 minutes break",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "activity": "iosconfsg23.day1",
+        "title": "An Async/Await Kickstart",
+        "start_at": "2023-01-12T03:15:00+00:00",
+        "end_at": null,
+        "talk_type": "workshop",
+        "talk_description": "We'll move on to examples of asynchronous sequences, notifications, url sessions, and other Apple APIs. We’ll finish with async in SwiftUI, structured concurrency, and actors.",
+        "speakers": [
+          {
+            "id": 20,
+            "name": "Daniel Steinberg",
+            "company": "Dim Sum Thinking",
+            "image_url": "https://iosconf.sg/images/speakers/daniel.jpg",
+            "twitter": "dimsumthinking",
+            "linkedin": null,
+            "short_bio": "Daniel is the author of more than a dozen books including the best selling books A Functional Programming Kickstart, A SwiftUI Kickstart, A Swift Kickstart and Dear Elena. He presents iOS, Functional Programming, SwiftUI, and Swift training and consults through his company Dim Sum Thinking. He has written apps for the iPhone and the iPad since the SDKs first appeared and has written programs for the Mac all the way back to System 7. When he's not coding or talking about coding for the Mac, the iPhone, and the iPad he's probably cooking, baking bread, or hanging out with friends."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "activity": "iosconfsg23.day1",
+        "title": "Check-in 💻 for Conference attendees",
+        "start_at": "2023-01-12T05:15:00+00:00",
+        "end_at": null,
+        "talk_type": "registration",
+        "talk_description": "Welcome to iOS Conf SG 2023 🎉 in person! Get ready with your QR code from Tito registration. There is no lunch for Conference only ticket holder today.",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "activity": "iosconfsg23.day1",
+        "title": "Lunch 🍱 for Workshop participants",
+        "start_at": "2023-01-12T05:15:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "Lunch",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "activity": "iosconfsg23.day1",
+        "title": "Opening address",
+        "start_at": "2023-01-12T06:15:00+00:00",
+        "end_at": null,
+        "talk_type": "openingAddress",
+        "talk_description": "Some things never change, like the love that we have for 👩‍💻🧑‍💻📱",
+        "speakers": [
+          {
+            "id": 2,
+            "name": "Vina Melody",
+            "company": "Dyson",
+            "image_url": "https://iosconf.sg/images/speakers/vina.jpg",
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": "Organiser"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "activity": "iosconfsg23.day1",
+        "title": "Mo Tips, Less Problems - Building a Tip Jar in StoreKit2",
+        "start_at": "2023-01-12T06:30:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "This talk will cover the updates Apple has made in StoreKit to make our lives easier when working with StoreKit2. Tunde will talk about how can use these new API’s to build a tip jar, things to look out for during submission and exciting other topics.",
+        "speakers": [
+          {
+            "id": 8,
+            "name": "Tunde Adegoroye",
+            "company": "Bally's Interactive",
+            "image_url": "https://iosconf.sg/images/speakers/tunde.jpg",
+            "twitter": "tundsdev",
+            "linkedin": null,
+            "short_bio": "Tunde teaches SwiftUI and all things related to iOS development on YouTube @tundsdev. He is a Lead App Developer based in Manchester, UK. When he is not coding you can catch him travelling, watching anime, trying new foods & experiencing new experiences."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "activity": "iosconfsg23.day1",
+        "title": "Swift Charts with WeatherKit - Behind the Scene",
+        "start_at": "2023-01-12T07:05:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "🌦️",
+        "speakers": [
+          {
+            "id": 12,
+            "name": "Betty Godier",
+            "company": "VanMoof",
+            "image_url": "https://iosconf.sg/images/speakers/betty.jpg",
+            "twitter": "bettygodier",
+            "linkedin": null,
+            "short_bio": "Betty works as a Senior iOS Engineer at VanMoof in Amsterdam. In her spare time, she enjoys sailing with her family."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "activity": "iosconfsg23.day1",
+        "title": "Coffee Break ☕ ",
+        "start_at": "2023-01-12T07:40:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "20 minutes break",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "activity": "iosconfsg23.day1",
+        "title": "SwiftUI Performance Tips",
+        "start_at": "2023-01-12T08:00:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "In an amazing app experience, every frame drop counts. In this talk, we will see the most common pitfalls that slow SwiftUI apps down. We will learn about animation hitches, using Instruments, debugging techniques and some practical tips that will improve the performance of your apps.",
+        "speakers": [
+          {
+            "id": 21,
+            "name": "Martin Mitrevski",
+            "company": "Stream",
+            "image_url": "https://iosconf.sg/images/speakers/martin.jpg",
+            "twitter": "mitrevski",
+            "linkedin": null,
+            "short_bio": "Martin is leading the iOS team at Stream. He has over 10 years of experience, working on apps and sdks in digital payments, chats, healthcare, transport, augmented reality, conversational interfaces, insurance etc. He's also the author of the book “Developing Conversational Interfaces for iOS”, published by Apress."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "activity": "iosconfsg23.day1",
+        "title": "Shadow Rendering Performance",
+        "start_at": "2023-01-12T08:35:00+00:00",
+        "end_at": null,
+        "talk_type": "lightningTalk",
+        "talk_description": "Drawing shadows are expensive 🤔 Is this because of the rendering engine? Wait, what does the rendering engine do? Let's find out!",
+        "speakers": [
+          {
+            "id": 17,
+            "name": "Pradnya Nikam",
+            "company": "Rakuten Viki",
+            "image_url": "https://iosconf.sg/images/speakers/pradnya.jpg",
+            "twitter": "pradnya_nikam",
+            "linkedin": null,
+            "short_bio": "Pradnya is an iOS engineer currently working at Rakuten Viki. She loves all things coding and also enjoys writing blog posts. In her free time you can find her practicing yoga or running around with her one year old."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "activity": "iosconfsg23.day1",
+        "title": "Short Break ☕️ 🚻 💬",
+        "start_at": "2023-01-12T08:50:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "activity": "iosconfsg23.day1",
+        "title": "Experimentation for Engineers",
+        "start_at": "2023-01-12T09:00:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Experimentation for Engineers",
+        "speakers": [
+          {
+            "id": 11,
+            "name": "Erin Weigel",
+            "company": "Erin Does Things",
+            "image_url": "https://iosconf.sg/images/speakers/erin.jpg",
+            "twitter": "endesignonline",
+            "linkedin": "https://www.linkedin.com/in/erindoesthings",
+            "short_bio": "Erin delivers impactful design, user-centric products and tells stories about how she does it. Her career started in customer service working retail and waiting tables. This experience gave her a service mindset, which guides her design approach. She's got lots of experience testing designs in her previous role as Principal Designer at Booking.com, where she worked for 9 years. She also dabbles in product management, engineering, and people management. Previously her specialty was data-informed design and experimentation. Now she focuses on design systems, operations, and product accessibility. She's currently writing a book for Rosenfeld Media called 'Design for Impact,' which is scheduled to publish late 2023."
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "activity": "iosconfsg23.day1",
+        "title": "Shipping Side Projects in 2-2-2 Easy Steps",
+        "start_at": "2023-01-12T09:35:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Jordi is an indie developer building products for Apple platforms. He has launched more than 20 apps and side projects over the last two years, seven of which have been featured on the App Store across the world and he was one of the finalists for the Apple Design Awards this year. In this talk he will walk you through his 2-2-2 method which helps you keep your ideas small, and actually ship them.",
+        "speakers": [
+          {
+            "id": 16,
+            "name": "Jordi Bruin",
+            "company": null,
+            "image_url": "https://iosconf.sg/images/speakers/jordi.jpg",
+            "twitter": "jordibruin",
+            "linkedin": null,
+            "short_bio": "Jordi builds things that make life easier and help others do the same."
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "activity": "iosconfsg23.day1",
+        "title": "Closing Address",
+        "start_at": "2023-01-12T10:10:00+00:00",
+        "end_at": null,
+        "talk_type": "closingAddress",
+        "talk_description": "🎤",
+        "speakers": [
+          {
+            "id": 5,
+            "name": "Kale Starler",
+            "company": "Organiser",
+            "image_url": "https://iosconf.sg/images/speakers/kale.jpg",
+            "twitter": null,
+            "linkedin": "https://www.linkedin.com/in/kaletoh",
+            "short_bio": ""
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "activity": "iosconfsg23.day2",
+        "title": "Check-in + Breakfast 🍳",
+        "start_at": "2023-01-13T00:30:00+00:00",
+        "end_at": null,
+        "talk_type": "registration",
+        "talk_description": "Be sure to wear your name tag! Breakfast bento will be served.",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "activity": "iosconfsg23.day2",
+        "title": "Opening address",
+        "start_at": "2023-01-13T01:20:00+00:00",
+        "end_at": null,
+        "talk_type": "openingAddress",
+        "talk_description": "🎤",
+        "speakers": [
+          {
+            "id": 4,
+            "name": "Melvin Tan",
+            "company": "Organiser",
+            "image_url": "https://iosconf.sg/images/speakers/melvin.jpg",
+            "twitter": null,
+            "linkedin": "https://www.linkedin.com/in/melvintansl",
+            "short_bio": ""
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "activity": "iosconfsg23.day2",
+        "title": "What's an App Without Data?",
+        "start_at": "2023-01-13T01:30:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Exploring where to save data for an iOS app, in the cloud and locally.",
+        "speakers": [
+          {
+            "id": 22,
+            "name": "Mikaela Caron",
+            "company": "Lickability",
+            "image_url": "https://iosconf.sg/images/speakers/mikaela.jpg",
+            "twitter": "mikaela__caron",
+            "linkedin": null,
+            "short_bio": "Mikaela is an iOS Engineer at Lickability. She creates content on YouTube, Instagram, and Twitter, sharing her knowledge about iOS development, and is an organizer of iOSDevHappy Hour."
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "activity": "iosconfsg23.day2",
+        "title": "Man vs Machine: Can ChatGPT write better SwiftUI than you?",
+        "start_at": "2023-01-13T02:05:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Can it?",
+        "speakers": [
+          {
+            "id": 6,
+            "name": "Paul Hudson",
+            "company": "Hacking with Swift",
+            "image_url": "https://iosconf.sg/images/speakers/paul.jpg",
+            "twitter": "twostraws",
+            "linkedin": null,
+            "short_bio": "Paul is the author of Hacking with Swift, Pro Swift, Swift Design Patterns, Server-Side Swift, Hacking with macOS, Hacking with watchOS, Hacking with tvOS, Swift Coding Challenges, and more. Suffice it to say, he quite likes Swift. And coffee. (But mostly Swift.) (And coffee.)"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "activity": "iosconfsg23.day2",
+        "title": "Scaling up a Super-App",
+        "start_at": "2023-01-13T02:40:00+00:00",
+        "end_at": null,
+        "talk_type": "lightningTalk",
+        "talk_description": "⚡️",
+        "speakers": [
+          {
+            "id": 25,
+            "name": "Omar Khaled Gawish",
+            "company": "Grab",
+            "image_url": "https://iosconf.sg/images/speakers/omar.jpg",
+            "twitter": null,
+            "linkedin": null,
+            "short_bio": "Omar is an iOS lead software engineer at Grab with a focus on code architecture as well as developer experience. When he's not writing code you can find him hiking around the Over the river and through the woods."
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "activity": "iosconfsg23.day2",
+        "title": "Short Break ☕️ 🚻 💬",
+        "start_at": "2023-01-13T02:50:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": null,
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "activity": "iosconfsg23.day2",
+        "title": "Improve User Experience With Firebase Dynamic Links",
+        "start_at": "2023-01-13T03:05:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Taking Firebase dynamic links to a new height!",
+        "speakers": [
+          {
+            "id": 7,
+            "name": "Danijela Vrzan",
+            "company": "Bally's Interactive",
+            "image_url": "https://iosconf.sg/images/speakers/danijela.jpg",
+            "twitter": "dvrzan",
+            "linkedin": null,
+            "short_bio": "Danijela is an iOS Developer and an article author for raywenderlich.com. In her free time, you can find her hiking or lifting heavy weights at the gym. When not working out, she's playing video-games, cooking, and trying to keep up with Swift updates!"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "activity": "iosconfsg23.day2",
+        "title": "Diversifying the Community",
+        "start_at": "2023-01-13T03:40:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Does diversity matters? Why should we care? How can we play our part?",
+        "speakers": [
+          {
+            "id": 15,
+            "name": "Eleni Papanikolopoulou",
+            "company": "Skroutz",
+            "image_url": "https://iosconf.sg/images/speakers/eleni.jpg",
+            "twitter": "elenipapanikolo",
+            "linkedin": null,
+            "short_bio": "Eleni is an iOS Developer with many years of experience working on various iOS Apps. She is currently working at Skroutz, the biggest e-commerce platform in Greece and she is part of the core mobile team focusing primarily on infrastructure, architecture and testing. She is the author of several articles in Medium and when she is not working she enjoys skiing and traveling."
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "activity": "iosconfsg23.day2",
+        "title": "📸",
+        "start_at": "2023-01-13T04:15:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": null,
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "activity": "iosconfsg23.day2",
+        "title": "Lunch 🍱",
+        "start_at": "2023-01-13T04:20:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "Lunch",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "activity": "iosconfsg23.day2",
+        "title": "Swift Quiz",
+        "start_at": "2023-01-13T05:50:00+00:00",
+        "end_at": null,
+        "talk_type": "lightningTalk",
+        "talk_description": "Are you ready for some fun and Swift. Mostly fun! And Swift. 🥳",
+        "speakers": [
+          {
+            "id": 18,
+            "name": "Vincent Pradeilles",
+            "company": "PhotoRoom",
+            "image_url": "https://iosconf.sg/images/speakers/vincent.jpg",
+            "twitter": "v_pradeilles",
+            "linkedin": null,
+            "short_bio": "Vincent started working on iOS apps back in 2011. After a few years spent on building great apps for major European banks, he's now part of the team at PhotoRoom. He loves Swift and enjoys talking about it on the Internet. In 2020, he started a YouTube channel to share his knowledge of Swift and iOS. He is also the one behind the Twitter account @ios_memes"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "activity": "iosconfsg23.day2",
+        "title": "Making the Most Out of Swift",
+        "start_at": "2023-01-13T06:00:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Do you know about these hidden gems? 💎",
+        "speakers": [
+          {
+            "id": 10,
+            "name": "Antoine van der Lee",
+            "company": "WeTransfer",
+            "image_url": "https://iosconf.sg/images/speakers/antoine.jpg",
+            "twitter": "twannl",
+            "linkedin": null,
+            "short_bio": "As a Staff iOS Engineer at WeTransfer, Antoine’s work is focused on code architecture and team processes."
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "activity": "iosconfsg23.day2",
+        "title": "More Than Code: Rooting Yourself in the iOS Community",
+        "start_at": "2023-01-13T06:35:00+00:00",
+        "end_at": null,
+        "talk_type": "panel",
+        "talk_description": "Janina discussing with Paul, Erin, Tunde and Mikaela",
+        "speakers": [
+          {
+            "id": 24,
+            "name": "Janina Kutyn",
+            "company": "Organiser",
+            "image_url": "https://iosconf.sg/images/speakers/janina.jpg",
+            "twitter": "janinakutyn",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "activity": "iosconfsg23.day2",
+        "title": "Automate building and testing your iPhone application with CircleCI Cloud.",
+        "start_at": "2023-01-13T07:15:00+00:00",
+        "end_at": null,
+        "talk_type": "lightningTalk",
+        "talk_description": "If you share your code on a repository like GitHub, BitBucket and GitLab with your collaborators, who is responsible for building, testing and releasing when someone modified and pushed their code to the repository? Are you tired of setting up (and maintaining) a shared build/test server? CircleCI will take care of these development processes in an automated way on Cloud. You can focus more on coding. CircleCI helps you CI/CD your iOS project up to 600 minutes/month for free with the macOS environment on Cloud.",
+        "speakers": [
+          {
+            "id": 14,
+            "name": "Masahiko Funaki",
+            "company": "CircleCI",
+            "image_url": "https://iosconf.sg/images/speakers/masahiko-funaki.jpg",
+            "twitter": "mfunaki",
+            "linkedin": null,
+            "short_bio": "Masahiko is Principal, Developer Advocate in JAPAC at CircleCI, a Continuous Integration and Delivery platform used by the world's best engineering teams. Masahiko is passionate about helping organizations of all sizes achieve digital innovation and has developed a deep understanding of both the business and technology sides through hands-on experience as an engineer and as a leader in global enterprises like Microsoft and SAP."
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "activity": "iosconfsg23.day2",
+        "title": "Coffee Break ☕️",
+        "start_at": "2023-01-13T07:30:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "Coffee Break",
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "activity": "iosconfsg23.day2",
+        "title": "Exploring Colormaps and UI Styles for Data and Information Visualization",
+        "start_at": "2023-01-13T08:00:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "Information can be represented in multiple forms including colors, text, icons, charts and numbers. This talk introduces accessible colormaps and the different ways they can be incorporated into swift, from color palette generation to data and information visualization.In addition, we touch on UI style and aesthetics as this is a very important factor to consider in order to make data visualizations both compelling and engaging.",
+        "speakers": [
+          {
+            "id": 23,
+            "name": "Anya Traille",
+            "company": "Rolls-Royce",
+            "image_url": "https://iosconf.sg/images/speakers/anya.jpg",
+            "twitter": "LaminarModes",
+            "linkedin": null,
+            "short_bio": "Anya is a decision scientist, engineer, designer and creator of LaminarModes."
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "activity": "iosconfsg23.day2",
+        "title": "Your Brain 🧠 on Swift Concurrency",
+        "start_at": "2023-01-13T08:35:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "This talk will cover some interesting bits and details about how Swift Concurrency requires a bit of a different way of thinking compared to what we used before!",
+        "speakers": [
+          {
+            "id": 9,
+            "name": "Donny Wals",
+            "company": "Freelance iOS Dev",
+            "image_url": "https://iosconf.sg/images/speakers/donny.jpg",
+            "twitter": "donnywals",
+            "linkedin": null,
+            "short_bio": "Donny is a freelance iOS engineer who loves learning and sharing knowledge. When he is not working on something iOS-related, you'll probably find him noodling around on his guitar."
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "activity": "iosconfsg23.day2",
+        "title": "Short Break ☕️ 🚻 💬",
+        "start_at": "2023-01-13T09:10:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": null,
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "activity": "iosconfsg23.day2",
+        "title": "The Best of Live Activities on Dynamic Island",
+        "start_at": "2023-01-13T09:20:00+00:00",
+        "end_at": null,
+        "talk_type": "lightningTalk",
+        "talk_description": "Can we end an iOS conference in Singapore without talking about dynamic island?",
+        "speakers": [
+          {
+            "id": 19,
+            "name": "Priyal Porwal",
+            "company": "Paytm",
+            "image_url": "https://iosconf.sg/images/speakers/priyal.jpg",
+            "twitter": "priyal_porwal_",
+            "linkedin": "https://www.linkedin.com/in/priyal-porwal",
+            "short_bio": "Priyal loves to learn and share knowledge with the community. She is passionate about accessibility, application security, testability and animations. You can catch her traveling, watching movies or enjoying cooking when she is not coding."
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "activity": "iosconfsg23.day2",
+        "title": "Building Responsive Interactions",
+        "start_at": "2023-01-13T09:40:00+00:00",
+        "end_at": null,
+        "talk_type": "normalTalk",
+        "talk_description": "As applications trend increasingly towards more simplistic / minimal, finding ways to build experiences that are both easy to use and highly interactive are becoming more difficult to do. It doesn't have to be though, and together we'll go over ways that UIKit and SwiftUI can coexist to build great feeling applications on iOS.",
+        "speakers": [
+          {
+            "id": 13,
+            "name": "Adam Bell",
+            "company": "Netflix",
+            "image_url": "https://iosconf.sg/images/speakers/bell.jpg",
+            "twitter": "b3ll",
+            "linkedin": "https://www.linkedin.com/in/donny-wals-33660014/?originalSubdomain=nl",
+            "short_bio": "Adam is a software engineer specialising in audio, animations, interactions, and gestures, currently working at Netflix. He is the creator of a highly performant animation and gestural interaction library called Motion (https://github.com/b3ll/Motion). In his spare time, he enjoys racing cars, messing with synthesizers, listening to records, and dabbling with the internals of Apple products."
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "activity": "iosconfsg23.day2",
+        "title": "Closing address",
+        "start_at": "2023-01-13T10:15:00+00:00",
+        "end_at": null,
+        "talk_type": "shortbreak",
+        "talk_description": "🎤",
+        "speakers": [
+          {
+            "id": 3,
+            "name": "Subhransu Behera",
+            "company": "Organiser",
+            "image_url": "https://iosconf.sg/images/speakers/subh.jpg",
+            "twitter": "subhransu",
+            "linkedin": null,
+            "short_bio": ""
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "activity": "iosconfsg23.day2",
+        "title": "Afterparty 🍻 - One-Way Shuttle 🚌 Will Be Provided",
+        "start_at": "2023-01-13T11:00:00+00:00",
+        "end_at": null,
+        "talk_type": "lightningTalk",
+        "talk_description": null,
+        "speakers": [
+          {
+            "id": 1,
+            "name": "Organiser",
+            "company": null,
+            "image_url": null,
+            "twitter": "iosconfsg",
+            "linkedin": null,
+            "short_bio": null
+          }
+        ]
+      }
+    ]
+  }
+}

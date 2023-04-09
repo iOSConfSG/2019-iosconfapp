@@ -20,6 +20,7 @@
 		5A651DD021EB467700098B66 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */; };
 		5A6C3AE329E01D65008C23D2 /* FlagsmithClient in Frameworks */ = {isa = PBXBuildFile; productRef = 5A6C3AE229E01D65008C23D2 /* FlagsmithClient */; };
 		5A6C3AE629E02495008C23D2 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 5A6C3AE529E02495008C23D2 /* Yams */; };
+		5A6C3AE829E0527A008C23D2 /* schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A6C3AE729E0527A008C23D2 /* schedule.json */; };
 		5A74201323535DBC00895C4E /* ScheduleGraphQLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */; };
 		5A7B2BDD2196865000D8FDC5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */; };
 		5A7B2BDF2196B5B200D8FDC5 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */; };
@@ -94,6 +95,7 @@
 		5A41848921CE73E5007E1905 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5A61519D23C0A32600D5FE5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5A651DCF21EB467700098B66 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		5A6C3AE729E0527A008C23D2 /* schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schedule.json; sourceTree = "<group>"; };
 		5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGraphQLViewModel.swift; sourceTree = "<group>"; };
 		5A7B2BDC2196865000D8FDC5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		5A7B2BDE2196B5B200D8FDC5 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				5A02AC1323520AA900C3CC39 /* TimelineCellV2.swift */,
 				5A74201223535DBC00895C4E /* ScheduleGraphQLViewModel.swift */,
 				5A1AAFB9235DEFDA0030239C /* DetailGraphqlViewController.swift */,
+				5A6C3AE729E0527A008C23D2 /* schedule.json */,
 			);
 			path = "Schedule Tab";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				5AFBF181218D6AA200FD2190 /* LaunchScreen.storyboard in Resources */,
 				5AFBF17E218D6AA200FD2190 /* Assets.xcassets in Resources */,
+				5A6C3AE829E0527A008C23D2 /* schedule.json in Resources */,
 				5A15CEFB2956798100745522 /* apollo-codegen-config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

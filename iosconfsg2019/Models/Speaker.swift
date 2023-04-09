@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Speaker {
+struct Speaker: Codable {
     var id: Int
     var name: String
     var shortBio: String?
@@ -16,4 +16,14 @@ struct Speaker {
     var linkedIn: String?
     var company: String?
     var imageUrl: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case shortBio = "short_bio"
+        case twitter
+        case linkedIn = "linkedin"
+        case company
+        case imageUrl = "image_url"
+    }
 }
