@@ -9,31 +9,37 @@
 import Foundation
 import Apollo
 import ConfAPI
+import FlagsmithClient
 
 protocol ScheduleGraphqlViewModelDelegate {
     func didFetchSchedule()
 }
 
 class ScheduleGraphqlViewModel {
-
+    
+    enum ScheduleMode: String {
+        case local
+        case remote
+    }
+    
     private var apollo: ApolloClient!
     private var scheduleSubscription: Cancellable?
     private var scheduleGraphql: [GetScheduleSubscription.Data.Schedule] = []
     private var schedule: [Talk] = []
-
+    
     var delegate: ScheduleGraphqlViewModelDelegate?
     var selectedDay: Int?
-
+    
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return df
     }()
-
+    
     enum ConferenceDay: Int, CaseIterable {
         case one = 0
         case two = 1
-
+        
         var dateString: String {
             switch self {
             case .one:
@@ -77,7 +83,7 @@ class ScheduleGraphqlViewModel {
             let calendar = Calendar.current
             let components = calendar.dateComponents([.day], from: today)
             let day = components.day ?? 0
-
+            
             switch day {
             case 18:
                 self.selectedDay = 1
@@ -86,10 +92,27 @@ class ScheduleGraphqlViewModel {
             }
         }
         return selectedDay ?? 0
-
     }
 
-    func tryFetchSchedule() {        
+    func tryFetchSchedule() {
+        Flagsmith.shared.getValueForFeature(withID: "schedule_mode") { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case let .success(.string(scheduleMode)):
+                guard let mode = ScheduleMode(rawValue: scheduleMode) else { return }
+                switch mode {
+                case .local:
+                    self.fetchLocalSchedule()
+                case .remote:
+                    self.fetchRemoteSchedule()
+                }
+            default:
+                self.fetchLocalSchedule()
+            }
+        }
+    }
+
+    func fetchRemoteSchedule() {
         scheduleSubscription = apollo.subscribe(subscription: GetScheduleSubscription(), resultHandler: { [weak self] (result) in
             switch result {
             case .success(let object):
@@ -102,6 +125,22 @@ class ScheduleGraphqlViewModel {
         })
     }
 
+    func fetchLocalSchedule() {
+        if let path = Bundle.main.url(forResource: "schedule", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: path, options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let localScheduleData = try decoder.decode(LocalScheduleData.self, from: data)
+                self.schedule = localScheduleData.data.talks
+                delegate?.didFetchSchedule()
+            } catch {
+                // Handle error
+                handleError(error: error)
+            }
+        }
+    }
+
     func handleError(error: Error) {
         print("Error = \(error.localizedDescription)")
     }
@@ -112,13 +151,13 @@ class ScheduleGraphqlViewModel {
         }
         for item in response {
             guard let id = item.id,
-                let title = item.title,
-                let talkTypeString = item.talk_type,
-                let talkType = TalkType(rawValue: talkTypeString) else {
+                  let title = item.title,
+                  let talkTypeString = item.talk_type,
+                  let talkType = TalkType(rawValue: talkTypeString) else {
                 print("Incomplete data \(item)")
                 return
             }
-            
+
             var speakers: [Speaker] = []
             if !item.speakers.isEmpty {
                 speakers = createSpeakers(from: item)
@@ -135,7 +174,7 @@ class ScheduleGraphqlViewModel {
         }
         delegate?.didFetchSchedule()
     }
-
+    
     func createSpeakers(from talk: GetScheduleSubscription.Data.Schedule) -> [Speaker] {
         let speakers = talk.speakers.map { (speaker) -> Speaker in
             return Speaker(id: speaker.id ?? 1,
@@ -151,7 +190,7 @@ class ScheduleGraphqlViewModel {
     func numberOfRows() -> Int {
         return scheduleFor(day: self.selectedDay ?? 0).count
     }
-
+    
     func getTalkForIndexpath(indexPath: IndexPath) -> Talk? {
         guard !self.schedule.isEmpty else { return nil }
         let selectedDay = self.selectedDay ?? 0
@@ -161,7 +200,7 @@ class ScheduleGraphqlViewModel {
 
         return scheduleOnSelectedDay[indexPath.row]
     }
-
+    
     private func scheduleFor(day: Int) -> [Talk] {
         guard let selectedDay = ConferenceDay(rawValue: day) else {
             return [Talk]()
